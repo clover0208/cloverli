@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+	<!-- Kindergarten Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/kindergarten/kindergarten.css" type="text/css" /> <!-- Kindergarten Custom Css -->
+	<link rel="stylesheet" href="demos/kindergarten/css/fonts.css" type="text/css" /> <!-- Kindergarten Custom Fonts -->
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=6953A8" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Closer-UX</title>
+
+	<style>
+		body {
+    font-family: L-PTSans, Arial, sans-serif;
+    color: #333;
+
+}
+p{
+	font: L-PTSans, Arial, sans-serif;
+	line-height: 1.6;
+	font-size: 20px;
+	
+}
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+	</style>
+	<style>
+
+/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+} */
+
+button {
+  margin: 50px;
+  font-family: inherit;
+}
+/* End of Page styling */
+
+/* Simple button styling -- No animation */
+.simple {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.simple::after {
+  content: "";
+  background-color: #dcbaff;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+/* End of Simple Button */
+
+/* Fill button styling */
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fill::after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
+/* End of Fill Button  */
+
+/* Slide button styling */
+.slide {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 30px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.slide i {
+  opacity: 0;
+  font-size: 13px;
+  transition: 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 21px;
+  transition: transform 1;
+}
+
+.slide div {
+  transition: transform 0.8s;
+}
+
+.slide:hover div {
+  transform: translateX(-6px);
+}
+
+.slide::after {
+  content: "";
+  background-color: #66f2d5;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+
+.slide:hover i {
+  opacity: 1;
+  transform: translateX(-6px);
+}
+		/* FONT LEGIBILITY */
+		h1, h2, h3, h4, h5, h6, p, a, li, span {
+		  font-variant-numeric: oldstyle-nums;
+		  font-feature-settings: "onum";
+		}
+		* {
+		 text-rendering: optimizeLegibility;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale; 
+		}
+	  /* LINK HOVER */
+	  .marker,
+	  .w-richtext a,
+	  .w-richtext p a{
+			-webkit-transition: all .15s ease-out;
+			-moz-transition: all .15s ease-out;
+			-ms-transition: all .15s ease-out;
+			-o-transition: all .15s ease-out;
+			transition: all .15s ease-out;
+			text-decoration: none;
+		  background-image: -webkit-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -moz-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -o-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: linear-gradient(transparent 50%, #fcf113 0%);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			border-bottom: 1px solid #33393f;
+		  }
+	  .marker:hover,
+	  .active-link,
+	  .w-richtext a:hover,
+	  .w-richtext p a:hover{
+		  background-size: 100% 100%;
+			border-bottom: 1px solid #fcf113;
+		  }
+	  @media screen and (min-width:1440px){
+		  img.image {
+				max-width:1440px;
+				}
+	  }
+	  /* Hide Nav when Scrolling */
+		#nav.nav-up {
+			 top:-70px; 
+		}
+	  @media screen and (max-width:480px){
+		  #nav.nav-up {
+				 bottom:-70px; 
+			}
+		.w-webflow-badge {
+			  top: 12px !important;
+			  bottom: auto !important;
+		  }
+	  }
+	  /* Making sure navigation stays behind lightbox overlay */
+		.w-lightbox-backdrop{
+			 z-index:9999; 
+		}
+	  .noscroll {
+		  overflow:hidden;
+	  }
+	  #mobile-nav.open .navbar:first-child {
+		  -webkit-transform:translateY(9px) rotate(225deg);
+		transform:translateY(9px) rotate(225deg);
+	  }
+	  #mobile-nav.open .navbar:nth-child(2) {
+		  -webkit-transform:translateX(50px);
+		transform:translateX(50px);
+		opacity:0;
+	  }
+	  #mobile-nav.open .navbar:last-child {
+		  -webkit-transform:translateY(-9px) rotate(-45deg);
+		transform:translateY(-9px) rotate(-45deg);
+	  }
+	  /* BADGE MODIFICATIONS */
+	  /*.w-webflow-badge span {
+		  position: absolute;
+		  right: 3px;
+		  top: 6px;
+		  color: #222;
+		  font-size: 14px;
+		  }*/
+	  </style>
+		<style>
+	  .w-slider-nav {
+		  text-align: left;
+	  }
+	  .w-slider-dot.w-active,
+	  .w-slider-dot.w-active:hover {
+		  background-color: #1E262B;
+	  }
+	  .w-slider-dot {
+		  background-color: transparent;
+		width:16px;
+		height:16px;
+		border:2px solid #1E262B;
+	  }
+	  .w-slider-dot:hover {
+		  background-color: #D8D8D8;
+	  }
+	 
+
+
+
+
+
+
+
+	 
+	 </style>
+
+
+
+</head>
+
+<body class="stretched">
+
+	<!-- <div class="modal-on-load" data-target="#myModal1"></div> -->
+
+	<!-- Modal -->
+	<!-- <div class="modal1 mfp-hide subscribe-widget" id="myModal1">
+		<a href="#" class="d-flex mx-auto h-scale-sm all-ts" style="max-width: 670px">
+			<img src="demos/kindergarten/images/banner.jpg" alt="Banner Image" class="rounded-4">
+		</a>
+	</div> -->
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-0 col-lg-3">
+							<!-- <a href="index.html" class="standard-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a>
+							<a href="index.html" class="retina-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a> -->
+						</div>
+						<!-- #logo end -->
+
+						<div class="header-misc col-lg-3 justify-content-end">
+							<!-- WhatsApp Icon
+							============================================= -->
+				
+						</div>
+
+
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div>
+
+						<nav class="primary-menu">
+
+							<ul class="menu-container">
+								<li class="menu-item"><a class="menu-link" href="../../index.html" ><div>Home</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="https://drive.google.com/file/d/1NJlOdgeZrMYcXHU12JGgAyKoVCSeZqSb/view?usp=sharing" ><div>CV</div></a></li>
+								<!-- <li class="menu-item"><a class="menu-link" href="#"><div>Our Programs</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#"><div>Contacts</div></a></li> -->
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+
+	
+
+		<!-- Hero
+		============================================= -->
+		<section id="slider" class="slider-element include-header" style="background-color: #ebeefb;">
+
+			<div class="position-absolute top-0 start-0 w-100 h-100" style="background: transparent url('./coverr.png') center center / cover; opacity: 1"></div>
+
+			<div class="container" >
+				<div class="row align-items-center min-vh-100 pt-5 pb-4">
+					<div class="col-lg-6" style="margin-left: 2vw;margin-top: -10vh;">
+						<h6 class="mb-4 ls1 text-uppercase fw-normal"></h6>
+						<h1 class="display-3 fw-bolder">Closer</h1>
+						<h2 >Individual Project</h2>
+						<p class="mt-4 mb-5 fw-light">With the opening of the second child policy, more  <br>and moremothers are facing postpartum depression.<br> Closer aims to strengthen the interaction between <br>couples and use the power of family to protect <br>mothers from depression.</p>
+						<!-- <a href="#" class="btn text-white bg-color rounded-1 py-3 px-5 fw-medium">Enroll Now  <i class="icon-line-arrow-right position-relative" style="top: 2px"></i></a>
+						<a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" class="btn bg-white rounded-1 px-5 py-3 fw-medium ms-2" data-lightbox="iframe"><i class="icon-play-circle me-1" style="position: relative; top: 1px; margin-right: 5px;"></i> Watch Video</a> -->
+					</div>
+					<!-- <div class="col-lg-6 align-self-end mt-5 mt-lg-0">
+						<img src="./cover.png" alt="Hero Bg">
+					</div> -->
+				</div>
+			</div>
+
+			<div class="shape-divider" data-shape="wave-2" data-position="bottom" data-height="80"></div>
+
+			<!-- <div class="position-relative d-none d-sm-block">
+				<img src="demos/kindergarten/images/fish2.png" alt="Fish" class="background-img pos-right float-anim" style="top: -120px">
+			</div> -->
+
+		</section>
+
+	<!-- //intro -->
+		<div class="rich-kid w-richtext">
+			<p>Today, "postpartum depression" and "widowed parenting" are in the news too often to be ignored.<br></p>
+			<p>Women are not only expected to take on the responsibilites of the traditional household structure, they are also expected to build their careers. This puts the pressure on young women today at an unprecedented level.<br></p>
+			<p>After working women leave their careers, they will have a strong sense of loss and disparity. Depression is very high. <strong>Closer</strong> treats themental health of new mothers in adifferent way, by creating a middleman, a buffer zone.</p>
+
+		  </div>
+
+		
+	<!-- //containers -->
+			<div class="container"style="margin-top:80px">
+				<h2 class="color h1 fw-bold mb-5" ><p style="color: #5b5b5b; font-size: 36px;" >Primary Research：Chinese Mothers are suffering</p></h2>
+
+				<div class="row col-mb-50">
+					
+					<div class="col-lg-8">
+						
+						<div class="row col-mb-50" style="position:relative; top:-4vh;">
+							<p>The public mental health insight report, which collected data from 2106 mothers, found that postpartum depression is common among mothers.</p>
+							<img src="images/300ppi/mom3.png" alt="Icon" class="p-2 rounded" style="width:50vw; position:relative; left:6vw; top:-4vh;">
+
+							<img src="images/300ppi/mom4.png" alt="Icon" class="p-2 rounded" style="width:50vw; position:relative; left:6vw; top:-8vh;">
+
+				
+						</div>
+					</div>
+
+					<div class="col-lg-4 mt-5 mt-lg-0" >
+						<div class="pop=up-one" style="border-style: hidden;" >
+							<div class="card-body">
+								<img src="images/300ppi/mom6.png" alt="Card Image" style="margin-top: 0px;">
+								<!-- <h3 class="card-title mt-4">How we care for your child?</h3> -->
+								<!-- <h5 class="fw-normal font-body h6 lh-base mb-0 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="container" style="margin-top:-40px">
+				<h2 class="color h1 fw-bold mb-5" ><p style="color: #5b5b5b; font-size: 36px;">Primary Research：The absense of father and husband</p></h2>
+				<div class="row col-mb-50">
+					
+					<div class="col-lg-8">
+						
+						<div class="row col-mb-50" style="position:relative; top:-4vh;">
+							<p>In this survey, most mothers mentioned a very important issue. Their husbands did not understand their needs very well, and there was room for improvement in educating taking care of their children.</p>
+							<img src="images/300ppi/mom7.png" alt="Icon" class="p-2 rounded" style="width:50vw; position:relative; left:6vw; top:vh;">
+
+							<!-- <img src="images/300ppi/mom4.png" alt="Icon" class="p-2 rounded" style="width:50vw; position:relative; left:6vw; top:-10vh;"> -->
+
+				
+						</div>
+					</div>
+
+					<div class="col-lg-4 mt-5 mt-lg-0" >
+						<div class="pop=up-one" style="border-style: hidden;" >
+							<div class="card-body">
+								<img src="images/300ppi/mom5.png" alt="Card Image" style="margin-top: 0px;">
+								<!-- <h3 class="card-title mt-4">How we care for your child?</h3> -->
+								<!-- <h5 class="fw-normal font-body h6 lh-base mb-0 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- interview -->
+			
+			<div class="container" style="margin-top:80px">
+				<h2 class="color h1 fw-bold mb-5" ><p style="color: #5b5b5b; font-size: 36px;">Interview and Field Research</p></h2>
+				<div class="row col-mb-50">
+					
+					<div class="col-lg-8">
+						
+						<div class="row col-mb-50" style="position:relative; top:-4vh;">
+							<p>In this survey, most mothers mentioned a very important issue. Their husbands did not understand their needs very well, and there was room for improvement in educating taking care of their children.</p>
+							<img src="images/SVG/intervieww.svg" alt="Icon" class="p-2 rounded" style="width:64vw; position:relative; left:1vw; top:-2vh;">
+
+							<!-- <img src="images/300ppi/mom4.png" alt="Icon" class="p-2 rounded" style="width:50vw; position:relative; left:6vw; top:-10vh;"> -->
+
+				
+						</div>
+					</div>
+
+					<div class="col-lg-4 mt-5 mt-lg-0" >
+						<div class="pop=up-one" style="border-style: hidden;" >
+							<div class="card-body">
+								<img src="images/300ppi/mom8.png" alt="Card Image" style="margin-top: 120px;">
+								<!-- <h3 class="card-title mt-4">How we care for your child?</h3> -->
+								<!-- <h5 class="fw-normal font-body h6 lh-base mb-0 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5> -->
+							</div>
+						</div>
+					</div>
+<!-- field -->
+<div class="col-lg-8">
+						
+	<div class="row col-mb-50" style="position:relative; top:-4vh;">
+		<p>I conducted a field research and documenting the parenting life. You can see father's role is missing in this chart.</p>
+		<img src="images/800ppi/资源 76800x.jpg" alt="Icon" class="p-2 rounded" style="width:80vw; position:relative; left:-1vw; top:-2vh;">
+
+		<!-- <img src="images/300ppi/mom4.png" alt="Icon" class="p-2 rounded" style="width:50vw; position:relative; left:6vw; top:-10vh;"> -->
+
+
+	</div>
+</div>
+
+<div class="col-lg-4 mt-5 mt-lg-0" >
+	<div class="pop=up-one" style="border-style: hidden;" >
+		<div class="card-body">
+			<img src="images/300ppi/feeding.png" alt="Card Image" style="width:80%; margin-top: 80px; margin-left: 15px">
+			<p>I tried it myself and feel the difficulty of taking care of baby</p>
+			<!-- <h3 class="card-title mt-4">How we care for your child?</h3> -->
+			<!-- <h5 class="fw-normal font-body h6 lh-base mb-0 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5> -->
+		</div>
+	</div>
+</div>
+				</div>
+			</div>
+
+<!-- interview start -->
+<div class="curly-section yellow">
+	<div class="site-content"></div>
+	<div class="rich-kid w-richtext">
+	  <h1><strong>Interviews Summary</strong></h1>
+	</div>
+	<div class="content-wrapper">
+	  <div class="card">
+		<div class="tagline insight-tagline">Interview Insight #1</div>
+		<h3 class="insight-heading">Physical: Accompaning and Spending more time with Baby<br></h3>
+		<p class="insight-paragraph">Fathers spend little time with their children and mothers mainly take care of babies' daily lives. Fathers are less involved in education, and mothers are the main educators.</p>
+	  </div>
+	  <div class="card">
+		<div class="tagline insight-tagline">Interview Insight #2</div>
+		<h3 class="insight-heading">Physical: Wife lacks husband's companionship and takes on heavy housework and parenting<br></h3>
+		<p class="insight-paragraph">In the absence of her husband, her mother took on a lot of physical work, and the task of grocery shopping, cooking, laundry and playing with the children was given to her.</p>
+	  </div>
+	  <div class="card">
+		<div class="tagline insight-tagline">Interview Insight #3</div>
+		<h3 class="insight-heading">Psychologically: mothers are prone to depression after facing their children alone for long periods of time <br></h3>
+		<p class="insight-paragraph">In the closed space of the family, mothers often have to face crying children, clean up the messy home, and face all this alone, mothers tend to feel stressed and cause depression..</p>
+	  </div>
+	  <div class="card">
+		<div class="tagline insight-tagline">Interview Insight #4</div>
+		<h3 class="insight-heading">Psychologically: The mother's bad feelings will be vented on the husband, further intensifying family conflicts<br></h3>
+		<p class="insight-paragraph">After a busy day, the husband will feel that his wife does not understand him when he faces her accusations. At the same time, the wife feels that the burden of taking care of the children is all on her, the husband is not responsible enough, and the family atmosphere is tense</p>
+	  </div>
+
+	</div>
+	<div class="rich-kid w-richtext">
+		<h1><strong>Analysis of Users' Needs</strong></h1>
+	  </div>
+<div class="content-wrapper">
+		<div class="card">
+		  <div class="tagline insight-tagline">Need #1</div>
+		  <h3 class="insight-heading">Wife: Regular daily care<br></h3>
+		  <p class="insight-paragraph">Eg. Phone Calls and Messages from husband concerning wife and baby's condition</p>
+		</div>
+		<div class="card">
+			<div class="tagline insight-tagline">Need #2</div>
+			<h3 class="insight-heading">Wife: Understanding and Support from husband<br></h3>
+			<p class="insight-paragraph">Eg. A simple sentence acknowledging the hard work of the wife and praising her for doing so much for the children and the family</p>
+		  </div>
+		
+		<div class="card">
+			<div class="tagline insight-tagline">Need #3</div>
+			<h3 class="insight-heading">Wife: Motivating the husband to contribute more to the family<br></h3>
+			<p class="insight-paragraph">Eg. 
+				Do more housework and undertake children's education</p>
+		  </div>
+
+		  <div class="card">
+			<div class="tagline insight-tagline">Need #4</div>
+			<h3 class="insight-heading">Husband: Wife will be able to communicate in a more calm condition<br></h3>
+			<p class="insight-paragraph">Eg. Have a heart-to-heart communication not shouting and blaming each other.</p>
+		  </div>
+		  <div class="card">
+			<div class="tagline insight-tagline">Need #5</div>
+			<h3 class="insight-heading">Husband: Wife understands how difficult it is for him in the workplace supporting family<br></h3>
+			<p class="insight-paragraph">Eg. Not just blaming him for not doing housework, but acknowledge that his effort for bringing family a better life</p>
+		  </div>
+		  <div class="card">
+			<div class="tagline insight-tagline">Need #6</div>
+			<h3 class="insight-heading">Husband: A Reminder for him to contact his wife<br></h3>
+			<p class="insight-paragraph">Eg. Husband sometimes just forget to message and care for his wife and baby. A reminder can remind him doing that.</p>
+		  </div>
+	</div>
+
+		<!-- <div class="rich-kid w-richtext">
+	  <h3>Generally</h3>
+	  <p>Learning in the form of traditional teaching and e-learning both require self-discipline, motivation and acceptance of the methodology, whereby e-learning – insofar as</p>
+	</div> -->
+  </div>
+<!-- interview end -->
+		
+
+
+		<!-- opportunities -->
+		<div class="rich-kid w-richtext" style="margin-top:16vh;">
+		<h2>Market Research</h2>
+		<p>Through investigation and analysis, I found that the existing apps mainly help facilitate shopping for moms, help record the changes of babies, and build group communication among moms. <br></p>
+		<p>But there is a lack of apps that urge husbands to take care of their wives and children, and not enough spiritual care for moms, so I decided to improve moms' postpartum problems by strengthening husbands' care for their wives<br></p>
+		<p></p>
+	</div>
+		<div class="curly-section yellow">
+			<div class="site-content"></div>
+			<div class="rich-kid w-richtext">
+			  <h1><strong>Existing Apps that satisfy parcial need</strong></h1>
+			  <h3>Competitve Analysis</h3>
+			</div>
+			<div class="content-wrapper">
+			  <div class="card">
+				<div class="tagline insight-tagline">Product #1</div>
+				
+
+				
+				<h3 class="insight-heading" style="margin-top:1vh;margin-left:-0.5vw;">					<img src="./images/babytree.png" alt="Icon" class="p-2 rounded" style="width: 80px;">  Babytree<br></h3>
+				
+				<p class="insight-paragraph" style="margin-top:1vh;"><strong>Pros</strong>: Help mothers get a lot of scientific advice and guidance, filling the knowledge gap of new mothers in parenting. At the same time, by establishing a social circle, new mothers can communicate with each other to relieve stress. </br></br><strong>Cons</strong>: The app only consolidates the women's own knowledge base and let mothers encourage each other, but does not reinforce the father's role in parenting</p>
+			  </div>
+
+			  <div class="card">
+				<div class="tagline insight-tagline">Product #2</div>
+				
+
+				
+				<h3 class="insight-heading" style="margin-top:1vh;margin-left:-0.5vw;">					<img src="./images/mamanetwork.png" alt="Icon" class="p-2 rounded" style="width: 80px;">  Mama Network<br></h3>
+				
+				<p class="insight-paragraph" style="margin-top:1vh;"><strong>Pros</strong>: Have the dad version that provide knowledge on how to take care of pregant wife. Also include knowledge on caring new babies.
+				</br></br><strong>Cons</strong>: Although dad's role in caring wife and baby is enhanced, it only provide knowledge instead of enhancing the communication and interaction between the couples.</p>
+			  </div>
+
+			  <div class="card">
+				<div class="tagline insight-tagline">Product #3</div>
+				
+
+				
+				<h3 class="insight-heading" style="margin-top:1vh;margin-left:-0.5vw;">					<img src="./images/截屏2022-01-12 上午1.43.16.png" alt="Icon" class="p-2 rounded" style="width: 80px;">  Kiss Baby<br></h3>
+				
+				<p class="insight-paragraph" style="margin-top:1vh;"><strong>Pros</strong>: Focus on the documentation of babies' daily lives making parents proud of their parenting. Tightening family relationship.</br></br><strong>Cons</strong>: The app consolidates parents' relationship with babies but didn't enhance the interaction between couples</p>
+			  </div>
+
+			  <div class="card">
+				<div class="tagline insight-tagline">Product #4</div>
+				
+
+				
+				<h3 class="insight-heading" style="margin-top:1vh;margin-left:-0.5vw;">					<img src="./images/beibei.jpeg" alt="Icon" class="p-2 rounded" style="width: 80px;">  Beibei<br></h3>
+				
+				<p class="insight-paragraph" style="margin-top:1vh;"><strong>Pros</strong>: This is an online platform where moms can buy goods cheaply and share the information on qualified goods for babies.</br></br><strong>Cons</strong>: Only engaging mothers to join but lack the enhancement of daddies.</p>
+			  </div>
+			 
+			  
+			  
+			
+			  <!-- <div class="card">
+				<div class="tagline insight-tagline">Opportunity #5</div>
+				<h3 class="insight-heading">Lower costs<br></h3>
+				<p class="insight-paragraph">There is no cost to buy textbooks, which will also make it easier for financially weak families to access education. In addition, e-learning contributes to the saving of financial, human and time resources, i.a. by simplifying various processes for schools, teachers and students.</p>
+			  </div>
+			  <div class="card">
+				<div class="tagline insight-tagline">Opportunity #6</div>
+				<h3 class="insight-heading">Automated learning success control<br></h3>
+				<p class="insight-paragraph">Students receive immediate feedback and can work with teachers and parents to follow their learning process. There is a risk of over-control and thus less self-organized learning, but also the chance to measure one&#x27;s own learning progress less with other students and instead with one&#x27;s own progress.</p>
+			  </div> -->
+			</div>
+			<div class="rich-kid w-richtext">
+			  <h1>Opportunities</h1>
+			</div>
+			<div class="content-wrapper">
+			  <div class="card">
+				<div class="tagline insight-tagline">Opportunity #1</div>
+				<h3 class="insight-heading">Enhance of Interaction<br></h3>
+				<p class="insight-paragraph">Can design functions enhance the communication and interaction between husband and wife</p>
+			  </div>
+			  <div class="card">
+				<div class="tagline insight-tagline">Opportunity #2</div>
+				<h3 class="insight-heading">Reminder of husband<br></h3>
+				<p class="insight-paragraph">A reminder function can further enhance interaction providing husband from forgeting. A wearable physical set-up can be considered.</p>
+			  </div>
+			  <div class="card">
+				<div class="tagline insight-tagline">Opportunity #3</div>
+				<h3 class="insight-heading">Building conditions for Support and Understanding <br></h3>
+				<p class="insight-paragraph">Functions can be designed to ensure couples' support for each other. Avoiding the situation of arguments.</p>
+			  </div>
+			  <div class="card">
+				<div class="tagline insight-tagline">Opportunity #4</div>
+				<h3 class="insight-heading">Apply data collection and visualization to motivate fathers' participation<br></h3>
+				<p class="insight-paragraph">Visualizing the data, fathers can check whether they spent enough time with their kid. Furthermore, a visualization base on their wife images can raise their awareness.</p>
+			  </div>
+			</div>
+			<!-- <div class="rich-kid w-richtext">
+			  <h3>Generally</h3>
+			  <p>Learning in the form of traditional teaching and e-learning both require self-discipline, motivation and acceptance of the methodology, whereby e-learning – insofar as it is used in isolation – relies more on intrinsic motivation.</p>
+			</div> -->
+		  </div>
+
+		  <!-- yellow end -->
+		  <!-- don'r delete it clover -->
+		  <div class="rich-kid w-richtext">
+		  </div>
+
+		  <div class="rich-kid w-richtext" style="margin-top:8vh;">
+			<h2>Persona</h2>
+			<p>Since I targeted both father and mother. I built two persona. I built two persona.<br></p>
+			<img src="./images/800ppi/资源 77800x.png" style="margin-top:-2vh;margin-left:-1vw;">
+			<img src="./images/800ppi/资源 78800x.png" style="margin-top:1vh;margin-left:-1vw;width:880px;">
+			<p></p>
+			
+		</div>
+
+		<div class="rich-kid w-richtext" style="margin-top:8vh;">
+			<h2>Infinity Map and Design Goal</h2>
+			<!-- <p>Since I targeted both father and mother. I built two persona. I built two persona.<br></p> -->
+			<img src="./images/800ppi/资源 80800x.png" style="margin-top:2vh;margin-left:-1vw;">
+			<img src="./images/800ppi/资源 90800x.png" style="margin-top:4vh;margin-left:5vw;width:500px;">
+			<p></p>
+			
+		</div>
+
+		<div class="rich-kid w-richtext" style="margin-top:8vh;">
+			<h2>Story Board</h2>
+			<!-- <p>Since I targeted both father and mother. I built two persona. I built two persona.<br></p> -->
+			<img src="./images/SVG/资源 8510x.svg" style="margin-top:2vh;margin-left:-1vw;width:800px;">
+			<p></p>
+			
+		</div>
+
+		<div class="rich-kid w-richtext" style="margin-top:8vh;">
+			<h2>Information Architecture</h2>
+			<p>Base on the research, I defined the sitemap and evaluated it with potential users.
+
+				<br></p>
+			<img src="./images/800ppi/资源 93800x.png" style="margin-top:2vh;margin-left:-1vw;width:800px;">
+			<img src="./images/800ppi/资源 96800x.png" style="margin-top:8vh;margin-left:vw;width:800px;">
+			<p></p>
+			
+		</div>
+
+		<div class="rich-kid w-richtext" style="margin-top:8vh;">
+			<h2>Wireframing, Prototyping & Usability-Testing</h2>
+			<h3>Wireframing & Prototyping</h3>
+			<p>I created a wireframe base on the functions.<br></p>
+			<img src="./images/SVG/资源 951x.svg" style="margin-top:2vh;margin-left:-1vw;width:800px;">
+		
+			
+			<h3 style="margin-top:12vh;">Usability-Testing</h3>
+			<p>I conducted user testing to improve my existing design. Feedback: 1.<br></p>
+			<img src="./images/800ppi/资源 93800x.png" style="margin-top:2vh;margin-left:-1vw;width:800px;">
+			
+		</div>
+
+		<div class="rich-kid w-richtext" style="margin-top:16vh;">
+			<h2>Hi-Fi Prototype</h2>
+			<h3>Version one:</h3>
+			<p>Improvments after receiving feedback from users:</p>
+			<p>1.Using the Visualization of wife and baby to raise husband's awareness. Update mood of wife can let husband understand wife better.</p>
+			<p>2.Engage and Focus on the communication system between husband and wife. Because wife's emotion are not stable when she just gave birth, they need a place where they can share feelings after them calm down. A place to share secrets can work.
+			</p>
+			<p>3.A real-time physical device can contribute to the communication.<br></p>
+
+		
+
+			<!-- <h3 style="margin-top:12vh;">Version two:</h3>
+			<p>I conducted user testing to improve my existing design. Feedback: 1.<br></p>
+			<img src="./images/800ppi/资源 93800x.png" style="margin-top:2vh;margin-left:-1vw;width:800px;"> -->
+			
+		</div>
+
+		<center><img src="./images/SVG/资源 971x.svg" style="margin-top:2vh;width:960px;"></center>
+		<center><img src="./images/SVG/资源 991x.svg" style="margin-top:2vh;width:720px;"></center>
+
+		
+		<div class="rich-kid w-richtext" style="margin-top:16vh;">
+			<h3>Version two:</h3>
+			<p>1.3D image can draw better real-life connection better.</p>
+			<p>2.Status concerning baby is updated</p>
+			<p>3.Data Comparison between wife and husband can help each other understand they both greatly contribute to the family.</p>
+			<p>4.A interface connected with physical device is updated</p>
+		
+
+			<!-- <h3 style="margin-top:12vh;">Version two:</h3>
+			<p>I conducted user testing to improve my existing design. Feedback: 1.<br></p>
+			<img src="./images/800ppi/资源 93800x.png" style="margin-top:2vh;margin-left:-1vw;width:800px;"> -->
+			
+		</div>
+
+		<!-- <div class="rich-kid w-richtext" style="margin-top:8vh; width:400;">
+		<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400" height="950" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fyz6q2wNFjuPTTh5D3aqLEW%2FCloser%3Fnode-id%3D1%253A49%26scaling%3Dmin-zoom%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A49" allowfullscreen></iframe>
+	</div> -->
+	<div class="rich-kid w-richtext" style="margin-top:8vh; width:600px;">
+	<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400" height="750" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fyz6q2wNFjuPTTh5D3aqLEW%2FCloser%3Fnode-id%3D1%253A49%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A49" allowfullscreen></iframe>
+</div>
+
+<a href="../../index.html">
+	<center><button type="button" class="slide">
+	<div>Back To Main Page</div>
+	<i class="icon-arrow-right"></i>
+  </button>
+</center>
+</a>
+
+
+	</div>
+
+
+	<div id="gotoTop" class="icon-hand-up rounded-circle"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/closer.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/hello.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+
+var animateButton = function(e) {
+
+e.preventDefault;
+//reset animation
+e.target.classList.remove('animate');
+
+e.target.classList.add('animate');
+setTimeout(function(){
+  e.target.classList.remove('animate');
+},800);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+// $(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+$(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+
+$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+
+
+
+		let carousels = jQuery('#kindergarten-carousel-img, #kindergarten-carousel-text');
+		jQuery('.carousel-control-prev').on( 'click', function(){
+			carousels.carousel('prev');
+		});
+		jQuery('.carousel-control-next').on( 'click', function(){
+			carousels.carousel('next');
+		});
+
+		jQuery(function() {
+			jQuery(".component-flatpickr").flatpickr({
+				enableTime: true,
+				dateFormat: "d/m/yy - H:i",
+			});
+		});
+
+
+		$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+	</script>
+
+</body>
+</html>

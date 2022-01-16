@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<link rel="shortcut icon" href="./300ppi/logo.png" type="image/x-icon"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+	<!-- Kindergarten Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/kindergarten/kindergarten.css" type="text/css" /> <!-- Kindergarten Custom Css -->
+	<link rel="stylesheet" href="demos/kindergarten/css/fonts.css" type="text/css" /> <!-- Kindergarten Custom Fonts -->
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=6953A8" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>WWE</title>
+
+	<style>
+		body {
+    font-family: L-PTSans, Arial, sans-serif;
+    color: #333;
+
+}
+p{
+	font: L-PTSans, Arial, sans-serif;
+	line-height: 1.6;
+	font-size: 20px;
+	
+}
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+	</style>
+	<style>
+
+/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+} */
+
+button {
+  margin: 50px;
+  font-family: inherit;
+}
+/* End of Page styling */
+
+/* Simple button styling -- No animation */
+.simple {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.simple::after {
+  content: "";
+  background-color: #dcbaff;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+/* End of Simple Button */
+
+/* Fill button styling */
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fill::after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
+/* End of Fill Button  */
+
+/* Slide button styling */
+.slide {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 30px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.slide i {
+  opacity: 0;
+  font-size: 13px;
+  transition: 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 21px;
+  transition: transform 1;
+}
+
+#ul{
+ color:white;
+}
+
+.slide div {
+  transition: transform 0.8s;
+}
+
+.slide:hover div {
+  transform: translateX(-6px);
+}
+
+.slide::after {
+  content: "";
+  background-color: #66f2d5;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+
+.slide:hover i {
+  opacity: 1;
+  transform: translateX(-6px);
+}
+		/* FONT LEGIBILITY */
+		h1, h2, h3, h4, h5, h6, p, a, li, span {
+		  font-variant-numeric: oldstyle-nums;
+		  font-feature-settings: "onum";
+		}
+		* {
+		 text-rendering: optimizeLegibility;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale; 
+		}
+	  /* LINK HOVER */
+	  .marker,
+	  .w-richtext a,
+	  .w-richtext p a{
+			-webkit-transition: all .15s ease-out;
+			-moz-transition: all .15s ease-out;
+			-ms-transition: all .15s ease-out;
+			-o-transition: all .15s ease-out;
+			transition: all .15s ease-out;
+			text-decoration: none;
+		  background-image: -webkit-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -moz-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -o-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: linear-gradient(transparent 50%, #fcf113 0%);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			border-bottom: 1px solid #33393f;
+		  }
+	  .marker:hover,
+	  .active-link,
+	  .w-richtext a:hover,
+	  .w-richtext p a:hover{
+		  background-size: 100% 100%;
+			border-bottom: 1px solid #fcf113;
+		  }
+	  @media screen and (min-width:1440px){
+		  img.image {
+				max-width:1440px;
+				}
+	  }
+	  /* Hide Nav when Scrolling */
+		#nav.nav-up {
+			 top:-70px; 
+		}
+	  @media screen and (max-width:480px){
+		  #nav.nav-up {
+				 bottom:-70px; 
+			}
+		.w-webflow-badge {
+			  top: 12px !important;
+			  bottom: auto !important;
+		  }
+	  }
+	  /* Making sure navigation stays behind lightbox overlay */
+		.w-lightbox-backdrop{
+			 z-index:9999; 
+		}
+	  .noscroll {
+		  overflow:hidden;
+	  }
+	  #mobile-nav.open .navbar:first-child {
+		  -webkit-transform:translateY(9px) rotate(225deg);
+		transform:translateY(9px) rotate(225deg);
+	  }
+	  #mobile-nav.open .navbar:nth-child(2) {
+		  -webkit-transform:translateX(50px);
+		transform:translateX(50px);
+		opacity:0;
+	  }
+	  #mobile-nav.open .navbar:last-child {
+		  -webkit-transform:translateY(-9px) rotate(-45deg);
+		transform:translateY(-9px) rotate(-45deg);
+	  }
+	  /* BADGE MODIFICATIONS */
+	  /*.w-webflow-badge span {
+		  position: absolute;
+		  right: 3px;
+		  top: 6px;
+		  color: #222;
+		  font-size: 14px;
+		  }*/
+	  </style>
+		<style>
+	  .w-slider-nav {
+		  text-align: left;
+	  }
+	  .w-slider-dot.w-active,
+	  .w-slider-dot.w-active:hover {
+		  background-color: #1E262B;
+	  }
+	  .w-slider-dot {
+		  background-color: transparent;
+		width:16px;
+		height:16px;
+		border:2px solid #1E262B;
+	  }
+	  .w-slider-dot:hover {
+		  background-color: #D8D8D8;
+	  }
+	 
+
+
+
+
+
+
+
+	 
+	 </style>
+
+
+
+</head>
+
+<body class="stretched">
+
+	<!-- <div class="modal-on-load" data-target="#myModal1"></div> -->
+
+	<!-- Modal -->
+	<!-- <div class="modal1 mfp-hide subscribe-widget" id="myModal1">
+		<a href="#" class="d-flex mx-auto h-scale-sm all-ts" style="max-width: 670px">
+			<img src="demos/kindergarten/images/banner.jpg" alt="Banner Image" class="rounded-4">
+		</a>
+	</div> -->
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-0 col-lg-3">
+							<!-- <a href="index.html" class="standard-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a>
+							<a href="index.html" class="retina-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a> -->
+						</div>
+						<!-- #logo end -->
+
+						<div class="header-misc col-lg-3 justify-content-end">
+							<!-- WhatsApp Icon
+							============================================= -->
+				
+						</div>
+
+
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div>
+
+						<nav class="primary-menu">
+
+							<ul class="menu-container" >
+								<li class="menu-item"><a class="menu-link" href="#"><div>Home</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#"><div>About</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#"><div>Our Programs</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#"><div>Contacts</div></a></li>
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+
+	
+
+		<!-- Hero
+		============================================= -->
+		<section id="slider" class="slider-element include-header" >
+<!-- <div style="margin-top: 40vh;"> -->
+		<center><div class="position-absolute top-0 start-0 w-100 h-100"  ><img src="./截屏2022-01-15 上午4.35.59.png" style="width:100%;opacity:0.9;"></div></center>
+		<div class="container" >
+			<div class="row align-items-center min-vh-100 pt-5 pb-4">
+				<div class="col-lg-6" style="margin-left: 2vw;margin-top: -10vh;">
+					<h6 class="mb-4 ls1 text-uppercase fw-normal"></h6>
+					<center><h1 class="display-3 fw-bolder" style="margin-left: 35vw; margin-top: 40vh;color:white;">Working with Electrons</h1></center>
+					<!-- <h2 >Collaborate Project</h2>
+					<p class="mt-4 mb-5 fw-light">A mini program helps students <br>efficiently, time savingly <br>take school shuttle bus.</p> -->
+
+					<!-- <a href="#" class="btn text-white bg-color rounded-1 py-3 px-5 fw-medium">Enroll Now  <i class="icon-line-arrow-right position-relative" style="top: 2px"></i></a>
+					<a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" class="btn bg-white rounded-1 px-5 py-3 fw-medium ms-2" data-lightbox="iframe"><i class="icon-play-circle me-1" style="position: relative; top: 1px; margin-right: 5px;"></i> Watch Video</a> -->
+				</div>
+				<!-- <div class="col-lg-6 align-self-end mt-5 mt-lg-0">
+					<img src="./cover.png" alt="Hero Bg">
+				</div> -->
+			</div>
+		</div>
+
+
+			<div class="shape-divider" data-shape="wave-2" data-position="bottom" data-height="80"></div>
+
+			<!-- <div class="position-relative d-none d-sm-block">
+				<img src="demos/kindergarten/images/fish2.png" alt="Fish" class="background-img pos-right float-anim" style="top: -120px">
+			</div> -->
+
+		</section>
+
+	<!-- //intro -->
+		<div class="rich-kid w-richtext">
+			<center><h1 style="margin-top:vh;"><strong><br>Step One: Preparatory research and analysis</strong></h1></center>
+			<p><br>A. Select an area of interest that you would like to explore in Electromagnetism. This will be your research motivation and you should be able to respond why is that interesting to you and how does this particularly stand out from other similar areas.
+				<br></p>
+
+			
+				<p>
+					We are interested in the Electromagnetic Field Detector. After the discussion concerning Tan Sitong, Qian Xuesen and Maxwell, we are quite interested in the wide-existing electromagnetic waves in our daily lives. They serve as medium supporting radio, TV, wifi nearly every device in our daily lives. Since people often ignore the importance of the EM existence, we want to find a way to make them more observable. What’s more, after the research on the harms of EM, we notice that because they are hardly noticeable, people sometimes don’t recognize their harms. We want to build an Electromagnetic Field Detector to detect the radiation in our daily lives. This not only helps us feel the indispensability of EM radiation, but can also help us realize the harms of EM radiation. 
+
+				</p>
+
+				<p><br>B. Find bibliography that supports your area of research. Find at least two artistic or scientific publications that give you a context. You can use them to compare and contrast them to your project proposal. 
+
+					<br></p>
+	
+				
+					<p>
+						1.Radioactivity and Radiation : What They Are, What They Do, and How to Harness Them.
+https://bobcat.library.nyu.edu/permalink/f/ci13eu/nyu_aleph006187027
+GRUPEN, CLAUS RODGERS MARK. RADIOACTIVITY AND RADIATION: What They Are, What They Do, and How to Harness Them. SPRINGER, 2018.
+In this book, Arthur introduces how detecting methods are used to detect the radiation and why the detectors matter. He also discusses the harms of radiation and the importance of knowing the harms so it’s better to protect ourselves.
+<br>
+<br>
+2. Anatomy of an Electromagnetic Wave.
+“Anatomy of an Electromagnetic Wave.” NASA, NASA, science.nasa.gov/ems/02_anatomy.
+In this article, the author introduces the electromagnetic energy, talks about the electricity field and the magnetic field, introduces the waves frequency and length, and discusses the differences between mechanical waves and electromagnetic waves.
+
+
+					</p>
+
+					<p>
+						<br>
+						C. Explore avenues of dissemination for your work, such as events, conferences, technology & art journals. 
+					</p>
+
+					<p>
+						1.<a href="https://www.youtube.com/watch?v=lO5ehpdZ5Po&t=154s" style="color:black">link one</a>
+						<br>The guy uses this device to test different EM radiation and the device can generate different sound. We like that he turns the statistic of EM radiation to the direct impression sound.
+<br>2.
+<a href="https://www.youtube.com/watch?v=ljNVseTkQs4" style="color:black">link two</a>
+<br>This is a simple device testing radio radiation and the sound will change based on different frequencies. 
+
+					</p>
+
+					<p><br>D. Propose in your blog three ideas that sprout out of this interest and the bibliography you have found. </p>
+<p>EM detecting bracelet: certain levels of electromagnetic radiation can lead to severe damage to the human body. We would like to build an electromagnetic radiation detector in the form of a bracelet. The product target customers are everyone but more specifically pregnant women. Current EM detectors are mostly alarming the user with sound or bothering flickering lights, we would like to build a detector that informs the user with consistent colors only when certain level EM radiation is detected. When the radiation level is safe for the user, the bracelet won’t glow, when the level is higher than the safety range, the bracelet will glow with calming lights.
+	<br><br>EM instrument: generate sound waves through the detected EM radiation. We will create an instrument that plays different notes when different levels of EM radiation are detected. The product aims at creating an electromagnetic instrument for physics and music lovers. The EM detector will be packed inside a handheld-sized box, the electromagnetic waves will be transferred into sound waves.
+	<br><br>FM radio: build a lower power FM radio that receives radio waves and converts information. The user will be able to select the frequency they would like to receive through tuning the potentiometer.
+	</p>
+
+		  </div>
+
+		
+	<!-- //containers -->
+			<div class="container"style="margin-top:80px">
+				<h2 class="color h1 fw-bold mb-5" ><p style="color: #5b5b5b; font-size: 36px;" >HOW MIGHT WE provide students with the most updated information of the shuttle bus? 
+				<br>
+				</p>
+				
+			</h2>
+			
+				
+
+				<div class="row col-mb-50">
+					<h2><strong>Inspiration</strong></h2>
+					<div class="col-lg-8">
+						
+						<div class="row col-mb-50" style="position:relative; top:4vh;">
+							<h3><strong>“Che lai le” Application</strong></h3>
+
+							
+
+							<p>1.Based on the time shown on the application, the passengers can better plan their trip because they don’t need to wait for a long time for the bus to come.
+							<br>2.The passengers can also see what station the bus has passed, so they will know how many stations they will take to get to their destination (know the accurate station and location of where they are).
+							</p>
+
+							<h3><strong>App Dianping's Seats booking system</strong></h3>
+							<p>The information provided by this platform can help the users to see how many seats are still available. Learnt from that, we can try to include the available seats of shuttle bus in our solution. </p>
+
+							<h3><strong>The nyush wechat account are match with mini program</strong></h3>
+				<p>1.It is a platform that connects individual students with the university.
+					<br>2.We can use this section to gather information about students’ schedule for the shuttle bus. 
+				</p>
+						</div>
+					</div>
+
+					<div class="col-lg-4 mt-5 mt-lg-0" >
+						<div class="pop=up-one" style="border-style: hidden; " >
+							<div class="card-body" style="margin-top: -10vh;margin-left: 2vw;">
+								<img src="./1.png" alt="Card Image" style="width:40%" ><img src="./2.png" alt="Card Image" style="width:35%;margin-left: 4vw;" >
+<p style="font-size:16px;">“Che lai le” Application           Seats booking system</p>
+
+							</div>
+						</div>
+
+						<div class="pop=up-one" style="border-style: hidden;" >
+							<div class="card-body" style="margin-top: -6vh;margin-left: 2vw;">
+								<img src="./3.png" alt="Card Image" style="width:35%;margin-left: 8vw; " >
+<!-- <p style="font-size:16px;">Video documentation on rare desease patient</p> -->
+<center><p style="font-size:16px;">The nyush wechat account</p></center>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+<!-- interview start -->
+
+<div class="rich-kid w-richtext" style="margin-top:16vh;">
+	<h1>Field research and interview with different stakeholders:</h1>
+	<a href="https://docs.google.com/document/d/13HV7fvFEBhHZuHmnsMwaGnxEo4MXl8UW_BxHsTSHYXM/edit?usp=sharing" style="color:rgb(106, 0, 255); font-size: 16px; margin-top: 4vh;">Details are documented in this doc.</a>
+	<p>We draw a mindmap base on the field work</p>
+	<center><h1 style="margin-top: 6vh;">Mindmap</h1></center>
+	<!-- <p>Rare diseases are far more than just medical problems; the system of protection from medical, educational, employment, psychological support, and social cognitive aspects is a complex system project.<br></p> -->
+
+</div>
+<img src="11_6 mindmap.png">
+
+
+<div class="curly-section yellow" style="margin-top:8vh;">
+	<div class="site-content"></div>
+	<!-- <div class="rich-kid w-richtext">
+	  <h1><strong>Summary</strong></h1>
+	</div> -->
+	<div class="rich-kid w-richtext" style="margin-top:8vh;">
+		<h1>HMW Questions & Possible Solutions</h1>
+
+<h3><strong>How Might We Questions</strong></h3>
+		<p>
+			1.How might we improve the service of shuttle buses in order to better satisfy the need of passengers?
+<br>2.How might we improve the experience of waiting for the shuttle bus?
+<br>-How might we improve the quality of time spent on waiting for the shuttle bus to leave?
+<br>-How might we reduce the waiting time of the shuttle bus?
+<br>3.How might we ensure every student and faculty can catch the bus they want?
+<br>-How might we improve the seat arrangement of shuttle buses?
+
+		</p>
+	
+	</div>
+	<div class="rich-kid w-richtext" >
+		<h3><strong>Solutions</strong></h3>
+		<a href="https://docs.google.com/presentation/d/1V7XD0rSBf2x8yqR7BHPWdwoxl_4Txf8DKK_Vv_0EQTU/edit?usp=sharing" style="color:rgb(0, 0, 0); font-size: 16px; margin-top: -7vh;">Details are documented in this doc.</a>
+	</div>
+
+	<div class="content-wrapper">
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #1<br></h3>
+		<p class="insight-paragraph">Drivers can drive a small van (like the one for Pusan students) particularly for Jinyang students to catch when they are going to Academic Building.
+		</p>
+	  </div>
+
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #2<br></h3>
+		<p class="insight-paragraph">Public Safety can hire drivers from other companies to drive the bus especially during late night hours for those students who stay at the AB at late night doing their work.
+		</p>
+	  </div>
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #3<br></h3>
+		<p class="insight-paragraph">Set up a reservation system (similar to the ARC system) for students to reserve their seats on the shuttle bus. This is targeted for the buses leaving from AB to the dorm. They can cancel their reservations 15 minutes before the chosen time. However, they will be blacklisted if they sign up for the bus but didn’t come for 3 times. They will lose the chance of signing up for shuttle buses during this semester.
+		</p>
+	  </div>
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #4<br></h3>
+		<p class="insight-paragraph">NYU Shanghai can settle a contract with taxi or Didi companies for coupons so that students who need to go back to the dorm at late night or those who bring their friends/families to visit the school can enjoy discounts especially when they leave from AB to the dorm.
+		</p>
+	  </div>
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #5<br></h3>
+		<p class="insight-paragraph">Drivers can play cartoons or movies on the screen in the front of the shuttle bus to make the waiting time less boring.
+		</p>
+	  </div>
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #6<br></h3>
+		<p class="insight-paragraph">Public Safety can create a Mini Program in Wechat and provide notifications for students to be informed about the update information for the shuttle bus.
+		</p>
+	  </div>
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #7<br></h3>
+		<p class="insight-paragraph">NYU Shanghai can set up a system for passengers to choose a time slot of shuttle bus they want to take today. If the slots are full, the option for the time slot can no longer be chosen.
+		</p>
+	  </div>
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #8<br></h3>
+		<p class="insight-paragraph">Use a swiping machine on the shuttle bus to keep track of the occupancy and the passengers currently on the shuttle bus.
+		</p>
+	  </div>
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #9<br></h3>
+		<p class="insight-paragraph">NYU Shanghai forces students to choose their shuttle bus schedule every week. They can only take the bus at the time they choose. They can also choose not the catch the bus they choose. But they cannot catch the bus at other time slot.
+		</p>
+	  </div>
+	  <div class="card">
+		<h3 class="insight-heading">Possible Solution #10<br></h3>
+		<p class="insight-paragraph">Public Safety could provide a platform for students to choose the seats they want. It also provides the information of the number and location of available seats.
+		</p>
+	  </div>
+
+	  <div class="rich-kid w-richtext" >
+		<h3><strong>In General</strong></h3>
+<p>After evaluating all the solutions, we decided to apply the mini-program to solve this problem.</p>
+	</div>
+
+
+
+	</div>
+
+
+  </div>
+<!-- interview end -->
+
+<div class="rich-kid w-richtext" style="margin-top: 20vh;">
+	<h1><strong>Solutions</strong></h1>
+<h3><strong>Stage I (Prototype Version A)</strong></h3>
+<br><p><strong>How we come up with the mini-program:</strong>
+	<br><br>-	We come up with this mini-program solution based on the current existing application called “车来了”. It is an application updates the information about the public bus which inspired us to come up with something that can provide students with information about shuttle buses in time. 
+<br>-	As the mini-program format, it is inspired by the current NYUSH Wechat account. We think that if we make it into a mini-program, it can be affiliated with this official account so that it will be easier for students to use. 
+
+</p>
+<p><strong>How we design the interface and functions:</strong>
+	<br><br>-		We considered three aspects of information that students may want to check. First, the most updated information of shuttle buses for each time slot. Second, reserve the seat and cancel the reservation. Third, some relative policies about the reservation system. 
+	<br>-		For the updated information, we thought that the number of available seats on each shuttle bus and the number of people paying attention to this time slot could be the information that students want to know the most. 
+	<br>-		For reserving the seat, we let students choose their destination first. Then we show them the time slots that are still available. After they choose their wanted time slot, the program will display the seating diagram that shows which seat has been reserved and which is still available. If students click on a reserved seat, there will be a reminder asking them to choose again. If they choose an available seat, there will be a confirmation notification. Click “confirm”, and the seat can be successfully reserved.
+	<br>-		The “cancel seat” button only shows up after they reserved their seats.
+	<br>-		In the “help” button, there are some policies of the reservation system which we use the policy of ARC as our enlightenment. Considering some emergencies of students, we set a deadline of canceling the reservation to 15 minutes before the scheduled time so that other students can still reserve newly empty seats on the bus. There would also be a punishment for late cancelations or disappearance. 
+
+</p>
+<p><strong>How to use the mini-program: </strong>
+	<br><br>	First is the login page (page 1). This is the page showing to the users when they open the mini program in Wechat. Users can click “log in”, then it goes to page 2 where students can log in to the NYU system with their Net ids and passwords in order to reserve a seat. On page 2, they can choose to confirm the login (go to page 3) or cancel (go back to page1). When they go to page 3, they can see their name shown on the upper-left corner of the page. There will be three options shown on this page. One is to check the information about each shuttle bus. If the user clicks on this button, it will go to page 4 which asks the user to choose a destination. After choosing the destination, it will go to page 12 which displays the most updated information about the shuttle bus, including the time slots, available seats and the number of people who are viewing this option. The user can close this page by clicking on the “X” on the top right corner. On the main page (page 3), the second button is “reserve a seat”. When the user clicks on this button, it will go to page 4. On page 4, the user can choose a destination, and then choose a time slot (showing on page5) based on the destination they choose. After that, it will jump to page 6 where they can select seats. If the user clicks on unavailable seats, there will be a notification that kindly reminds them that this seat is not available(page 9). When they choose an available seat, there will be the option to confirm (page 7). If the student clicks on “confirm”, it will go the page 19 where shows the reserved time and the button for cancelation. On the main page (page 3), the third button is “help”. If the user clicks on it, it will go to page 13 where lists the policy of this mini-program. The user can close this page by clicking on the “X” on the top right corner. On page 10, there is a new button called “cancel seat”. If the user clicks it, it will send a notification (page 11). If the user clicks “cancel it”, it will go to page 3 where the user can reserve another seat. If the user clicks “keep it”, it will go back to page 11 and nothing changed. If the user has three late cancellations or disappearances, his account would be blacklisted and his main page will be page 14.
+
+</p>
+</div>
+<center><img src="4.png"style="width:90%;"></center>
+
+<div class="rich-kid w-richtext" style="margin-top: 20vh;">
+	<!-- <h1><strong>Solutions</strong></h1> -->
+<h3><strong>Stage II (Prototype Version B)</strong></h3>
+<br><p><strong>What we received from the user test:</strong>
+	<br><br>-	The reserve system is a good idea. It is time-saving for students to check and reserve available seats on the shuttle bus.
+<br>-	The process of selecting specific seats on the shuttle bus is too complicated and unnecessary. There are too many steps and pages to finish the process of reserving a seat.
+<br>-Use different colors to indicate the possibility of successfully reserving a seat on the shuttle bus.
+<br>-More punishments for those who reserve the seats but didn’t show up.
+<br>-The function of reserving seats in this mini-program is meaningless and complicated because students can still get on the shuttle bus without reservation and it’s embarrassing to kick them off the shuttle bus. Also, students may forget to take their cards with them when getting on the bus.
+<br>-Bring the cancellation deadline forward so that students who didn’t reserve a seat successfully can have enough time to check and reserve newly available seats.
+</p>
+<!-- <p><strong>How we improve our prototype:</strong>
+	<br><br>-		We considered three aspects of information that students may want to check. First, the most updated information of shuttle buses for each time slot. Second, reserve the seat and cancel the reservation. Third, some relative policies about the reservation system. 
+
+
+</p> -->
+<p><strong>How we improve our prototype: </strong>
+	<br><br>- We change the system to reserve a random seat so that students can feel free to sit wherever they want.
+	<br>- We combine the “information checking” button and the “reserve seats” button into a “check and reserve” button. When clicking into this button, users can check the information about how many people are viewing this option, how many seats are available on the shuttle bus and reserve their seats.
+	<br>- We add a waitlist system so that when students cancel their reservations, the students in the waitlist can get the seat.
+	<br>-We add the function of sending notifications automatically so that it can remind students that their bus is going to set off in 15 minutes.
+	<br>-We use the current existing equipment which is the card-swiping equipment as the backing up force of our mini-program. Force students to swipe their cards when catching the bus. If they don’t have their cards with them, they should go to public safety for identification.
+</p>
+</div>
+<center><img src="6.png"style="width:90%;"></center>
+<div class="rich-kid w-richtext" style="margin-top: 8vh;">
+
+<p><strong>2nd Round Feedback Summary </strong>
+	<br><br>- The page is concise and clear to read.
+	<br>-Provide accurate and the most updated information about the shuttle bus.
+	<br>-The inconvenience of the function of reserving seats.
+	<br>-Whether the usage of mini-program is voluntary or mandatory
+	<br>-The conflict between the reserved and unreserved students.
+	<br>-Ask more stakeholders, including public safety staffs and shuttle bus drivers.
+	<br>-Public safety: after the feedback, there are special arrangement of shuttle bus for special events, so what we are going to focus on is the everyday common use of shuttle bus
+	<br>-Bus drivers: different language English and Chinese which satisfy the needs of bus drivers.
+</p>
+</div>
+<center><h2><strong>School color:purple</strong></h2></center>
+<center><img src="8.png"style="width:60%; margin-top:2vh;"></center>
+
+<div class="rich-kid w-richtext" style="margin-top: 10vh;">
+	<!-- <h1><strong>Solutions</strong></h1> -->
+<h1><strong>Our Thoughts on Improvements</strong></h1>
+	<p>-	Unable to satisfy everyone’s need (reserve seats)
+<br>-	Targeting students who take the last shuttle bus
+<br>-   Electronic campus card or facial access
+</p>
+
+</div>
+
+
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+	<center><button type="button" class="slide">
+	<div>Back To Main Page</div>
+	<i class="icon-arrow-right"></i>
+  </button>
+</center>
+
+
+	</div>
+
+
+	<div id="gotoTop" class="icon-hand-up rounded-circle"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/closer.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/hello.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+
+var animateButton = function(e) {
+
+e.preventDefault;
+//reset animation
+e.target.classList.remove('animate');
+
+e.target.classList.add('animate');
+setTimeout(function(){
+  e.target.classList.remove('animate');
+},800);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+// $(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+$(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+
+$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+
+
+
+		let carousels = jQuery('#kindergarten-carousel-img, #kindergarten-carousel-text');
+		jQuery('.carousel-control-prev').on( 'click', function(){
+			carousels.carousel('prev');
+		});
+		jQuery('.carousel-control-next').on( 'click', function(){
+			carousels.carousel('next');
+		});
+
+		jQuery(function() {
+			jQuery(".component-flatpickr").flatpickr({
+				enableTime: true,
+				dateFormat: "d/m/yy - H:i",
+			});
+		});
+
+
+		$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+	<link rel="shortcut icon" href="./300ppi/logo.png" type="image/x-icon"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+	<!-- Kindergarten Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/kindergarten/kindergarten.css" type="text/css" />
+	<!-- Kindergarten Custom Css -->
+	<link rel="stylesheet" href="demos/kindergarten/css/fonts.css" type="text/css" /> <!-- Kindergarten Custom Fonts -->
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=6953A8" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Eye-PoseNet,p5.js</title>
+
+	<style>
+		body {
+			background-color: black;
+			font-family: L-PTSans, Arial, sans-serif;
+			color: #cccccc;
+
+		}
+
+		p {
+			font: L-PTSans, Arial, sans-serif;
+			line-height: 1.6;
+			font-size: 20px;
+
+		}
+
+		.centerImage {
+			text-align: center;
+			display: block;
+		}
+	</style>
+	<style>
+		/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+} */
+
+		button {
+			margin: 50px;
+			font-family: inherit;
+		}
+
+		/* End of Page styling */
+
+		/* Simple button styling -- No animation */
+		.simple {
+			font-size: 20px;
+			font-weight: 200;
+			letter-spacing: 1px;
+			padding: 13px 50px 13px;
+			outline: 0;
+			border: 1px solid black;
+			cursor: pointer;
+			position: relative;
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		.simple::after {
+			content: "";
+			background-color: #dcbaff;
+			width: 100%;
+			z-index: -1;
+			position: absolute;
+			height: 100%;
+			top: 7px;
+			left: 7px;
+		}
+
+		/* End of Simple Button */
+
+		/* Fill button styling */
+		.fill {
+			font-size: 20px;
+			font-weight: 200;
+			letter-spacing: 1px;
+			padding: 13px 50px 13px;
+			outline: 0;
+			border: 1px solid black;
+			cursor: pointer;
+			position: relative;
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		.fill::after {
+			content: "";
+			background-color: #ffe54c;
+			width: 100%;
+			z-index: -1;
+			position: absolute;
+			height: 100%;
+			top: 7px;
+			left: 7px;
+			transition: 0.2s;
+		}
+
+		.fill:hover::after {
+			top: 0px;
+			left: 0px;
+		}
+
+		/* End of Fill Button  */
+
+		/* Slide button styling */
+		.slide {
+			font-size: 20px;
+			font-weight: 200;
+			letter-spacing: 1px;
+			padding: 13px 30px 13px;
+			outline: 0;
+			border: 1px solid #cccccc;
+			cursor: pointer;
+			position: relative;
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		.slide i {
+			opacity: 0;
+			font-size: 13px;
+			transition: 0.2s;
+			position: absolute;
+			right: 10px;
+			top: 21px;
+			transition: transform 1;
+		}
+
+		.slide div {
+			transition: transform 0.8s;
+		}
+
+		.slide:hover div {
+			transform: translateX(-6px);
+		}
+
+		.slide::after {
+			content: "";
+			background-color: #66f2d5;
+			width: 100%;
+			z-index: -1;
+			position: absolute;
+			height: 100%;
+			top: 7px;
+			left: 7px;
+		}
+
+		.slide:hover i {
+			opacity: 1;
+			transform: translateX(-6px);
+		}
+
+		/* FONT LEGIBILITY */
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		a,
+		li,
+		span {
+			font-variant-numeric: oldstyle-nums;
+			font-feature-settings: "onum";
+		}
+
+		* {
+			text-rendering: optimizeLegibility;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		/* LINK HOVER */
+		.marker,
+		.w-richtext a,
+		.w-richtext p a {
+			-webkit-transition: all .15s ease-out;
+			-moz-transition: all .15s ease-out;
+			-ms-transition: all .15s ease-out;
+			-o-transition: all .15s ease-out;
+			transition: all .15s ease-out;
+			text-decoration: none;
+			background-image: -webkit-linear-gradient(transparent 50%, #fcf113 0%);
+			background-image: -moz-linear-gradient(transparent 50%, #fcf113 0%);
+			background-image: -o-linear-gradient(transparent 50%, #fcf113 0%);
+			background-image: linear-gradient(transparent 50%, #fcf113 0%);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			border-bottom: 1px solid #cccccc;
+		}
+
+		.marker:hover,
+		.active-link,
+		.w-richtext a:hover,
+		.w-richtext p a:hover {
+			background-size: 100% 100%;
+			border-bottom: 1px solid #fcf113;
+		}
+
+		@media screen and (min-width:1440px) {
+			img.image {
+				max-width: 1440px;
+			}
+		}
+
+		/* Hide Nav when Scrolling */
+		#nav.nav-up {
+			top: -70px;
+		}
+
+		@media screen and (max-width:480px) {
+			#nav.nav-up {
+				bottom: -70px;
+			}
+
+			.w-webflow-badge {
+				top: 12px !important;
+				bottom: auto !important;
+			}
+		}
+
+		/* Making sure navigation stays behind lightbox overlay */
+		.w-lightbox-backdrop {
+			z-index: 9999;
+		}
+
+		.noscroll {
+			overflow: hidden;
+		}
+
+		#mobile-nav.open .navbar:first-child {
+			-webkit-transform: translateY(9px) rotate(225deg);
+			transform: translateY(9px) rotate(225deg);
+		}
+
+		#mobile-nav.open .navbar:nth-child(2) {
+			-webkit-transform: translateX(50px);
+			transform: translateX(50px);
+			opacity: 0;
+		}
+
+		#mobile-nav.open .navbar:last-child {
+			-webkit-transform: translateY(-9px) rotate(-45deg);
+			transform: translateY(-9px) rotate(-45deg);
+		}
+	</style>
+	<style>
+		.w-slider-nav {
+			text-align: left;
+		}
+
+		.w-slider-dot.w-active,
+		.w-slider-dot.w-active:hover {
+			background-color: #1E262B;
+		}
+
+		.w-slider-dot {
+			background-color: transparent;
+			width: 16px;
+			height: 16px;
+			border: 2px solid #1E262B;
+		}
+
+		.w-slider-dot:hover {
+			background-color: #D8D8D8;
+		}
+
+		ul {
+			justify-content: center;
+			display: flex;
+		}
+	</style>
+
+
+
+</head>
+
+<body class="stretched">
+
+	<!-- <div class="modal-on-load" data-target="#myModal1"></div> -->
+
+	<!-- Modal -->
+	<!-- <div class="modal1 mfp-hide subscribe-widget" id="myModal1">
+		<a href="#" class="d-flex mx-auto h-scale-sm all-ts" style="max-width: 670px">
+			<img src="demos/kindergarten/images/banner.jpg" alt="Banner Image" class="rounded-4">
+		</a>
+	</div> -->
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header">
+			<nav class="primary-menu">
+
+				<ul class="menu-container">
+					<li class="menu-item"><a class="menu-link" href="../../index.html">
+							<div style="color: #cccccc;">Home</div>
+						</a></li>
+					<li class="menu-item"><a class="menu-link" href="https://drive.google.com/file/d/1NJlOdgeZrMYcXHU12JGgAyKoVCSeZqSb/view?usp=sharing">
+							<div style="color: #cccccc;">CV</div>
+						</a></li>
+					<!-- <li class="menu-item"><a class="menu-link" href="#">
+							<div style="color: #cccccc;">Our Programs</div>
+						</a></li>
+					<li class="menu-item"><a class="menu-link" href="#">
+							<div style="color: #cccccc;">Contacts</div>
+						</a></li> -->
+				</ul>
+
+			</nav>
+
+			<div id="header-wrap" style="opacity: 0;">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-0 col-lg-3">
+							<!-- <a href="index.html" class="standard-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a>
+							<a href="index.html" class="retina-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a> -->
+						</div>
+						<!-- #logo end -->
+
+						<div class="header-misc col-lg-3 justify-content-end">
+							<!-- WhatsApp Icon
+							============================================= -->
+
+						</div>
+
+
+						<!-- <div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div> -->
+
+
+						<!-- #primary-menu end -->
+
+					</div>
+				</div>
+			</div>
+			<!-- <div class="header-wrap-clone"></div> -->
+		</header><!-- #header end -->
+
+
+
+		<!-- Hero
+		============================================= -->
+		<section id="slider" class="slider-element include-header" style="background-color: #ebeefb;">
+
+			<div class="position-absolute top-0 start-0 w-100 h-100"
+				style="background: transparent url('./300ppi/资源\ 14300x.png') center center / cover; opacity: 1"></div>
+
+			<div class="container" style="width:120%">
+				<div class="row align-items-center min-vh-100 pt-5 pb-4">
+					<center>
+						<div class="col-lg-6" style="margin-top: 80vh;">
+							<h6 class="mb-4 ls1 text-uppercase fw-normal"></h6>
+							<h1 class="display-3 fw-bolder" style="margin-top: -8vh;">Eye</h1>
+							<h2>Individual Project with p5.js, poseNet</h2>
+							<p></p>
+							<p style="opacity:0;">haha</p>
+						</div>
+					</center>
+				</div>
+			</div>
+
+			<div class="shape-divider" data-shape="wave-2" data-position="bottom" data-height="80"></div>
+
+			<!-- <div class="position-relative d-none d-sm-block">
+				<img src="demos/kindergarten/images/fish2.png" alt="Fish" class="background-img pos-right float-anim" style="top: -120px">
+			</div> -->
+
+		</section>
+
+		<!-- //intro -->
+		<div class="rich-kid w-richtext">
+			<p>Male gaze is a topic that is discussed a lot in the West, but in China, not many people recognize or even
+				understand it. Some don't even believe it exists, or acknowledge the problems caused by male gaze<br>
+			</p>
+			<p>I designed a male gaze project, using motion capture and tracking technology, and I collected a lot of
+				video information and mapped them to the information identified by motion capture. To restore the
+				feeling of women being stared at in real life as much as possible.</p>
+
+
+		</div>
+		<!-- style="color:#4096e2;" -->
+		<div class="rich-kid w-richtext">
+			<center>
+				<h1><strong>2020 Global Gender Gap</strong></h1>
+			</center>
+			<center>
+				<h3><strong>Major barriers to economic and political advamcement</strong></h3>
+			</center>
+			<p>Compared with the rapid development in ecnomics, the gender gap in China improve slowly. In China, there
+				are almost 700 billion women still facing major barriers to economic and political advancement.</p>
+			<img src="./300ppi/资源 15300x.png">
+			<center>
+				<h3 style="margin-top: 8vh;"><strong>Six major areas need improve</strong></h3>
+			</center>
+			<center><img src="./300ppi/资源 16300x.png" style="margin-top: 4vh;width:70%;"></center>
+		</div>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>A Deeper Research</strong></h1>
+			</center>
+			<p>Visualization on inequality complaint post: <strong>python </strong>for data collection and d3.js for
+				visual
+				<br><strong>Data Source</strong>: The discussion on Gender Inequaliy, the patriarchy phenomenon in China
+			</p>
+			<img src="300ppi/资源 17300x.png">
+			<p style="margin-top: 8vh;">This is the result collected from the above questions, including the content
+				of the questions, the created time, the vote-up count. <strong>10263</strong> complaints concerning this
+				issue.</p>
+			<img src="300ppi/资源 18300x.png">
+			<p style="margin-top: 8vh;">
+				We can see this is a constant problem from 2015. Women keep posting comments trying to raise awareness
+				towards gender issue.
+				<br><br>This is a visualization of <strong>10263</strong> data. <strong>y-xias is the total
+					vote-up(agree)counts</strong> for one specific post
+
+			</p>
+
+		</div>
+		<center><img src="eye.gif" style="width:70%"></center>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Interview I: with lady from Zhihu platform</strong></h1>
+			</center>
+
+		</div>
+
+		<center><img src="300ppi/资源 19300x.png" style="width:70%;margin-top:8vh;"></center>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Interview II: with lady from different ages</strong></h1>
+			</center>
+
+		</div>
+		<center><img src="300ppi/资源 21300x.png" style="width:70%;margin-top:8vh;"></center>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Experiment: Do gaze exist </strong></h1>
+				<h3><strong>PoseNet and D3.js </strong></h3>
+			</center>
+
+			<p>Since all my interviewees mentioned the existence of staring, I wanted to design an experiment to observe
+				whether staring is real and in what form. So I designed this experiment, which can accurately record the
+				movement of </p>
+			<p>I invited a friend to wear different size of cloth then I track the eye movement with poseNet and
+				console.log the x and y position. I export the data in json formate and visualize the result with d3.js
+			</p>
+		</div>
+		<center><img src="300ppi/资源 22400x.png" style="width:70%;margin-top:8vh;">
+			<p style="margin-top:8vh;">Conclusion: people do gaze differently no matter male or female.</p>
+		</center>
+
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Idea I</strong></h1>
+				<h3><strong>Using p5.js, OOP programing, and poseNet</strong></h3>
+			</center>
+
+		</div>
+		<center><img src="300ppi/资源 23400x.png" style="width:70%;margin-top:8vh;">
+
+			<center>
+				<h3 style="margin-top: 8vh;"><strong>User test #1</strong>
+					<br>I invite girls to join one by one and share their feelings
+				</h3>
+			</center>
+			<center><img src="300ppi/资源 25400x.png" style="width:60%;margin-top:4vh;">
+
+
+				<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+					<center>
+						<h1><strong>Iteration</strong></h1>
+						<h3><strong>Filming with real person's eye</strong></h3>
+					</center>
+
+				</div>
+				<center><img src="300ppi/资源 26400x.png" style="width:80%;margin-top:4vh;">
+
+					<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+						<center>
+							<h1><strong>Production Process</strong></h1>
+							
+							<h3><strong>A collection of 24 eye sights recording</strong></h3>
+						</center>
+	
+					</div>
+
+					<center><img src="300ppi/资源 27400x.png" style="width:60%;margin-top:4vh;"></center>
+
+					<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+						<center>
+							
+							
+							<h3><strong>A collection of 24 eye sights recording</strong></h3>
+						</center>
+	
+					</div>
+					<center><img src="300ppi/资源 28400x.png" style="width:60%;margin-top:4vh;"></center>
+					<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+						<center>
+							<h1><strong>Setup & Real-world test</strong></h1>
+							
+							<!-- <h3><strong>A collection of 24 eye sights recording</strong></h3> -->
+						</center>
+	
+					</div>
+					<center><img src="300ppi/资源 32400x.png" style="width:40%;margin-top:4vh;"></center>
+					<center><img src="300ppi/资源 31400x.png" style="width:88%;margin-top:4vh;"></center>
+					<center><img src="300ppi/资源 30400x.png" style="width:88%;margin-top:4vh;"></center>
+
+
+
+
+
+				<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+					<center>
+						<h1><strong>Future Design</strong></h1>
+						<h3><strong>make this a VR project where users can feel the gaze from human
+						</strong></h3>
+					</center>
+				
+
+				</div>
+				<center><img src="300ppi/资源 33400x.png" style="width:88%;margin-top:4vh;"></center>
+				
+
+
+<a href="../../index.html">
+				<center><button type="button" class="slide" style="color:#cccccc;margin-top: 8vh;">
+						<divs style="color:#cccccc;">Back To Main Page
+	</div>
+	</button>
+	</center>
+</a>
+
+
+	</div>
+
+
+	<div id="gotoTop" class="icon-hand-up rounded-circle"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/closer.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/hello.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+
+		var animateButton = function (e) {
+
+			e.preventDefault;
+			//reset animation
+			e.target.classList.remove('animate');
+
+			e.target.classList.add('animate');
+			setTimeout(function () {
+				e.target.classList.remove('animate');
+			}, 800);
+		};
+
+		var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+		for (var i = 0; i < bubblyButtons.length; i++) {
+			bubblyButtons[i].addEventListener('click', animateButton, false);
+		}
+		// $(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+		$(".col-lg-4 mt-5 mt-lg-0").css('display', null);
+
+		$(document).ready(function () {
+			// Hide Webflow Badge
+			$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+			$('.wf').hide();
+
+			if ($(window).width() > 479) {
+				// Hide Header on scroll down
+				var didScroll;
+				var lastScrollTop = 0;
+				var delta = 5;
+				var navbarHeight = $('#nav').outerHeight();
+				$(window).scroll(function (event) {
+					didScroll = true;
+				});
+				setInterval(function () {
+					if (didScroll) {
+						hasScrolled();
+						didScroll = false;
+					}
+				}, 250);
+				function hasScrolled() {
+					var st = $(this).scrollTop();
+					// Make sure they scroll more than delta
+					if (Math.abs(lastScrollTop - st) <= delta)
+						return;
+					// If they scrolled down and are past the navbar, add class .nav-up.
+					if (st > lastScrollTop && st > navbarHeight) {
+						// Scroll Down
+						$('#nav').addClass('nav-up');
+					} else {
+						// Scroll Up
+						if (st + $(window).height() < $(document).height()) {
+							$('#nav').removeClass('nav-up');
+						}
+					}
+					lastScrollTop = st;
+				}
+			}
+			//mobile nav open close
+			if ($(window).width() < 480) {
+				$('#mobile-nav, .nav-link, .mobopen').on('click', function () {
+					//$('.logo-link').toggleClass("mobopen");
+					//$('#menu').toggleClass("flex");
+					$('#mobile-nav').toggleClass("open");
+					$('body').toggleClass("noscroll");
+				});
+			}
+		});
+
+
+
+		let carousels = jQuery('#kindergarten-carousel-img, #kindergarten-carousel-text');
+		jQuery('.carousel-control-prev').on('click', function () {
+			carousels.carousel('prev');
+		});
+		jQuery('.carousel-control-next').on('click', function () {
+			carousels.carousel('next');
+		});
+
+		jQuery(function () {
+			jQuery(".component-flatpickr").flatpickr({
+				enableTime: true,
+				dateFormat: "d/m/yy - H:i",
+			});
+		});
+
+
+		$(document).ready(function () {
+			// Hide Webflow Badge
+			$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+			$('.wf').hide();
+
+			if ($(window).width() > 479) {
+				// Hide Header on scroll down
+				var didScroll;
+				var lastScrollTop = 0;
+				var delta = 5;
+				var navbarHeight = $('#nav').outerHeight();
+				$(window).scroll(function (event) {
+					didScroll = true;
+				});
+				setInterval(function () {
+					if (didScroll) {
+						hasScrolled();
+						didScroll = false;
+					}
+				}, 250);
+				function hasScrolled() {
+					var st = $(this).scrollTop();
+					// Make sure they scroll more than delta
+					if (Math.abs(lastScrollTop - st) <= delta)
+						return;
+					// If they scrolled down and are past the navbar, add class .nav-up.
+					if (st > lastScrollTop && st > navbarHeight) {
+						// Scroll Down
+						$('#nav').addClass('nav-up');
+					} else {
+						// Scroll Up
+						if (st + $(window).height() < $(document).height()) {
+							$('#nav').removeClass('nav-up');
+						}
+					}
+					lastScrollTop = st;
+				}
+			}
+			//mobile nav open close
+			if ($(window).width() < 480) {
+				$('#mobile-nav, .nav-link, .mobopen').on('click', function () {
+					//$('.logo-link').toggleClass("mobopen");
+					//$('#menu').toggleClass("flex");
+					$('#mobile-nav').toggleClass("open");
+					$('body').toggleClass("noscroll");
+				});
+			}
+		});
+	</script>
+
+</body>
+
+</html>

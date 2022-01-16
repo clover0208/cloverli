@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+	<!-- Kindergarten Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/kindergarten/kindergarten.css" type="text/css" /> <!-- Kindergarten Custom Css -->
+	<link rel="stylesheet" href="demos/kindergarten/css/fonts.css" type="text/css" /> <!-- Kindergarten Custom Fonts -->
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=6953A8" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Rare Desease-UX</title>
+
+	<style>
+		body {
+    font-family: L-PTSans, Arial, sans-serif;
+    color: #333;
+
+}
+p{
+	font: L-PTSans, Arial, sans-serif;
+	line-height: 1.6;
+	font-size: 20px;
+	
+}
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+	</style>
+	<style>
+
+/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+} */
+
+button {
+  margin: 50px;
+  font-family: inherit;
+}
+/* End of Page styling */
+
+/* Simple button styling -- No animation */
+.simple {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.simple::after {
+  content: "";
+  background-color: #dcbaff;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+/* End of Simple Button */
+
+/* Fill button styling */
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fill::after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
+/* End of Fill Button  */
+
+/* Slide button styling */
+.slide {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 30px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.slide i {
+  opacity: 0;
+  font-size: 13px;
+  transition: 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 21px;
+  transition: transform 1;
+}
+
+.slide div {
+  transition: transform 0.8s;
+}
+
+.slide:hover div {
+  transform: translateX(-6px);
+}
+
+.slide::after {
+  content: "";
+  background-color: #66f2d5;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+
+.slide:hover i {
+  opacity: 1;
+  transform: translateX(-6px);
+}
+		/* FONT LEGIBILITY */
+		h1, h2, h3, h4, h5, h6, p, a, li, span {
+		  font-variant-numeric: oldstyle-nums;
+		  font-feature-settings: "onum";
+		}
+		* {
+		 text-rendering: optimizeLegibility;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale; 
+		}
+	  /* LINK HOVER */
+	  .marker,
+	  .w-richtext a,
+	  .w-richtext p a{
+			-webkit-transition: all .15s ease-out;
+			-moz-transition: all .15s ease-out;
+			-ms-transition: all .15s ease-out;
+			-o-transition: all .15s ease-out;
+			transition: all .15s ease-out;
+			text-decoration: none;
+		  background-image: -webkit-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -moz-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -o-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: linear-gradient(transparent 50%, #fcf113 0%);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			border-bottom: 1px solid #33393f;
+		  }
+	  .marker:hover,
+	  .active-link,
+	  .w-richtext a:hover,
+	  .w-richtext p a:hover{
+		  background-size: 100% 100%;
+			border-bottom: 1px solid #fcf113;
+		  }
+	  @media screen and (min-width:1440px){
+		  img.image {
+				max-width:1440px;
+				}
+	  }
+	  /* Hide Nav when Scrolling */
+		#nav.nav-up {
+			 top:-70px; 
+		}
+	  @media screen and (max-width:480px){
+		  #nav.nav-up {
+				 bottom:-70px; 
+			}
+		.w-webflow-badge {
+			  top: 12px !important;
+			  bottom: auto !important;
+		  }
+	  }
+	  /* Making sure navigation stays behind lightbox overlay */
+		.w-lightbox-backdrop{
+			 z-index:9999; 
+		}
+	  .noscroll {
+		  overflow:hidden;
+	  }
+	  #mobile-nav.open .navbar:first-child {
+		  -webkit-transform:translateY(9px) rotate(225deg);
+		transform:translateY(9px) rotate(225deg);
+	  }
+	  #mobile-nav.open .navbar:nth-child(2) {
+		  -webkit-transform:translateX(50px);
+		transform:translateX(50px);
+		opacity:0;
+	  }
+	  #mobile-nav.open .navbar:last-child {
+		  -webkit-transform:translateY(-9px) rotate(-45deg);
+		transform:translateY(-9px) rotate(-45deg);
+	  }
+	  /* BADGE MODIFICATIONS */
+	  /*.w-webflow-badge span {
+		  position: absolute;
+		  right: 3px;
+		  top: 6px;
+		  color: #222;
+		  font-size: 14px;
+		  }*/
+	  </style>
+		<style>
+	  .w-slider-nav {
+		  text-align: left;
+	  }
+	  .w-slider-dot.w-active,
+	  .w-slider-dot.w-active:hover {
+		  background-color: #1E262B;
+	  }
+	  .w-slider-dot {
+		  background-color: transparent;
+		width:16px;
+		height:16px;
+		border:2px solid #1E262B;
+	  }
+	  .w-slider-dot:hover {
+		  background-color: #D8D8D8;
+	  }
+	 
+
+
+
+
+
+
+
+	 
+	 </style>
+
+
+
+</head>
+
+<body class="stretched">
+
+	<!-- <div class="modal-on-load" data-target="#myModal1"></div> -->
+
+	<!-- Modal -->
+	<!-- <div class="modal1 mfp-hide subscribe-widget" id="myModal1">
+		<a href="#" class="d-flex mx-auto h-scale-sm all-ts" style="max-width: 670px">
+			<img src="demos/kindergarten/images/banner.jpg" alt="Banner Image" class="rounded-4">
+		</a>
+	</div> -->
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-0 col-lg-3">
+							<!-- <a href="index.html" class="standard-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a>
+							<a href="index.html" class="retina-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a> -->
+						</div>
+						<!-- #logo end -->
+
+						<div class="header-misc col-lg-3 justify-content-end">
+							<!-- WhatsApp Icon
+							============================================= -->
+				
+						</div>
+
+
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div>
+
+						<nav class="primary-menu">
+
+							<ul class="menu-container">
+								<li class="menu-item"><a class="menu-link" href="../../index.html"><div>Home</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="https://drive.google.com/file/d/1NJlOdgeZrMYcXHU12JGgAyKoVCSeZqSb/view?usp=sharing"><div>CV</div></a></li>
+								<!-- <li class="menu-item"><a class="menu-link" href="#"><div>Our Programs</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#"><div>Contacts</div></a></li> -->
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+
+	
+
+		<!-- Hero
+		============================================= -->
+		<section id="slider" class="slider-element include-header" style="background-color: #ffe9d3;">
+<!-- <div style="margin-top: 40vh;"> -->
+			<center><div class="position-absolute top-0 start-0 w-100 h-100" style="margin-top: -16vh;" ><img src="raree.png" style="width:90%"></div></center>
+		
+			<div class="container" style="width:120%">
+				<div class="row align-items-center min-vh-100 pt-5 pb-4">
+					<center><div class="col-lg-6" style="margin-top: 88vh;">
+						<h6 class="mb-4 ls1 text-uppercase fw-normal"></h6>
+						<h1 class="display-3 fw-bolder" style="margin-top: -8vh;">Rare Friends</h1>
+						<h2 >Collaborate Project, I engaged in every process </h2>
+						<p></p>
+						<p style="opacity:0;">haha</p>
+					</div>
+				</center>
+				</div>
+			</div>
+		<!-- </div> -->
+
+			<div class="shape-divider" data-shape="wave-2" data-position="bottom" data-height="80"></div>
+
+			<!-- <div class="position-relative d-none d-sm-block">
+				<img src="demos/kindergarten/images/fish2.png" alt="Fish" class="background-img pos-right float-anim" style="top: -120px">
+			</div> -->
+
+		</section>
+
+	<!-- //intro -->
+		<div class="rich-kid w-richtext">
+			<p>In order to allow more patients to receive a definitive diagnosis, bring patients closer to medical resources, and improve their psychological well-being, we created an online mobile app community to provide them with information about doctors and hospitals, medical resources, and an interactive platform for making new friends.
+				<br></p>
+			<p>In the future, we look forward to partnering with pharmaceutical companies and bringing in donations so that patients can have access to medical care and medication. At the same time, we will pay more attention to patient privacy issues so that they can feel truly reassured and be hopeful for their future.
+				<br></p>
+			<!-- <p>After working women leave their careers, they will have a strong sense of loss and disparity. Depression is very high. <strong>Closer</strong> treats themental health of new mothers in adifferent way, by creating a middleman, a buffer zone.</p> -->
+
+		  </div>
+
+		
+	<!-- //containers -->
+			<div class="container"style="margin-top:80px">
+				<h2 class="color h1 fw-bold mb-5" ><p style="color: #5b5b5b; font-size: 36px;" >Fact Pack: What’s the existing patient community looks like
+				</p></h2>
+
+				<div class="row col-mb-50">
+					
+					<div class="col-lg-8">
+						
+						<div class="row col-mb-50" style="position:relative; top:-4vh;">
+							<p>General Information:Among the patients interviewed in the 2019 Comprehensive Social Survey of Rare Diseases in China, 6,443 were male, accounting for 49%, and 6,792 were female, accounting for 51%. Nearly 90% of the patients are under the age of 50, and more than half are under the age of 18. Among the 6,598 adult patients, more than a quarter of them had bachelor's degree or higher education (25.9%), college diploma patients accounted for 18.1%, and completed technical secondary school accounted for 11.4%.
+							</p>
+							<p>Relationship: The research also shows that the social support available to primary caregivers is even significantly lower than that available to patients. The focus on primary caregivers is urgent. </p>
+							<!-- <img src="./Fact1.jpeg" alt="Icon" class="p-2 rounded" style="width:50vw; position:relative; left:6vw; top:-4vh;"> -->
+<p>In the documentary film "Born Extraordinaire - Profiles," the director finds that those with rare diseases are still in a mode of living a negative, repetitive, single life every day. She feels that many people with rare diseases over-exaggerate the label of rare disease patient  and feel that all their problems are attributable to their rare disease. This causes their mental problem.</p>
+							<p>This is a documentary made by patients themselves. In this documentary, it shows that the patients rely highly on their family. So family members’ community connection is as important as patients themselves. How did the patients learned to make films? What other people involved? </p>
+<!-- <a href="https://www.bilibili.com/video/av18424436/" style="color:rgb(255, 102, 0); font-size: 16px; margin-top: -2vh;" >Introduction Video for further reading</a> -->
+
+							<!-- <img src="images/300ppi/mom4.png" alt="Icon" class="p-2 rounded" style="width:50vw; position:relative; left:6vw; top:-8vh;"> -->
+
+				
+						</div>
+					</div>
+
+					<div class="col-lg-4 mt-5 mt-lg-0" >
+						<div class="pop=up-one" style="border-style: hidden; " >
+							<div class="card-body" style="margin-top: -6vh;margin-left: 2vw;">
+								<img src="./Fact1.jpeg" alt="Card Image" style="width:80%" >
+<p style="font-size:16px;">Data source: Zhao Heng. A survey study and analysis of the current epidemiological situation of rare diseases in Shandong [D]. Jinan University.</p>
+							</div>
+						</div>
+						<div class="pop=up-one" style="border-style: hidden; " >
+							<div class="card-body" style="margin-top: 2vh;margin-left: 2vw;">
+								<center><img src="./Fact3.png" alt="Card Image" style="width:80%" ></center>
+<!-- <p style="font-size:16px;">Video documentation on rare desease patient</p> -->
+<center><a href="https://www.bilibili.com/video/av18424436/" style="color:rgb(255, 102, 0); font-size: 16px; margin-top: 2vh;" >Introduction Video for further reading</a></center>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- <div class="container" style="margin-top:80px">
+				<h2 class="color h1 fw-bold mb-5" ><p style="color: #5b5b5b; font-size: 36px;">What are the challenges</p></h2>
+				<div class="row col-mb-50">
+					
+					<div class="col-lg-8">
+						
+						<div class="row col-mb-50" style="position:relative; top:-4vh;">
+							<p>Rare diseases are far more than just medical problems; the system of protection from medical, educational, employment, psychological support, and social cognitive aspects is a complex system project.</p>
+							<p>Social cognitive aspects：Rare diseases in marriage: A lot of the patients tend to hide their diseases when getting married. Even their family refuse to understand the disease. </p>
+
+				
+						</div>
+					</div>
+
+					<div class="col-lg-4 mt-5 mt-lg-0" >
+						<div class="pop=up-one" style="border-style: hidden;" >
+							<div class="card-body">
+								<img src="images/300ppi/mom5.png" alt="Card Image" style="margin-top: 0px;">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+
+			<!-- interview -->
+<!-- 			
+			<div class="container" style="margin-top:80px">
+				<h2 class="color h1 fw-bold mb-5" ><p style="color: #5b5b5b; font-size: 36px;">Interview and Field Research</p></h2>
+				<div class="row col-mb-50">
+					
+					<div class="col-lg-8">
+						
+						<div class="row col-mb-50" style="position:relative; top:-4vh;">
+							<p>In this survey, most mothers mentioned a very important issue. Their husbands did not understand their needs very well, and there was room for improvement in educating taking care of their children.</p>
+							<img src="images/SVG/intervieww.svg" alt="Icon" class="p-2 rounded" style="width:64vw; position:relative; left:1vw; top:-2vh;">
+
+				
+						</div>
+					</div>
+
+					<div class="col-lg-4 mt-5 mt-lg-0" >
+						<div class="pop=up-one" style="border-style: hidden;" >
+							<div class="card-body">
+								<img src="images/300ppi/mom8.png" alt="Card Image" style="margin-top: 120px;">
+
+							</div>
+						</div>
+					</div>
+<div class="col-lg-8">
+						
+	<div class="row col-mb-50" style="position:relative; top:-4vh;">
+		<p>I conducted a field research and documenting the parenting life. You can see father's role is missing in this chart.</p>
+		<img src="images/800ppi/资源 76800x.jpg" alt="Icon" class="p-2 rounded" style="width:80vw; position:relative; left:-1vw; top:-2vh;">
+
+
+
+	</div>
+</div>
+
+<div class="col-lg-4 mt-5 mt-lg-0" >
+	<div class="pop=up-one" style="border-style: hidden;" >
+		<div class="card-body">
+			<img src="images/300ppi/feeding.png" alt="Card Image" style="width:80%; margin-top: 80px; margin-left: 15px">
+			<p>I tried it myself and feel the difficulty of taking care of baby</p>
+
+		</div>
+	</div>
+</div>
+				</div>
+			</div> -->
+
+<!-- interview start -->
+
+<div class="rich-kid w-richtext" style="margin-top:16vh;">
+	<h1>What are the challenges</h1>
+	<p>Rare diseases are far more than just medical problems; the system of protection from medical, educational, employment, psychological support, and social cognitive aspects is a complex system project.<br></p>
+
+</div>
+<div class="curly-section yellow">
+	<div class="site-content"></div>
+	<div class="rich-kid w-richtext">
+	  <h1><strong>Summary</strong></h1>
+	</div>
+	<div class="content-wrapper">
+	  <div class="card">
+		<div class="tagline insight-tagline">Challenge #1</div>
+		<h3 class="insight-heading">Diagnosis<br></h3>
+		<p class="insight-paragraph">The unfortunate reality is that rare diseases too often go undiagnosed for extended periods of time because patients, families and physicians have limited awareness of the disease and symptoms may not always be evident to healthcare providers who have never encountered it. 
+		</p>
+	  </div>
+	  <div class="card">
+		<div class="tagline insight-tagline">Challenge #2</div>
+		<h3 class="insight-heading">Delays in Diagnosis<br></h3>
+		<p class="insight-paragraph">Children typically wait <strong>six to eight years </strong>before being diagnosed. Delays in diagnosis can lead to inappropriate disease management as well as disease progression.
+		</p>
+	  </div>
+	  <div class="card">
+		<div class="tagline insight-tagline">Challenge #3</div>
+		<h3 class="insight-heading">Misdiagnosis <br></h3>
+		<p class="insight-paragraph">Patients are often misdiagnosed when symptoms present similar to another disease and a misdiagnosis can lead to unsuitable interventions for the underlying disorder. In more than <strong>40% </strong>of cases, patients receive a misdiagnosis more than once, as too often, “rare” can mean “off the radar” to healthcare providers. 
+		</p>
+	  </div>
+	  <div class="card">
+		<div class="tagline insight-tagline">Challenge #4</div>
+		<h3 class="insight-heading">Access to Quality Medical Care<br></h3>
+		<p class="insight-paragraph">Most rare diseases are treated by numerous specialists such as geneticists, neurologists, endocrinologists, dermatologists, etc. However, there are few places in which to seek specialized medical care for rare diseases, and due to the rare nature of these conditions, there may be NO specialists treating your specific rare disease. You will also be responsible for researching and coordinating your care, appointments, and therapy, as there is likely not a patient advocate, social worker, or anyone else to help point you in the right direction. Even if a specialist exists for your particular condition, it can be costly to see them. You must arrange for your own travel and expenses and Medicaid often places restrictions on where you may seek care.
+		</p>
+	  </div>
+	  <div class="card">
+		<div class="tagline insight-tagline">Challenge #5</div>
+		<h3 class="insight-heading">Isolating<br></h3>
+		<p class="insight-paragraph">Individuals and families affected by rare disease often face isolation. You may be one of hundreds or just a handful of individuals in the entire world with your particular condition. There may be nobody in your area, your state, or even your country with the same condition. Many people seek comfort, validation, and support through online community support groups, but this does not replace connection with people in your own community. 
+		</p>
+	  </div>
+	  <div class="card">
+		<div class="tagline insight-tagline">Challenge #6</div>
+		<h3 class="insight-heading">Lack of Public Awareness <br></h3>
+		<p class="insight-paragraph">The general public is largely unaware of the issues that face the rare disease community. They are unaware of the challenges the rare disease community experience in accessing medical care, treatments, and supplemental income. They are unaware of how difficult it can be to coordinate care and the stress this places on diagnosed individuals and caregivers. Most people are unaware that 80% of rare conditions have a genetic origin and that 50% of rare disease patients are children. Many are shocked to discover that scientific advances in rare disease research positively impacts treatments for other more common medical conditions. And most importantly, the general public is unaware that rare is not rare….that 1 in 10 individuals are diagnosed with rare disease, cumulatively impacting more people than cancer and AIDS combined.
+
+		</p>
+	  </div>
+
+	</div>
+	<!-- <div class="rich-kid w-richtext">
+		<h1><strong>Analysis of Users' Needs</strong></h1>
+	  </div> -->
+<!-- <div class="content-wrapper">
+		<div class="card">
+		  <div class="tagline insight-tagline">Need #1</div>
+		  <h3 class="insight-heading">Wife: Regular daily care<br></h3>
+		  <p class="insight-paragraph">Eg. Phone Calls and Messages from husband concerning wife and baby's condition</p>
+		</div>
+
+
+	</div> -->
+
+		<!-- <div class="rich-kid w-richtext">
+	  <h3>Generally</h3>
+	  <p>Learning in the form of traditional teaching and e-learning both require self-discipline, motivation and acceptance of the methodology, whereby e-learning – insofar as</p>
+	</div> -->
+  </div>
+<!-- interview end -->
+
+<div class="container" style="margin-top:80px">
+	<h1 class="color h1 fw-bold mb-5" ><p style="color: #5b5b5b; font-size: 36px;">Inspiration Gallery</p></h1>
+	<div class="row col-mb-50">
+		
+		<div class="col-lg-8">
+			<div class="row col-mb-50" style="position:relative; top:-4vh;">
+				<p>RareConnect</p>
+				<p>RareConnect is an online social network, created by Eurordis, which aims at connecting patients, families affected by a rare disease. The website is organized into disease specific communities which facilitate support and access to validated information, and allow patients and families share experience on their disease, on quality of life, on social issues. A set of features is implemented : communication tools like forums and private discussion lists, medical articles written by experts, texts from patients and families, testimonies using text, photos or videos, latest news from research, events concerning the community or rare diseases at large. The website is available in thirteen languages right now.</p>
+<p>Share4Rare</p>
+<p>The Share4Rare project includes the creation of a large social network that, unlike conventional forums, incorporates mathematical algorithms, such as those used by dating platforms. These will help to connect users based on the information they provide in their profile and it will make possible for people to direct their queries to those who are most likely to be able to provide an answer. Share4Rare will also help patients and carers affected by the same disease or symptoms to connect so they can support each other.</p>
+<!-- <p>Rare Compass</p>
+<p>巴拉度宝宝: This is an APP that helps child patients' parents know better about their children’s mental stage and have proper guidance towards children. This app allows parents to keep diaries and provides gamified mental tests. <br>
+	享联医疗: This is a system that aims to solve the problem of not making definite diagnosis. Based on the intelligent system, this platform starts from convenience, accuracy, timely and classification to improve the accuracy of diagnosis. <br>
+	云罕: This uses a method called “narrative medicine”, collaborating with universities to get rare diseases cases. After translation and localization, those cases will be put on platforms that patients can have access to.
+	</p> -->
+	<p>Chinese Organization for Rare Disorders (CORD)</p>
+	<p>CORD is a non-profit organization dedicated to the field of rare diseases, founded in 2013 by Mr. Rufang Huang. It is committed to enhancing communication and cooperation among rare disease patient groups, rare disease organizations, medical professionals, pharmaceutical companies and governmental agencies, strengthening public understanding of rare diseases, improving access to rare disease drugs, promoting policies related to rare diseases, carrying out international exchange and cooperation in the field of rare diseases, and promoting the development of the cause of rare diseases in China.</p>
+	
+			</div>
+		</div>
+
+		<div class="col-lg-4 mt-5 mt-lg-0" >
+			<div class="pop=up-one" style="border-style: hidden;" >
+				<div class="card-body">
+					<center><img src="./Fact4.png" alt="Card Image" style="width:64%;margin-top: -2vh;">
+					<p style="font-size:16px;">RareConnect</p></center>
+					<center><img src="./Fact5.png" alt="Card Image" style="width:40%;margin-top: -2vh">
+					<p style="font-size:16px;">Share4Rare</p></center>
+					<center><img src="./Fact6.png" alt="Card Image" style="margin-top: 0vh">
+						<p style="font-size:16px;">Chinese Organization for Rare Disorders (CORD)</p></center>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		
+
+
+		<!-- opportunities -->
+		<div class="rich-kid w-richtext" style="margin-top:16vh;">
+		<h2>Mindmap</h2>
+		<p>This is a mindmap we draw base on the analysis of different stakeholders and different party engage in this process.</p>
+		<img src="./Mindmap.jpeg">
+
+	</div>
+	
+	<div class="rich-kid w-richtext" style="margin-top:16vh;">
+		<h2>Interview I: with my friend Yandong and </h2>
+		<h2>Interview II: In class interview with rare desease helping organization leaders</h2>
+		<a href="https://docs.google.com/document/d/1Zvrs1VRMr5ZfnvOiRQnjP2dOUd1dXz7YH5XGoYNOK1Q/edit?usp=sharing" style="color:rgb(255, 102, 0); font-size: 16px; margin-top: 4vh;">Details are documented in this doc. Since we targeting Rare Desease Patients in China, our questions are designed using Chinese, but the summary is in English.</a>
+		<!-- <p>My interviewee is Yandong, a patient with dermatomyositis(DM), he is now 31 and has been suffering from DM for the past five years. He told us about his own experience of being misdiagnosed and then diagnosed, constantly treated but then relapsing. When Yandong was talking about his experience, the most frequently used phrase was "I didn't expect". When he was recalling the moment he was diagnosed with DM, he said: "The first time I heard the word, I have no idea what a DM is. The doctor told me the disease was very serious. At that time, I could still walk, though I may cough and breathe heavily. I didn't expect the situation would be so bad". From his experience, we can tell that most people with rare diseases know very little about the disease they have and are not psychologically prepared for the disease they have acquired. In addition to material support like medication, psychological distress and support are essential parts of the community. That is why it is crucial to build a community of people who can provide counseling and complementary support to patients. Furthermore, older patients helping newer patients is also an important part of constructing a tight community. His experience of being misdiagnosed and continuously relapsing demonstrates that many doctors have very little knowledge about rare disease.  So the experience of old patients is also an important source of information for new rare disease patients. Yandong mentions that he was in a group chat consisting of DM patients where he shared his experience with new patients: “Every time a new patient comes into the group, he or she will ask how many years they can survive. I always told them that nobody can decide how many years you can survive, not the doctors, and not even yourselves”. For this unknown nature of rare diseases, old patients can give psychological help to new patients. Yandong said he is willingly giving up his autonomy and expectations.</p>
+			<p>Another issue revealed in this interview is the relationship between doctors and patients. To truly build up a community benefiting rare disease patients, doctors’ comment and diagnosis is another factor needed to take into account. Doctors dominate the fate of rare disease patients because the patients are in a particular ignorant status and display complete obedience. This may lead to doctors’ imprudence and promote arbitrary and improper comments from the doctors which might be unhealthy for the patients. In Yandong’s case, before he was diagnosed, doctors replied to him with “you don’t have any disease”, or “you are very healthy.” This deepens the patient's confusion. Doctors, such an authority have no way of understanding their symptoms, which deepens the psychological burden for many patients and is detrimental to their treatment.</p>
+			<p>In conclusion, on one hand, the relationship between older patients and newer patients is an important part of constructing a tight community.The group chat Yandong joined is illuminating as a method of forming the group identity of DM patients. The exchange of experience and information within such groups may help change the current ignorant and powerless status of rare disease patients. On the other hand, as the authority and one of the most important stakeholders, doctors should pay more attention to the actual feeling of the patients. By telling them “you don’t have any disease” actually deepens psychological burden for many patients. Doctors should be more conscious of the responsibility they shoulder as saviors for the patients.				 -->
+			
+</p>
+	
+	</div>
+
+	<div class="curly-section yellow">
+		<div class="site-content"></div>
+		<div class="rich-kid w-richtext">
+		  <h1><strong>Interview Summary</strong></h1>
+		</div>
+		<div class="content-wrapper">
+		  <div class="card">
+			<div class="tagline insight-tagline">Insight #1</div>
+			<h3 class="insight-heading">Identity Familiarity<br></h3>
+			<p class="insight-paragraph"> "The most important psychological building that new patients need to do is to achieve identity and identity familiarity, and it is important to provide them with <strong>a role model </strong>in this process. This role model is usually a successful person among the patients who can serve as an inspiration to others. Furthermore, one of the great innate strengths of the patient is their <strong>ability to empathize</strong>. Other people don't experience the same pain when they are sick, and it's only the patients who can empathize with each other." 
+			</p>
+		  </div>
+		  <div class="card">
+			<div class="tagline insight-tagline">Insight #2</div>
+			<h3 class="insight-heading">Repetitive Labour<br></h3>
+			<p class="insight-paragraph">Tech-savvy volunteers are extremely needed for today's rare disease communities to help build an online platform to provide frequently asked questions and answers and also relevant information for people to search for in order to reduce repetitive labor. Also, communities need to host online networking events to bring patients and other stakeholders closer together. Moreover, old patients need to play their role in a most effective way to provide new patients with as much help as they need.
+			</p>
+		  </div>
+		  <div class="card">
+			<div class="tagline insight-tagline">Insight #3</div>
+			<h3 class="insight-heading">Helpful Method <br></h3>
+			<p class="insight-paragraph">It would be better if patients themselves can learn some basic skills like managing wechat official accounts or filming. On the patient's side This might help them build identity recognition within their community by making their own effort and  not rely so much on others’ help. On the volunteer’s side, tech-savvy workers are extremely needed to build platforms or apps and may be hired as a paid job . However, other volunteers like managing wechat official accounts without payments maybe are harder to find than we think.
+			</p>
+		  </div>
+		  <div class="card">
+			<div class="tagline insight-tagline">Insight #4</div>
+			<h3 class="insight-heading">Right Doctors<br></h3>
+			<p class="insight-paragraph">Another point is it’s very important to match the right doctors. In the interview, Yandong told me that he visited 5 hospital before he was finally diagnosed with DM. He also went from Shanghai to Beijing for medical treatment. Finding a doctor who understands rare diseases is really important for patients, saving money and resources. Also, finding the right doctors help ease the mental burden. Before being diagnosed, the doctors all told him “you don’t have any disease”, which made him feel confused and helpless. 	
+			</p>
+		  </div>
+	
+		  <div class="rich-kid w-richtext">
+			<h1><strong>Root Problems</strong></h1>
+			<p>Base on our researches, we analyized the root problem</p>
+		  </div>
+	
+		  <div class="card">
+			<!-- <div class="tagline insight-tagline">Problem #1</div> -->
+			<h3 class="insight-heading">Problem 1<br></h3>
+			<p class="insight-paragraph">New patients cannot find the right doctors to diagnose their diseases and the resources they need.	
+			</p>
+		  </div>
+
+		  <div class="card">
+			<!-- <div class="tagline insight-tagline">Problem #1</div> -->
+			<h3 class="insight-heading">Problem 2<br></h3>
+			<p class="insight-paragraph">Patients’ psychological issues are needed to be solved.
+			</p>
+		  </div>
+
+		  <div class="card">
+			<!-- <div class="tagline insight-tagline">Problem #1</div> -->
+			<h3 class="insight-heading">Problem 3<br></h3>
+			<p class="insight-paragraph">Old patients and other professionals are doing repetitive work to help new patients.
+			</p>
+		  </div>
+
+		  <div class="rich-kid w-richtext">
+			<h1><strong>Experiment</strong></h1>
+			<!-- <p>Base on our researches, we analyized the root problem</p> -->
+		  </div>
+		 
+		  <div class="card">
+			<div class="tagline insight-tagline">Experiment #1</div>
+			<h3 class="insight-heading">Match<br></h3>
+			<p class="insight-paragraph">Help patients to match with <strong>the right doctors </strong>they are looking for and with <strong>the experienced patients </strong>with the same disease 
+			</p>
+		  </div>
+		  
+		  <div class="card">
+			<div class="tagline insight-tagline">Experiment #2</div>
+			<h3 class="insight-heading">Efficiency<br></h3>
+			<p>Reduce repetitive labor and unnecessary costs of patients:<br>
+			-	An algorithm that summarizes the answers to the previous questions<br>
+			-	Contact with the knowledgeable doctor (like the google map we see today)
+			</p>
+		  </div>
+
+		  <div class="rich-kid w-richtext">
+			<h1><strong>What-if Questions:</strong></h1>
+			<p>Try to improve the solution, we used what if questions</p>
+			<!-- <p>Base on our researches, we analyized the root problem</p> -->
+		  </div>
+
+		  <div class="card">
+			<div class="tagline insight-tagline">What-if #1</div>
+			<h3 class="insight-heading">What if doctors need payback after answering patients’ multiple questions?<br></h3>
+			<p>-   With the patient's permission, provide the doctor with the patient's contact information that can be used as a research participant in the doctor's rare disease study.<br>
+				-   Put ads in the app for hospitals that patients can visit, with doctors specializing in rare diseases.<br>
+			</p>
+		  </div>
+
+		  <div class="card">
+			<div class="tagline insight-tagline">What-if #2</div>
+			<h3 class="insight-heading">What if patients can contribute to our map?<br></h3>
+			<p>-   Open an entry where patients can give suggestions for improvements. We will frequently check those suggestions and update the details of our app.<br>
+				-   Or teach patients to build buttons and add information to the app.<br>
+			</p>
+		  </div>
+
+		</div>
+	</div>
+
+
+	<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+		<h1><strong>Potential Solutions:Online Community App</strong></h1>
+		<h3><strong>Implementation: Functions</strong></h3>
+		<!-- <p>:</p> -->
+		<p>1. Map: Patients can see which hospitals are closest to them. Click on those red dots to also check the doctors’ qualifications, resumes and research papers.Map:Patients can see which hospitals are closest to them. Click on those red dots to also check the doctors’ qualifications, resumes and research papers.
+		<br>2. Forum: Patients can post their information to find those who have similar diseases.
+		<br>3. Q&A: Held by the doctors in a certain time to answer patients’ questions.
+		<br>4. Message and suggestion: Patients can enter their suggestions.
+		<br>5. Collection: People can pin the post they like and the doctors’ information.</p>
+	  <h3><strong></strong>Pros:</strong></h3>
+	  <p>
+		 1.It reduced repetitive labor of volunteers answering similar questions over and over again as frequently asked questions are provided.
+		<br> 2.It helps match patients with the right doctor to get accurate diagnoses.
+		<br>  3.It helps match new patients with the elder ones to get psychological support and exchange medicine information.
+	  </p>
+	  <h3><strong></strong>Cons:</strong></h3>
+	  <p>
+		1.Doctors need to focus on the current hospital system and this online community which causes double efforts.
+		<br>2.The app relies on a community large enough to match new patients with certain doctor and elder patients.
+		<br>3.Cannot solve the root problem of no treatment for those rare diseases. 
+	  </p>
+	  <h3><strong></strong>Possible Scenarios: </strong></h3>
+	  <p>
+		What if patients don’t know how to get access to our solution?
+		<br>- Post information about our app to existing rare disease communities and encourage patients and their family to join our online community.
+	  </p>
+	  <p>What if we cannot reach out to enough doctors to join our community?
+		<br>- Go to Medical Rare Disease Exchange Meetings to promote our app and encourage doctors to participate.
+	  </p>
+<p>What if doctors need payback after answering patients’ multiple questions?
+	<br>- With the patient's permission, provide the doctor with the patient's contact information that can be used as a research participant in the doctor's rare disease study.
+	<br>- Put ads in the app for hospitals that patients can visit, with doctors specializing in rare diseases.
+</p>
+
+	</div>
+
+	
+	<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+		<h1><strong>Demo Proposal Chart</strong></h1>
+		<img src="demo.png" style="margin-left: -1vw;">
+	</div>
+
+	<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+		<h1><strong>Feedback from User Testing</strong></h1>
+		<h3><strong></strong>Patient One:  </strong></h3>
+		<p>
+			-	 Displaying two sessions above the Q&A session is not convenient if there is only a fixed period of time to consult an expert in case of an emergency.
+			<br>-	 It would be convenient to have a channel where patients can directly talk to doctors. Open a channel which provides the doctor’s contact number (like the QR friend code enabling the direct contact). It would allow patients to talk directly to their doctors.
+		</p>
+		<h3><strong></strong>Patient Two:  </strong></h3>
+		<p>
+			- Q&A session appointment function needs improve.
+			<br>-	About Us: Privacy Policy: scroll page needs improve.
+			<br>-	Introduction + Privacy of our app in a new page.
+			<br>-   Users need to read the Privacy Policy before they can log in.
+		</p>
+
+		<h3><strong></strong>Patient Three:  </strong></h3>
+		<p>-  Needs a introduction page or name: don’t know what this app is about
+			<br>-	Add a platform that allows patients to submit medical history and documentation of their condition to facilitate physician judgment and doctor-patient communication, not the categories already exemplified. Let the patient choose to join the group because he may not know what his illness is
+		</p>
+		
+	</div>
+	<div class="rich-kid w-richtext" style="margin-top: 16vh;"><h1><strong>Finalized Version:</strong></h1></div>
+	<div class="rich-kid w-richtext" style="margin-top:8vh; width:600px;">
+		<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400" height="750" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FT9fhZpgrkwD7IshNbHmInJ%2FRare-Disease-Community%3Fnode-id%3D105%253A36%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D105%253A36" allowfullscreen></iframe>
+	</div>
+	<div class="rich-kid w-richtext" style="margin-top: 8vh;">
+	<center>
+		<h1><strong>Poster for project show</strong></h1>
+		<img src="截屏2022-01-14 下午1.38.16.png"style="width:500px;"></center>
+</div>
+
+	
+
+
+
+
+
+<a href="../../index.html">
+	<center><button type="button" class="slide">
+	<div>Back To Main Page</div>
+	<i class="icon-arrow-right"></i>
+  </button>
+</center>
+</a>
+
+
+	</div>
+
+
+	<div id="gotoTop" class="icon-hand-up rounded-circle"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/closer.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/hello.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+
+var animateButton = function(e) {
+
+e.preventDefault;
+//reset animation
+e.target.classList.remove('animate');
+
+e.target.classList.add('animate');
+setTimeout(function(){
+  e.target.classList.remove('animate');
+},800);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+// $(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+$(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+
+$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+
+
+
+		let carousels = jQuery('#kindergarten-carousel-img, #kindergarten-carousel-text');
+		jQuery('.carousel-control-prev').on( 'click', function(){
+			carousels.carousel('prev');
+		});
+		jQuery('.carousel-control-next').on( 'click', function(){
+			carousels.carousel('next');
+		});
+
+		jQuery(function() {
+			jQuery(".component-flatpickr").flatpickr({
+				enableTime: true,
+				dateFormat: "d/m/yy - H:i",
+			});
+		});
+
+
+		$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+	</script>
+
+</body>
+</html>

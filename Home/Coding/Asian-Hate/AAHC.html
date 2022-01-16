@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+	<!-- Kindergarten Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/kindergarten/kindergarten.css" type="text/css" /> <!-- Kindergarten Custom Css -->
+	<link rel="stylesheet" href="demos/kindergarten/css/fonts.css" type="text/css" /> <!-- Kindergarten Custom Fonts -->
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=6953A8" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>AAHC-Data</title>
+
+	<style>
+		body {
+    font-family: L-PTSans, Arial, sans-serif;
+    color: #333;
+
+}
+p{
+	font: L-PTSans, Arial, sans-serif;
+	line-height: 1.6;
+	font-size: 20px;
+	
+}
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+	</style>
+	<style>
+
+/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+} */
+
+button {
+  margin: 50px;
+  font-family: inherit;
+}
+/* End of Page styling */
+
+/* Simple button styling -- No animation */
+.simple {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.simple::after {
+  content: "";
+  background-color: #dcbaff;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+/* End of Simple Button */
+
+/* Fill button styling */
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fill::after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
+/* End of Fill Button  */
+
+/* Slide button styling */
+.slide {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 30px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.slide i {
+  opacity: 0;
+  font-size: 13px;
+  transition: 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 21px;
+  transition: transform 1;
+}
+
+.slide div {
+  transition: transform 0.8s;
+}
+
+.slide:hover div {
+  transform: translateX(-6px);
+}
+
+.slide::after {
+  content: "";
+  background-color: #66f2d5;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+
+.slide:hover i {
+  opacity: 1;
+  transform: translateX(-6px);
+}
+		/* FONT LEGIBILITY */
+		h1, h2, h3, h4, h5, h6, p, a, li, span {
+		  font-variant-numeric: oldstyle-nums;
+		  font-feature-settings: "onum";
+		}
+		* {
+		 text-rendering: optimizeLegibility;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale; 
+		}
+	  /* LINK HOVER */
+	  .marker,
+	  .w-richtext a,
+	  .w-richtext p a{
+			-webkit-transition: all .15s ease-out;
+			-moz-transition: all .15s ease-out;
+			-ms-transition: all .15s ease-out;
+			-o-transition: all .15s ease-out;
+			transition: all .15s ease-out;
+			text-decoration: none;
+		  background-image: -webkit-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -moz-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -o-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: linear-gradient(transparent 50%, #fcf113 0%);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			border-bottom: 1px solid #33393f;
+		  }
+	  .marker:hover,
+	  .active-link,
+	  .w-richtext a:hover,
+	  .w-richtext p a:hover{
+		  background-size: 100% 100%;
+			border-bottom: 1px solid #fcf113;
+		  }
+	  @media screen and (min-width:1440px){
+		  img.image {
+				max-width:1440px;
+				}
+	  }
+	  /* Hide Nav when Scrolling */
+		#nav.nav-up {
+			 top:-70px; 
+		}
+	  @media screen and (max-width:480px){
+		  #nav.nav-up {
+				 bottom:-70px; 
+			}
+		.w-webflow-badge {
+			  top: 12px !important;
+			  bottom: auto !important;
+		  }
+	  }
+	  /* Making sure navigation stays behind lightbox overlay */
+		.w-lightbox-backdrop{
+			 z-index:9999; 
+		}
+	  .noscroll {
+		  overflow:hidden;
+	  }
+	  #mobile-nav.open .navbar:first-child {
+		  -webkit-transform:translateY(9px) rotate(225deg);
+		transform:translateY(9px) rotate(225deg);
+	  }
+	  #mobile-nav.open .navbar:nth-child(2) {
+		  -webkit-transform:translateX(50px);
+		transform:translateX(50px);
+		opacity:0;
+	  }
+	  #mobile-nav.open .navbar:last-child {
+		  -webkit-transform:translateY(-9px) rotate(-45deg);
+		transform:translateY(-9px) rotate(-45deg);
+	  }
+	  /* BADGE MODIFICATIONS */
+	  /*.w-webflow-badge span {
+		  position: absolute;
+		  right: 3px;
+		  top: 6px;
+		  color: #222;
+		  font-size: 14px;
+		  }*/
+	  </style>
+		<style>
+	  .w-slider-nav {
+		  text-align: left;
+	  }
+	  .w-slider-dot.w-active,
+	  .w-slider-dot.w-active:hover {
+		  background-color: #1E262B;
+	  }
+	  .w-slider-dot {
+		  background-color: transparent;
+		width:16px;
+		height:16px;
+		border:2px solid #1E262B;
+	  }
+	  .w-slider-dot:hover {
+		  background-color: #D8D8D8;
+	  }
+	 
+
+
+
+
+
+
+
+	 
+	 </style>
+
+
+
+</head>
+
+<body class="stretched">
+
+	<!-- <div class="modal-on-load" data-target="#myModal1"></div> -->
+
+	<!-- Modal -->
+	<!-- <div class="modal1 mfp-hide subscribe-widget" id="myModal1">
+		<a href="#" class="d-flex mx-auto h-scale-sm all-ts" style="max-width: 670px">
+			<img src="demos/kindergarten/images/banner.jpg" alt="Banner Image" class="rounded-4">
+		</a>
+	</div> -->
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-0 col-lg-3">
+							<!-- <a href="index.html" class="standard-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a>
+							<a href="index.html" class="retina-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a> -->
+						</div>
+						<!-- #logo end -->
+
+						<div class="header-misc col-lg-3 justify-content-end">
+							<!-- WhatsApp Icon
+							============================================= -->
+				
+						</div>
+
+
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div>
+
+						<nav class="primary-menu">
+
+							<ul class="menu-container">
+								<li class="menu-item"><a class="menu-link" href="../../index.html"><div>Home</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="https://drive.google.com/file/d/1NJlOdgeZrMYcXHU12JGgAyKoVCSeZqSb/view?usp=sharing"><div>CV</div></a></li>
+								<!-- <li class="menu-item"><a class="menu-link" href="#"><div>Our Programs</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="#"><div>Contacts</div></a></li> -->
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+
+	
+
+		<!-- Hero
+		============================================= -->
+		<section id="slider" class="slider-element include-header" style="background-color: #c399fea6;">
+<!-- <div style="margin-top: 40vh;"> -->
+		<div class="position-absolute top-0 start-0 w-100 h-100" style="margin-top: -16vh;" ><img src="./haha.png"></div>
+		<div class="container" >
+			<div class="row align-items-center min-vh-100 pt-5 pb-4">
+				<div class="col-lg-6" style="margin-left: 2vw;margin-top: -10vh;">
+					<h6 class="mb-4 ls1 text-uppercase fw-normal"></h6>
+					<h1 class="display-3 fw-bolder">Asian American <br>Hate Crime Report</h1>
+					<h2 >Individual Project</h2>
+					<p class="mt-4 mb-5 fw-light">Python for data mining <br>d3.js for visualization </p>
+					<!-- <a href="#" class="btn text-white bg-color rounded-1 py-3 px-5 fw-medium">Enroll Now  <i class="icon-line-arrow-right position-relative" style="top: 2px"></i></a>
+					<a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" class="btn bg-white rounded-1 px-5 py-3 fw-medium ms-2" data-lightbox="iframe"><i class="icon-play-circle me-1" style="position: relative; top: 1px; margin-right: 5px;"></i> Watch Video</a> -->
+				</div>
+				<!-- <div class="col-lg-6 align-self-end mt-5 mt-lg-0">
+					<img src="./cover.png" alt="Hero Bg">
+				</div> -->
+			</div>
+		</div>
+
+
+			<!-- <div class="container" style="width:120%">
+				<div class="row align-items-center min-vh-100 pt-5 pb-4">
+					<center><div class="col-lg-6" style="margin-top: 88vh;">
+						<h6 class="mb-4 ls1 text-uppercase fw-normal"></h6>
+						<h1 class="display-3 fw-bolder" style="margin-top: -8vh;">Rare Friends</h1>
+						<h2 >Collaborate Project, I engaged in every process </h2>
+						<p></p>
+						<p style="opacity:0;">haha</p>
+					</div>
+				</center>
+			
+				</div>
+			</div> -->
+		<!-- </div> -->
+
+			<div class="shape-divider" data-shape="wave-2" data-position="bottom" data-height="80"></div>
+
+			<!-- <div class="position-relative d-none d-sm-block">
+				<img src="demos/kindergarten/images/fish2.png" alt="Fish" class="background-img pos-right float-anim" style="top: -120px">
+			</div> -->
+
+		</section>
+
+	<!-- //intro -->
+		<div class="rich-kid w-richtext">
+		<center><h1><strong>Brief: Contextual Report for Data Viz</strong></h1></center>
+<center><h3>How is Asian American Hate Crime reported differently and similarly</h3></center>
+	<p>This data visualization focuses on how Asian American Hate Crime (AAHC) is presented in various media sources. I chose three main categories: the police department, the mainstream media, and the local Chinese media as the media sources. Police department offers official and relatively credible information about the AAHC cases while the other two media offer different angles and opinions towards the same issue. In my project, I want to investigate their differences and similarities. There will be a geographic comparison between the NYPD and the Atlanta PD, the New York Times’ New York crime reports and Atlanta crime reports, as well as the World Journal’s New York crime reports and Atlanta crime reports. In this data story, I want to present how these three different groups convey different messages concerning AAHC topics to the public.</p>
+	<p>The purpose of this project is to invoke the audience to think deeply about what the “bias” each group has and who they speak for. Instead of accusing one group, I want my readers to dig into the topic that why under some circumstances the definition of AAHC varies. I also want to clarify that my focus is on how the three main categories describe AAHC in their posts. I read through all the posts from January to March, whenever the report contains the word “hate-crime”, I document its title, the sentences they used to describe hate crime, the victim and suspect’s gender, age, and race. </p>
+	<p>After discussing how I collect the data and my position, I want to start with the first section of my visualization that is what are the differences between the three groups. First, I want to introduce my chosen representatives of the three main categories. For the police, I chose NYPD and Atlanta PD’s official account on Facebook. Their difference is NYPD admitted six AAHC in March while Atlanta PD admitted none. Then I add a second group that is the mainstream media representative: the New York Times, which has one of the largest reader groups in the US. In this part, I will also make a separation of AAHC’s report in NY and AAHC’s report in Atlanta. Compared to NYPD’s AAHC data, before the Atlanta tragedy, in NY, there occurred one debating crime that on Feb.25, a 36-year-old Asian man was stabbed by a 23-year-old Yemen man. However, the suspect was not accused of hate crime because he didn’t say anything when he committed the crime. Compared with Atlanta PD, the New York Times post is sometimes titled with “Asian-American”, stressing the victim’s race. After presenting the police and mainstream media, I introduce a third group that is the World Journal Newspaper, the largest Chinese language newspaper in the US. Compared to New York Times, in the World Journal, I find 7 more detailed crimes concerning AAHC in New York and the World Journal tend to cite the suspects’ humiliating words in title. Concerning reports in Atlanta, almost all the World Journal reports titled “Asian Women'' stress the race and gender of the victim. In this part, I want to let my readers have an awareness about the sources I am using and how they are different from each other.</p>
+	<p>In addition to the differences between the three groups, the second section of my visualization will be the similarities between the three groups. Analyzing the suspect information released by the police: 7 of them belong to the minority groups, 3 are white, and one unknown. The trend is the same with the total cases covered by New York Times and World Journal. There are 4 people who are white and 10 belong to the minority, and 6 unknowns. Also, all of them are male except one female who only used verbal assault. Surprisingly, the minorities are fighting against each other. And for victims, most of them are over 50. Also, the three media all increase their attention on AAHC in March compared to January and February. In this section, I want to let the readers know that besides their differences, all three media reflect some common features about AAHC.</p>
+		<p>For website design, I will take Shirley Wu’s: An Interactive Visualization of Every Line in Hamilton as an inspiration. Each post will be visualized as a circle that when users hover their mouse on the circle, they can see the title, the victims and suspects’ information as well as the crime description. I want my readers to glimpse at the complexity of AAHC, which is beyond just a timely occurrence. Asians tend not to report crimes to the police and the system's transformation of viral hatred into racial hatred and interracial conflict also serves as possible causes for AAHC.</p>
+				<center><a href="https://clover0208.github.io/cdv-student/projects/enter%20copy/index.html" style="font-size:32px;color:rgb(247, 156, 38)">link to live website</a></center>
+
+		  </div>
+
+	
+
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+<a href="../../index.html">
+	<center><button type="button" class="slide">
+	<div>Back To Main Page</div>
+	<i class="icon-arrow-right"></i>
+  </button>
+</center>
+</a>
+
+
+	</div>
+
+
+	<div id="gotoTop" class="icon-hand-up rounded-circle"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/closer.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/hello.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+
+var animateButton = function(e) {
+
+e.preventDefault;
+//reset animation
+e.target.classList.remove('animate');
+
+e.target.classList.add('animate');
+setTimeout(function(){
+  e.target.classList.remove('animate');
+},800);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+// $(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+$(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+
+$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+
+
+
+		let carousels = jQuery('#kindergarten-carousel-img, #kindergarten-carousel-text');
+		jQuery('.carousel-control-prev').on( 'click', function(){
+			carousels.carousel('prev');
+		});
+		jQuery('.carousel-control-next').on( 'click', function(){
+			carousels.carousel('next');
+		});
+
+		jQuery(function() {
+			jQuery(".component-flatpickr").flatpickr({
+				enableTime: true,
+				dateFormat: "d/m/yy - H:i",
+			});
+		});
+
+
+		$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+	</script>
+
+</body>
+</html>

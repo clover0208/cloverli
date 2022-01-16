@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+	<link rel="shortcut icon" href="./300ppi/logo.png" type="image/x-icon"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+	<!-- Kindergarten Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/kindergarten/kindergarten.css" type="text/css" />
+	<!-- Kindergarten Custom Css -->
+	<link rel="stylesheet" href="demos/kindergarten/css/fonts.css" type="text/css" /> <!-- Kindergarten Custom Fonts -->
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=6953A8" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Imbalance-physical</title>
+
+	<style>
+		body {
+			background-color: black;
+			font-family: L-PTSans, Arial, sans-serif;
+			color: #cccccc;
+
+		}
+
+		p {
+			font: L-PTSans, Arial, sans-serif;
+			line-height: 1.6;
+			font-size: 20px;
+
+		}
+
+		.centerImage {
+			text-align: center;
+			display: block;
+		}
+	</style>
+	<style>
+		/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+} */
+
+		button {
+			margin: 50px;
+			font-family: inherit;
+		}
+
+		/* End of Page styling */
+
+		/* Simple button styling -- No animation */
+		.simple {
+			font-size: 20px;
+			font-weight: 200;
+			letter-spacing: 1px;
+			padding: 13px 50px 13px;
+			outline: 0;
+			border: 1px solid black;
+			cursor: pointer;
+			position: relative;
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		.simple::after {
+			content: "";
+			background-color: #dcbaff;
+			width: 100%;
+			z-index: -1;
+			position: absolute;
+			height: 100%;
+			top: 7px;
+			left: 7px;
+		}
+
+		/* End of Simple Button */
+
+		/* Fill button styling */
+		.fill {
+			font-size: 20px;
+			font-weight: 200;
+			letter-spacing: 1px;
+			padding: 13px 50px 13px;
+			outline: 0;
+			border: 1px solid black;
+			cursor: pointer;
+			position: relative;
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		.fill::after {
+			content: "";
+			background-color: #ffe54c;
+			width: 100%;
+			z-index: -1;
+			position: absolute;
+			height: 100%;
+			top: 7px;
+			left: 7px;
+			transition: 0.2s;
+		}
+
+		.fill:hover::after {
+			top: 0px;
+			left: 0px;
+		}
+
+		/* End of Fill Button  */
+
+		/* Slide button styling */
+		.slide {
+			font-size: 20px;
+			font-weight: 200;
+			letter-spacing: 1px;
+			padding: 13px 30px 13px;
+			outline: 0;
+			border: 1px solid #cccccc;
+			cursor: pointer;
+			position: relative;
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		.slide i {
+			opacity: 0;
+			font-size: 13px;
+			transition: 0.2s;
+			position: absolute;
+			right: 10px;
+			top: 21px;
+			transition: transform 1;
+		}
+
+		.slide div {
+			transition: transform 0.8s;
+		}
+
+		.slide:hover div {
+			transform: translateX(-6px);
+		}
+
+		.slide::after {
+			content: "";
+			background-color: #66f2d5;
+			width: 100%;
+			z-index: -1;
+			position: absolute;
+			height: 100%;
+			top: 7px;
+			left: 7px;
+		}
+
+		.slide:hover i {
+			opacity: 1;
+			transform: translateX(-6px);
+		}
+
+		/* FONT LEGIBILITY */
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		a,
+		li,
+		span {
+			font-variant-numeric: oldstyle-nums;
+			font-feature-settings: "onum";
+		}
+
+		* {
+			text-rendering: optimizeLegibility;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		/* LINK HOVER */
+		.marker,
+		.w-richtext a,
+		.w-richtext p a {
+			-webkit-transition: all .15s ease-out;
+			-moz-transition: all .15s ease-out;
+			-ms-transition: all .15s ease-out;
+			-o-transition: all .15s ease-out;
+			transition: all .15s ease-out;
+			text-decoration: none;
+			background-image: -webkit-linear-gradient(transparent 50%, #fcf113 0%);
+			background-image: -moz-linear-gradient(transparent 50%, #fcf113 0%);
+			background-image: -o-linear-gradient(transparent 50%, #fcf113 0%);
+			background-image: linear-gradient(transparent 50%, #fcf113 0%);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			border-bottom: 1px solid #cccccc;
+		}
+
+		.marker:hover,
+		.active-link,
+		.w-richtext a:hover,
+		.w-richtext p a:hover {
+			background-size: 100% 100%;
+			border-bottom: 1px solid #fcf113;
+		}
+
+		@media screen and (min-width:1440px) {
+			img.image {
+				max-width: 1440px;
+			}
+		}
+
+		/* Hide Nav when Scrolling */
+		#nav.nav-up {
+			top: -70px;
+		}
+
+		@media screen and (max-width:480px) {
+			#nav.nav-up {
+				bottom: -70px;
+			}
+
+			.w-webflow-badge {
+				top: 12px !important;
+				bottom: auto !important;
+			}
+		}
+
+		/* Making sure navigation stays behind lightbox overlay */
+		.w-lightbox-backdrop {
+			z-index: 9999;
+		}
+
+		.noscroll {
+			overflow: hidden;
+		}
+
+		#mobile-nav.open .navbar:first-child {
+			-webkit-transform: translateY(9px) rotate(225deg);
+			transform: translateY(9px) rotate(225deg);
+		}
+
+		#mobile-nav.open .navbar:nth-child(2) {
+			-webkit-transform: translateX(50px);
+			transform: translateX(50px);
+			opacity: 0;
+		}
+
+		#mobile-nav.open .navbar:last-child {
+			-webkit-transform: translateY(-9px) rotate(-45deg);
+			transform: translateY(-9px) rotate(-45deg);
+		}
+	</style>
+	<style>
+		.w-slider-nav {
+			text-align: left;
+		}
+
+		.w-slider-dot.w-active,
+		.w-slider-dot.w-active:hover {
+			background-color: #1E262B;
+		}
+
+		.w-slider-dot {
+			background-color: transparent;
+			width: 16px;
+			height: 16px;
+			border: 2px solid #1E262B;
+		}
+
+		.w-slider-dot:hover {
+			background-color: #D8D8D8;
+		}
+
+		ul {
+			justify-content: center;
+			display: flex;
+		}
+	</style>
+
+
+
+</head>
+
+<body class="stretched">
+
+	<!-- <div class="modal-on-load" data-target="#myModal1"></div> -->
+
+	<!-- Modal -->
+	<!-- <div class="modal1 mfp-hide subscribe-widget" id="myModal1">
+		<a href="#" class="d-flex mx-auto h-scale-sm all-ts" style="max-width: 670px">
+			<img src="demos/kindergarten/images/banner.jpg" alt="Banner Image" class="rounded-4">
+		</a>
+	</div> -->
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header">
+			<nav class="primary-menu">
+
+				<ul class="menu-container">
+					<li class="menu-item"><a class="menu-link" href="../../index.html">
+							<div style="color: #cccccc;">Home</div>
+						</a></li>
+					<li class="menu-item"><a class="menu-link" href="https://drive.google.com/file/d/1NJlOdgeZrMYcXHU12JGgAyKoVCSeZqSb/view?usp=sharing">
+							<div style="color: #cccccc;">CV</div>
+						</a></li>
+					<!-- <li class="menu-item"><a class="menu-link" href="#">
+							<div style="color: #cccccc;">Our Programs</div>
+						</a></li>
+					<li class="menu-item"><a class="menu-link" href="#">
+							<div style="color: #cccccc;">Contacts</div>
+						</a></li> -->
+				</ul>
+
+			</nav>
+
+			<div id="header-wrap" style="opacity: 0;">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-0 col-lg-3">
+							<!-- <a href="index.html" class="standard-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a>
+							<a href="index.html" class="retina-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a> -->
+						</div>
+						<!-- #logo end -->
+
+						<div class="header-misc col-lg-3 justify-content-end">
+							<!-- WhatsApp Icon
+							============================================= -->
+
+						</div>
+
+
+						<!-- <div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div> -->
+
+
+						<!-- #primary-menu end -->
+
+					</div>
+				</div>
+			</div>
+			<!-- <div class="header-wrap-clone"></div> -->
+		</header><!-- #header end -->
+
+
+
+		<!-- Hero
+		============================================= -->
+		<section id="slider" class="slider-element include-header" style="background-color: #ebeefb;">
+
+			<div class="position-absolute top-0 start-0 w-100 h-100"
+				style="background: transparent url('./300ppi/资源\ 30300x.png') center center / cover; opacity: 1"></div>
+
+			<div class="container">
+				<div class="row align-items-center min-vh-100 pt-5 pb-4">
+					<div class="col-lg-6" style="margin-left: 2vw;margin-top: -10vh;">
+						<h6 class="mb-4 ls1 text-uppercase fw-normal"></h6>
+
+						<p class="mt-4 mb-5 fw-light">The purpose of my motion-sensing game <br>design is to put the
+							players in an environment <br>where they have to rely on and help others,<br> so that they
+							can feel the efficiency and fun <br>of teamwork, and feel the beautiful experience <br>of
+							mutual trust and interdependence.
+							<img src="300ppi/资源 31300x.png" style="width:60%">
+					</div>
+					<!-- <div class="col-lg-6 align-self-end mt-5 mt-lg-0">
+						<img src="./cover.png" alt="Hero Bg">
+					</div> -->
+				</div>
+			</div>
+
+			<div class="shape-divider" data-shape="wave-2" data-position="bottom" data-height="80"></div>
+
+			<!-- <div class="position-relative d-none d-sm-block">
+				<img src="demos/kindergarten/images/fish2.png" alt="Fish" class="background-img pos-right float-anim" style="top: -120px">
+			</div> -->
+
+		</section>
+
+		<!-- //intro -->
+		<div class="rich-kid w-richtext">
+			<p>Teamwork is the main way college students complete many projects, and the same method is widely used in
+				various commercial companies. It's certainly a way of working that has a lot of advantages. However, one
+				of my surveys shows that a significant number of college students have a negative experience of
+				teamwork.<br></p>
+
+
+		</div>
+		<!-- style="color:#4096e2;" -->
+		<div class="rich-kid w-richtext">
+			<center>
+				<h1><strong>Interviews Summary</strong></h1>
+			</center>
+			<p>The illustrations portray how people can make a good teamwork. A good teamwork usually consists of the
+				following process:
+				<br><strong>Brainstorming, Discussion, Collaboration, Co-working (development) and
+					Presentation.</strong>
+			</p>
+			<img src="300ppi/资源 31 (2)300x.png">
+		</div>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Problem: Interview Result Visualization</strong></h1>
+			</center>
+			<p>However, through out my observation and own experience, teamwork doesn’t always make people happy.I
+				interviewed seven students and they all mentioned at least one bad team work experience. I asked them to
+				list some key words when they think of previous teamwork experience and found that <strong>the negative
+					words greatly are greatly larger than the positive words.</strong>
+				This is a visualization of the interview result made with <strong>d3.js.</strong></p>
+
+		</div>
+		<center><img src="300ppi/资源 33400x.png" style="width:56%;"></center>
+
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Problem Summary</strong></h1>
+			</center>
+			<p>From the interview result, we can see that bad teamwork experience can bring many negative feelings to one people. These are some <strong>illustration of the major problems.</strong></p>
+			<img src="300ppi/资源 34300x.png" >
+		</div>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Inspiration/references</strong></h1>
+			</center>
+			<p>As a sports lover, this project idea was inspired from the teamwork I observed when athlets cooperate so well when they performed. I noticed they paid strong effort in their movement cooperation, so I thought maybe I can also design a game utilizing the body balance to help people enhance how to make a good teamwork.</p>
+			
+		</div>
+		<center><img src="300ppi/资源 35300x.png" style="width:80%;"></center>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Dance Movement Therapy</strong></h1>
+			</center>
+			<p>Dance/movement therapy, usually referred to simply as dance therapy or DMT, is a type of therapy that uses movement to help individuals achieve emotional, cognitive, physical, and social integration. Since these movement usually conducted in team base, I was inspired that maybe building an interaction utilizing the balance of movement can contribute to helping people understand how to make a good teamwork.</p>
+			
+		</div>
+		<center><img src="300ppi/资源 39300x.png" style="width:80%;"></center>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Movement/Posture Design</strong></h1>
+			</center>
+			<p>Base on my research on the poses of athletics and DMT, I design the movement that using the bend level of knee to control the spaceship moving left and right, and the height of knee to control the up and down of the spaceship.  </p>
+			
+		</div>
+		<center><img src="300ppi/资源 40300x.png" style="width:80%;margin-left: 8vw;"></center>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Wearing Set-up Design</strong></h1>
+			</center>
+			<p>The flex sensor and the distance sensor is tied on the equipment and user can wear it on their knee.  </p>
+			<p>To avoid the trouser influence, I design a to make the distance sensor away. </p>
+			<img src="300ppi/资源 41300x.png" >
+		</div>
+		
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Map Design</strong></h1>
+			</center>
+
+			
+		</div>
+		<center><img src="300ppi/资源 42300x.png" style="width:80%;"></center>
+
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>Process Development</strong></h1>
+			</center>
+			<p>Using soldering, I connnect the cable and set up the wearing equipment.</p>
+
+			
+		</div>
+		<center><img src="300ppi/资源 43400x.png" style="width:80%;"></center>
+		<center><img src="300ppi/资源 44400x.png" style="width:70%;margin-top: 8vh;"></center>
+		<center><img src="300ppi/资源 45400x.png" style="width:70%;margin-top: 8vh;"></center>
+		<center><img src="300ppi/资源 46400x.png" style="width:70%;margin-top: 8vh;"></center>
+		<center><img src="300ppi/资源 47400x.png" style="width:90%;margin-top: 8vh;"></center>
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>	Coding with Processing and Connecting Arduino</strong></h1>
+			</center>
+
+
+			
+		</div>
+		<center><img src="300ppi/资源 48400x.png" style="width:60%;margin-top: 8vh;"></center>
+	
+		<div class="rich-kid w-richtext" style="margin-top: 16vh;">
+			<center>
+				<h1><strong>	User Testing for Improvement</strong></h1>
+			</center>
+
+
+			
+		</div>
+		<center><img src="300ppi/资源 49400x.png" style="width:90%;margin-top: 8vh;"></center>
+		
+		
+
+<a href="../../index.html">
+		<center><button type="button" class="slide" style="color:#cccccc;margin-top: 8vh;">
+				<divs style="color:#cccccc;">Back To Main Page
+	</div>
+	<i class="icon-arrow-right" style="border-color:#cccccc;"></i>
+	</button>
+	</center>
+</a>
+
+
+	</div>
+
+
+	<div id="gotoTop" class="icon-hand-up rounded-circle"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/closer.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/hello.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+
+		var animateButton = function (e) {
+
+			e.preventDefault;
+			//reset animation
+			e.target.classList.remove('animate');
+
+			e.target.classList.add('animate');
+			setTimeout(function () {
+				e.target.classList.remove('animate');
+			}, 800);
+		};
+
+		var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+		for (var i = 0; i < bubblyButtons.length; i++) {
+			bubblyButtons[i].addEventListener('click', animateButton, false);
+		}
+		// $(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+		$(".col-lg-4 mt-5 mt-lg-0").css('display', null);
+
+		$(document).ready(function () {
+			// Hide Webflow Badge
+			$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+			$('.wf').hide();
+
+			if ($(window).width() > 479) {
+				// Hide Header on scroll down
+				var didScroll;
+				var lastScrollTop = 0;
+				var delta = 5;
+				var navbarHeight = $('#nav').outerHeight();
+				$(window).scroll(function (event) {
+					didScroll = true;
+				});
+				setInterval(function () {
+					if (didScroll) {
+						hasScrolled();
+						didScroll = false;
+					}
+				}, 250);
+				function hasScrolled() {
+					var st = $(this).scrollTop();
+					// Make sure they scroll more than delta
+					if (Math.abs(lastScrollTop - st) <= delta)
+						return;
+					// If they scrolled down and are past the navbar, add class .nav-up.
+					if (st > lastScrollTop && st > navbarHeight) {
+						// Scroll Down
+						$('#nav').addClass('nav-up');
+					} else {
+						// Scroll Up
+						if (st + $(window).height() < $(document).height()) {
+							$('#nav').removeClass('nav-up');
+						}
+					}
+					lastScrollTop = st;
+				}
+			}
+			//mobile nav open close
+			if ($(window).width() < 480) {
+				$('#mobile-nav, .nav-link, .mobopen').on('click', function () {
+					//$('.logo-link').toggleClass("mobopen");
+					//$('#menu').toggleClass("flex");
+					$('#mobile-nav').toggleClass("open");
+					$('body').toggleClass("noscroll");
+				});
+			}
+		});
+
+
+
+		let carousels = jQuery('#kindergarten-carousel-img, #kindergarten-carousel-text');
+		jQuery('.carousel-control-prev').on('click', function () {
+			carousels.carousel('prev');
+		});
+		jQuery('.carousel-control-next').on('click', function () {
+			carousels.carousel('next');
+		});
+
+		jQuery(function () {
+			jQuery(".component-flatpickr").flatpickr({
+				enableTime: true,
+				dateFormat: "d/m/yy - H:i",
+			});
+		});
+
+
+		$(document).ready(function () {
+			// Hide Webflow Badge
+			$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+			$('.wf').hide();
+
+			if ($(window).width() > 479) {
+				// Hide Header on scroll down
+				var didScroll;
+				var lastScrollTop = 0;
+				var delta = 5;
+				var navbarHeight = $('#nav').outerHeight();
+				$(window).scroll(function (event) {
+					didScroll = true;
+				});
+				setInterval(function () {
+					if (didScroll) {
+						hasScrolled();
+						didScroll = false;
+					}
+				}, 250);
+				function hasScrolled() {
+					var st = $(this).scrollTop();
+					// Make sure they scroll more than delta
+					if (Math.abs(lastScrollTop - st) <= delta)
+						return;
+					// If they scrolled down and are past the navbar, add class .nav-up.
+					if (st > lastScrollTop && st > navbarHeight) {
+						// Scroll Down
+						$('#nav').addClass('nav-up');
+					} else {
+						// Scroll Up
+						if (st + $(window).height() < $(document).height()) {
+							$('#nav').removeClass('nav-up');
+						}
+					}
+					lastScrollTop = st;
+				}
+			}
+			//mobile nav open close
+			if ($(window).width() < 480) {
+				$('#mobile-nav, .nav-link, .mobopen').on('click', function () {
+					//$('.logo-link').toggleClass("mobopen");
+					//$('#menu').toggleClass("flex");
+					$('#mobile-nav').toggleClass("open");
+					$('body').toggleClass("noscroll");
+				});
+			}
+		});
+	</script>
+
+</body>
+
+</html>
