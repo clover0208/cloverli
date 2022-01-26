@@ -378,7 +378,7 @@ html {
     padding-top: 52px;
     padding-bottom: 160px;
     background-color: #c399fea6;
-    background-image: url(../images/shape-top.png), url(../images/shape-bottom.png);
+    background-image: url(./images/shape-top.png), url(./images/shape-bottom.png);
     background-position: 50% 0px, 50% 100%;
     background-position-x: 50%, 50%;
     background-position-y: 0px, 100%;
