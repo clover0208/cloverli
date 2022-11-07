@@ -7,16 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chenglin Li Portfolio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" crossorigin="anonymous"></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <script>
-        const sharp = require('sharp');
-        const fs = require('fs');
-        const directory = './images';
-        
-        fs.readdirSync(directory).forEach(file => {
-          sharp(`${directory}/${file}`)
-            .resize(200, 100) // width, height
-            .toFile(`${directory}/${file}-small.jpg`);
-          });
+
     </script>
 
 <style>
@@ -166,7 +159,7 @@
       <div id="section1" style="height: 50vh;padding: 1vh 4.5vw 2vh 4.5vw; display: flex;flex-wrap: none;">
         <a href="./UX/closer-ux/Closer.html">
          <div class="container">
-          <img src="assets/Behance-closer-1.jpg" style="object-fit: cover;width: 45vw; height: 50vh;">
+          <img src="assets/SVG/资源 1100x.svg" style="object-fit: cover;width: 45vw; height: 50vh;">
             <div class="overlay">
               <div class="text" >
                 <h1 style="font-size: 30px; line-height: 0.2;">Closer</h1>
@@ -177,7 +170,7 @@
         </a>
         <a href="./UX/Rare Decease/Rare Desease.html">
           <div class="container" style="margin-left: 1vw;">
-           <img src="assets/Rare.png" style="object-fit: cover;width: 45vw; height: 50vh;">
+           <img src="assets/SVG/资源 2100x.svg" style="object-fit: cover;width: 45vw; height: 50vh;">
              <div class="overlay">
                <div class="text" >
                  <h1 style="font-size: 30px; line-height: 0.2;">Rare Desease</h1>
@@ -191,7 +184,7 @@
       <div id="section1" style="height: 50vh;padding: 0vh 4.5vw 2vh 4.5vw; display: flex;flex-wrap: none;">
         <a href="./physical/Imbalance/Imbalance.html">
          <div class="container">
-          <img src="assets/cover2.png" style="object-fit: cover;width: 45vw; height: 50vh;">
+          <img src="assets/SVG/资源 3100x.svg" style="object-fit: cover;width: 45vw; height: 50vh;">
             <div class="overlay">
               <div class="text" >
                 <h1 style="font-size: 30px; line-height: 0.2;">Imbalance</h1>
@@ -202,7 +195,7 @@
         </a>
         <a href="./physical/Eye/eye.html">
           <div class="container" style="margin-left: 1vw;">
-           <img src="assets/资源 14300x.png" style="object-fit: cover;width: 45vw; height: 50vh;">
+           <img src="assets/SVG/资源 4_1100x.svg" style="object-fit: cover;width: 45vw; height: 50vh;">
              <div class="overlay">
                <div class="text" >
                  <h1 style="font-size: 30px; line-height: 0.2;">Eye</h1>
