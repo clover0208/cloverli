@@ -10,10 +10,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
 	<link rel="stylesheet" href="css/dark.css" type="text/css" />
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
 
 	<link rel="stylesheet" href="css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -244,7 +246,85 @@ input[type="range"]::-moz-range-thumb {
 
 
 
+.portfolio-single-content h2 {
+		font-size: 1.75rem;
+	}
+	.portfolio-meta {
+		font-size: 1rem;
+	}
+	.portfolio-meta li {
+		margin-bottom: 1rem;
+	}
+	/* Swiper */
+	.slider-top .swiper-slide {
+		width: 100%;
+		height: 100%;
+		min-height: 700px;
+		background-size: cover;
+		background-position: center center;
+	}
 
+	@media (min-width: 992px) {
+		.slider-top .swiper-slide {
+			width: 85%;
+			min-height: 750px;
+		}
+	}
+	.slider-thumbs {
+		padding: 10px 0;
+	}
+	.slider-thumbs .swiper-slide {
+		width: 23%;
+		height: 100%;
+		opacity: 0.3;
+	}
+	.slider-thumbs .swiper-slide-active {
+		opacity: 1;
+	}
+
+
+	.button-3d {
+  position: relative;
+  display: inline-block;
+  margin: 100px auto;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 20px 80px;
+  transform: perspective(500px);
+  cursor: pointer;
+  color: transparent;
+}
+.button-3d:before, .button-3d:after {
+  content: attr(text);
+  display: block;
+  width: 100%;
+  height: calc(100% - 20px);
+  border: 5px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: -5px;
+  padding: 5px 0 0;
+  transition: 0.4s all;
+  color: rgb(0, 0, 0);
+}
+.button-3d:before {
+  transform: perspective(500px) rotateX(0) translateY(0);
+  transform-origin: 50% 0;
+}
+.button-3d:after {
+  transform: perspective(500px) rotateX(-90deg) translateY(100%);
+  transform-origin: 50% 100%;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.button-3d:hover:before {
+  transform: perspective(500px) rotateX(90deg) translateY(-100%);
+}
+.button-3d:hover:after {
+  transform: perspective(500px) rotateX(0) translateY(0);
+}
 
 
 </style>
@@ -274,9 +354,9 @@ input[type="range"]::-moz-range-thumb {
 			<div class="child" style="position:relative; left:4vw;">Contact</div>
 			<div class="child" style="position:absolute; right:8vw;">Resume</div>
 		</div> -->
-		<center>
+		<!-- <center>
 			<img src="./Screen Shot 2022-10-20 at 8-13-04 PM_9.gif"  style="position: relative; top: -60px; z-index: -1;">
-		</center>
+		</center> -->
 
 		<!-- Page Title
 		============================================= -->
@@ -326,6 +406,40 @@ input[type="range"]::-moz-range-thumb {
 					<center>
 						<img src="./300ppi/User Interview _ Design Thinking (Community) (2) (1).png" style="position: relative; top:-4vh; width:90%">
 					</center>
+
+					<div id="wrapper" >
+
+						<section id="slider" class="slider-element swiper_wrapper customjs h-auto" >
+							<div class="swiper-container swiper-parent slider-top" style="position:relative; top:0vh;">
+								<div class="swiper-wrapper h-auto" width="100vh;">
+									<div class="swiper-slide" style="background-image: url('./300ppi/Layer\ 1.png');"></div>
+									<div class="swiper-slide" style="background-image: url('./300ppi/Interview2.png')"></div>
+									<div class="swiper-slide" style="background-image: url('./300ppi/interview3.png')"></div>
+									<div class="swiper-slide" style="background-image: url('./300ppi/usermap1.png')"></div>
+									<div class="swiper-slide" style="background-image: url('./300ppi/map.png')"></div>
+									<div class="swiper-slide" style="background-image: url('./300ppi/map2.png')"></div>
+									<div class="swiper-slide" style="background-image: url('./300ppi/map3.png')"></div>
+				
+								</div>
+								<!-- Add Arrows -->
+								<div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
+								<div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
+							</div>
+							<div class="swiper-container slider-thumbs">
+								<div class="swiper-wrapper h-auto">
+									<div class="swiper-slide"><img src="./Screen Shot 2022-11-20 at 6.34.29 PM.png" alt="Image"></div>
+									<div class="swiper-slide"><img src="./Screen Shot 2022-11-20 at 6.34.29 PM.png" alt="Image"></div>
+									<div class="swiper-slide"><img src="./Screen Shot 2022-11-20 at 6.34.29 PM.png" alt="Image"></div>
+									<div class="swiper-slide"><img src="./Screen Shot 2022-11-20 at 6.34.29 PM.png" alt="Image"></div>
+									<div class="swiper-slide"><img src="./Screen Shot 2022-11-20 at 6.34.29 PM.png" alt="Image"></div>
+									<div class="swiper-slide"><img src="./Screen Shot 2022-11-20 at 6.34.29 PM.png" alt="Image"></div>
+									<div class="swiper-slide"><img src="./Screen Shot 2022-11-20 at 6.34.29 PM.png" alt="Image"></div>
+				
+								</div>
+							</div>
+						</section>
+						</div>
+				
 				
 					<center>
 						<img src="./300ppi/SVG/SVG/资源 13.svg" style="position:relative;top:10vh;width:81%">
@@ -341,8 +455,11 @@ input[type="range"]::-moz-range-thumb {
 					</center>
 					<center>
 						<img src="./300ppi/SVG/SVG/资源 15.svg" style="position:relative;top:35vh;width:81%">
-						<img src="./Pre-comp 1 5.24.00 PM.gif" style="position:relative;top:35vh;width:70%">
+
 					</center>
+					<center>
+					<img src="./Pre-comp 1 5.24.00 PM.gif" style="position:relative;top:35vh;width:70%">
+				</center>
 					<center>
 						<img src="./300ppi/SVG/SVG/资源 16_1.svg" style="position:relative;top:45vh;width:81%">
 					</center>
@@ -738,6 +855,14 @@ input[type="range"]::-moz-range-thumb {
 		<!-- #footer end -->
 
 	</div><!-- #wrapper end -->
+	<center>
+	<a class="button-3d" text="Next" href="../physical/Eye/eye.html" style=" text-align:center; position:relative; top:-10vh;">
+		<center>
+		Next
+	</center>
+	  </a>
+
+	</center>
 
 	<!-- Go To Top
 	============================================= -->
@@ -760,6 +885,32 @@ input[type="range"]::-moz-range-thumb {
 		});
 		jQuery(window).on( 'load', function() {
 			jQuery('.block-hero-12 #hotspot-img-onhover').hotSpot();
+		});
+
+		jQuery(window).on( 'pluginSwiperReady', function(){
+			var sliderTop = new Swiper('.slider-top', {
+				spaceBetween: 10,
+				slidesPerView: 'auto',
+				centeredSlides: true,
+				navigation: {
+					nextEl: '.slider-arrow-right',
+					prevEl: '.slider-arrow-left',
+				},
+				loop: true,
+				loopedSlides: 4
+			});
+			var sliderThumbs = new Swiper('.slider-thumbs', {
+				spaceBetween: 10,
+				centeredSlides: true,
+				slidesPerView: 'auto',
+				touchRatio: 0.2,
+				slideToClickedSlide: true,
+					loop: true,
+					loopedSlides: 4
+			});
+
+			sliderTop.controller.control = sliderThumbs;
+			sliderThumbs.controller.control = sliderTop;
 		});
 	</script>
 
