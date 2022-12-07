@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chenglin Li Portfolio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" crossorigin="anonymous"></script>
-    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <script>
 
     </script>
@@ -102,7 +101,7 @@
     .container{
       position: relative;
       width: 45w;
-      height: 50vh;
+      height: 56vh;
     }
     .overlay {
       position: absolute;
@@ -132,32 +131,55 @@
       text-align: center;
     }
 
-
+#introbox{
+  width: 100%;
+  height: 58vh;
+  overflow: hidden;
+  background-color: white;
+  margin: -5vh;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+.f {
+  position: fixed;
+  bottom: 0px;
+  right: 15px;
+  font-family: 'Arial';
+  font-size: 0.7rem;
+  color: #070707;
+  text-align: center;
+}
+.f a {
+  font-size: 0.8rem;
+  color: #4062bb;
+}
 
 </style>
 </head>
 <body>
-    <div class="box">
+    <!-- <div class="box">
         <div class="inner">
           <span>Hi I am Clover</span>
         </div>
         <div class="inner">
           <span>Hi I am Clover</span>
         </div>
-      </div>
-
-<div style="padding: 13vh 15vw 5vh 15vw; text-align: center;">
+      </div> -->
+<div id="introbox">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+</div>
+               <!-- | &#160<a href="#section5" id="link">music interface</a> -->
+<!-- <div style="padding: 13vh 15vw 5vh 15vw; text-align: center;">
     <p style="font-size: 18px; font-weight: 100;font-family: sans-serif;">
               &#160 | &#160<a href="./Rare-desease/about-me.html" id="link">Web Design and Development</a> 
                | &#160<a href="./iFlyPlus/about-me.html" id="link">App Design</a> 
                | &#160<a href="./car.html" id="link">Auto Car Interface</a>
                | &#160<a href="./UX/closer-ux/Closer.html" id="link">Wearable Watch Design</a>
                &#160 | &#160
-               <!-- | &#160<a href="#section5" id="link">music interface</a> -->
 </p>
-</div>
+</div> -->
 
-<div style="position:relative;top:-2vh;">
+<div style="position:relative;top:16vh;">
   
       <div id="section1" style="height: 50vh;padding: 0vh 4.5vw 2vh 4.5vw; display: flex;flex-wrap: none;">
         <!-- <a href="./UX/closer-ux/Closer.html"> -->
@@ -165,7 +187,7 @@
             <a href="./Rare-desease/about-me.html">
          <div class="container">
           <!-- <img src="assets/SVG/资源 1100x.svg" style="object-fit: cover;width: 45vw; height: 50vh;"> -->
-          <img src="./assets/3x/资源 135@3x-20.jpg" style="object-fit: cover;width: 45vw; height: 50vh;">
+          <img src="./assets/3x/资源 135@3x-20.jpg" style="object-fit: cover;width: 45vw; height: 56vh;">
           <div class="overlay">
             <div class="text" >
              <h1 style="font-size: 30px; font-weight: 100;line-height: 0.2;font-family: sans-serif;">Pansies</h1>
@@ -179,7 +201,7 @@
             <a href="./iFlyPlus/about-me.html">
           <div class="container" style="margin-left: 1vw;">
            <!-- <img src="assets/SVG/资源 2100x.svg" style="object-fit: cover;width: 45vw; height: 50vh;"> -->
-           <img src="./assets/Mockup2 8.23.50 PM.png" style="object-fit: cover;width: 45vw; height: 50vh;">
+           <img src="./assets/Mockup2 8.23.50 PM.png" style="object-fit: cover;width: 45vw; height: 56vh;">
            <div class="overlay">
             <div class="text" >
               <h1 style="font-size: 30px; font-weight: 100;line-height: 0.2;font-family: sans-serif;">iFlyPlus</h1>
@@ -190,11 +212,11 @@
          </a>
       </div> 
 
-      <div id="section1" style="height: 50vh;padding: 0vh 4.5vw 2vh 4.5vw; display: flex;flex-wrap: none;">
+      <div id="section1" style="height: 50vh;padding: 8vh 4.5vw 2vh 4.5vw; display: flex;flex-wrap: none;">
         <!-- <a href="./physical/Imbalance/Imbalance.html"> -->
           <a href="./car.html">
          <div class="container">
-          <img src="assets/资源 1-20.jpg" style="object-fit: cover;width: 45vw; height: 50vh;">
+          <img src="assets/资源 1-20.jpg" style="object-fit: cover;width: 45vw; height: 56vh;">
             <div class="overlay">
               <div class="text" >
                 <h1 style="font-size: 30px; line-height: 0.2;font-weight: 100;font-family: sans-serif;">HMI Design</h1>
@@ -205,7 +227,7 @@
         </a>
         <a href="./UX/closer-ux/Closer.html">
           <div class="container" style="margin-left: 1vw;">
-           <img src="assets/SVG/资源 1100x.svg" style="object-fit: cover;width: 45vw; height: 50vh;">
+           <img src="assets/SVG/资源 1100x.svg" style="object-fit: cover;width: 45vw; height: 56vh;">
              <div class="overlay">
                <div class="text" >
                  <h1 style="font-size: 30px; font-weight: 100;line-height: 0.2;font-family: sans-serif;">Closer</h1>
@@ -307,4 +329,9 @@
           <p style="padding-top: 200px;font-size: 20px;">created@2022</p>
         </div>
 </body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js'></script>
+<script  src="./scriptthree.js"></script>
+<script  src="./scripttwo.js"></script>
+<script  src="./scriptone.js"></script>
 </html>
