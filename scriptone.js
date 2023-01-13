@@ -177,7 +177,7 @@ const {
     constructor(text, font, { size = 0.3, letterSpacing = 0.03, color = '#000000' } = {}) {
       super();
   
-      this.basePosition = 0;
+      this.basePosition = -1;
       this.size = size;
   
       const letters = Array.from(text);
@@ -226,9 +226,9 @@ const {
   const fontAsset = fontLoader.parse(fontFile);
   
   setTimeout(() => {
-    const text = new AnimatedText('Hi Clover here', fontAsset);
+    const text = new AnimatedText('Clover is a designer,researcher,coder', fontAsset);
     text.position.x -= text.basePosition * 0.39;
-    text.position.y -= -1.2;
+    text.position.y -= -1.1;
     webgl.add(text);
     text.show();
   }, 1000);
