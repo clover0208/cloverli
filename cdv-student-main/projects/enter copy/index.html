@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Asian American Hate Crime Report: January to April</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3-axis.v1.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  <script src="https://d3js.org/d3-array.v2.min.js"></script>
+  <script src="https://unpkg.com/enter-view"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div class="peopleimages">
+    <img id="imgone" src="./200415-asian-american-commission-al-1343_8f1a6135094b15b15e9d3b7c75142edd.fit-2000w.jpg">
+  </div>
+
+  <div class="title">
+    <p id="bigtitle"> Asian American Hate Crime Reported</p>
+    <p id="secondtitle">an analysis focusing on NYC as the example
+    </p>
+    <p id="intro">
+      This analysis utilizes data from three main sources:
+      the NYPD, the New York Times,
+      and the World
+      Journal between
+      January and
+        March 2021.33 attacks
+      were reported by
+      the three sources in total.
+    </p>
+
+  </div>
+  
+
+  <div class="generalViz">
+    <div id="generalcontainer">
+      <p id="Titleheader"><strong>Let's start with title</strong><br>In 2021, there are 64 articles and
+        <br>announcements concerning
+        <br>hate crimes against Asian Americans <br>in New York City
+        reported by<br>
+      <p></p>
+      <p id="NYPD"><strong>the NYPD</strong>, who is the
+        <br>department in charge of crime.
+      </p>
+      <p id="NewYorkTimes"><strong>the New York Times</strong>, who
+        <br>is main stream media in NY.
+      </p>
+      <p id="theWorldJournal"><strong>the World Journal</strong>, who
+        <br>is the largest Chinese
+        <br>language newspaper in US.
+      </p>
+      </p>
+    </div>
+  </div>
+
+
+  <div class="partOne section sectionWithStick">
+    <div id="vizContainer1" class="sticky fullscreen">
+
+    </div>
+    <div class="scrollingContent">
+      <div class="fullscreen stepOne">
+        <p id="introdensity">
+          <strong>When it happened,What Crime was reported</strong>
+          <br>As shown on the right there's
+          <br>an increase in March 16 probably
+          <br>because the shooting in Atanla.
+          <br>In the next part you will see
+          <br>how the three group report
+          <br>crimes differently.
+          <br>Each name represent one
+          <br>specific crime, above the name
+          <br>is the related reports,
+          <br>from the three sources
+        </p>
+      </div>
+      <div class="fullscreen stepTwo">
+        <p id="suspectrace">
+          <br><strong>Suspects Information</strong>
+          <br>Among the 64 reports
+          <p id="NYPDtwo">we see both <strong>the NYPD</strong> and</p>
+          <p id="NYTtwo"><strong>the New York Times</strong></p>
+          <p id="Worldtwo">reported huge percentage  
+          <br>of minority suspect
+          <br>while <strong>the World Journal</strong>
+          <br>reported a larger percentage
+          <br>of light-skin suspects
+          <br>compared to the 
+          <br>previous groups.</p>
+          <p id="whatsuspecttell">
+            <br><strong>What gender say</strong>
+            <br>Among the 64 reports
+            <br>only one female
+            <br>attacker were 
+            <br>reported. This is
+            <br>consistent with
+            <br>statistic that men 
+            <br>commit more hate crime
+          </p>
+        </p>
+      </div>
+      <div class="fullscreen stepThree">
+      </div>
+      <div class="fullscreen stepFour">
+        <p id="whatvictimttell">
+          <br><strong>Victim Information</strong>
+         <br>Among the 64 reports
+          <br>most victims are
+          <br>either people age above
+          <br>50 or they are female.
+          <br>Also analysis about
+          <br>the female victims 
+          <br>appear frequently probably 
+          <br>because the Atlanta shooting 
+          <br>crime kill 6 female.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="cover">
+    <div class="book">
+      <label for="page-1" class="book__page book__page--1">
+        <img src="./I-Still-Believe-in-Our-City-6.jpeg">
+      </label>
+
+      <label for="page-2" class="book__page book__page--4">
+        <div class="page__content">
+          <h1 class="page__content-title">Monologue:Interests and Limitations</h1>
+          <div class="page__content-blockquote">
+            <p class="page__content-blockquote-text">I started my interet when I saw videos of granny Xie in San
+              Francisco being attacked. As a student who hope to study in New York one day, I
+              investigate the reports about Asian American Hate Crime to know what's happening there
+            </p>
+            <p class="page__content-blockquote-text">What trigers my interets about suspect's race is in one police
+              announcement: Watch as @NYPDShea updates the media on new Asian
+              hate crime initiatives(19:31). I was shocked by one picture that six suspects all belongs to
+              the minority group.
+            </p>
+            <p class="page__content-blockquote-text">Since I already began my research, I recognized some of the six and
+              I knew that, some light-skin also did something bad because the World Journal report thoses
+              crimes at the same time. But why are the light-skin missing? If you watch the video, you will see, 8 out
+              of 10 belongs to monority. But if you research, there also exist crimes commited
+              by light-skin.</p>
+            <!-- <span class="page__content-blockquote-reference">Encyclopedia Galactica*</span> -->
+          </div>
+          <div class="page__content-blockquote-text">
+            <p>Also I admit, from the three group I select, I can't tell all the Hate Crime targeted Asian American Hate
+              Crime. But since my purpose is to raise people's awareness and open discussions, I hope I can let readers
+              focus more on what I present.</p>
+          </div>
+        </div>
+      </label>
+
+      <!-- Resets the page -->
+      <input type="radio" name="page" id="page-1" />
+
+      <!-- Goes to the second page -->
+      <input type="radio" name="page" id="page-2" />
+      <label class="book__page book__page--2">
+        <div class="book__page-front">
+          <div class="page__content">
+            <h1 class="page__content-book-title">End Note</h1>
+            <h2 class="page__content-author">Chenglin Li</h2>
+
+            <p class="page__content-credits">
+              Created with
+              <span>Self-collected Data</span>
+            </p>
+
+            <p class="page__content-credits">
+              Hope to
+              <span>Open dicsussion</span>
+            </p>
+
+            <div class="page__content-copyright">
+              <p>Asian Amercian Hate Crime</p>
+              <p>New York</p>
+            </div>
+          </div>
+        </div>
+        <div class="book__page-back">
+          <div class="page__content">
+            <h1 class="page__content-title">Data Collection</h1>
+            <table class="page__content-table">
+              <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To begin my research, I choose three influential
+                groups who share different readers. Police department offers official and relatively credible
+                information about the AAHC cases while the other two media offer different angles and opinions towards
+                the same issue. New York Times is one of the most popular main stream newspaper in New York. Thw World
+                Journal Newspaper is the largest Chinese language newspaper in the US.
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To
+                get detailed information about Asian American
+                Hate crimehappened in New York, I checked multiple sources. For NYPD, I checked their
+                offcial website,
+                the information they released on Facebook
+                Account and
+                their twitter account. I watch every post they wrote as well as watching all the video and live
+                streaming recording.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For New York Times, I checked their offcial
+                website. I filted by date and I read through all the post connected with Asian American Hate
+                crime. I didn't use the word filter because the word filter may be inaccurate. Also I only record crime
+                reported by the New York Times instead of some articles cited by the New York Times. I only record
+                artcicles published on the main cite because this show how they write the crime.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the
+                World Journal, I checked all the post published on their website because their word filter may also be
+                inaccurate.I believe that's the best way to avoid missing information.
+
+              </td>
+              <!-- (https://twitter.com/nypdtips?lang=en) -->
+              <!-- (https://www1.nyc.gov/site/nypd/index.page) -->
+              <!-- (https://www.facebook.com/checkpoint/1501092823525282/?next=https%3A%2F%2Fwww.facebook.com%2FNYPD%2F) -->
+              <!-- (https://www.pscp.tv/w/1jMKgpqjEolGL?fbclid=IwAR2soIl2dqhZuZt18WrR6YE-_j4N2HJYECjURXYPV3WSSapTVKXV8HQMmYA&t=26s) -->
+            </table>
+
+
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css">
+
+	<!-- Document Title
+	============================================= -->
+	<title>WOODPECKER</title>
+	<style>
+		.previousnext {
+	position:relative;
+	top:500px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px; 
+}
+#previousnext{
+	top:100px;
+}
+
+.previousnexttwo {
+	position:relative;
+	top:140px;
+    display: inline-block;
+    margin-left: 120px;
+    margin-right: auto;
+    height: 500px; 
+}
+#previousnexttwo{
+	top:100px;
+}
+
+.three {
+	position:relative;
+	top:320px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 408px; 
+}
+#three{
+	top:100px;
+}
+.four {
+	position:relative;
+	top:460px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 315px; 
+}
+#four{
+	top:100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+
+  padding: 16px;
+}
+img{
+	height: 350px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.row {
+margin-top: 40px;
+margin-left: 70px;
+margin-right: 70px;
+}
+.rowtwo {
+margin-top: 20px;
+margin-left: 70px;
+margin-right: 70px;
+}
+h1 {
+font-size: 60px;
+margin-top: 60px;
+margin-left: 80px;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 80%;
+  }
+}
+	</style>
+
+</head>
+
+<body class="stretched">
+
+<div>
+	<h1>Data Visualization</h1>
+<center>
+	
+	<div class="row">
+		<div class="column">
+		  <a href="./projects/enter copy/index.html"><img src="./Screen Shot 2023-02-27 at 11.49.44 PM.png" alt="Snow" style="width:100%">
+		  </a>
+		</div>
+		<div class="column">
+		  <a href="./coding-exercises/week5/rosling-start/index.html"><img src="./Screen Shot 2023-02-27 at 11.51.11 PM.png" alt="Forest" style="width:100%">
+		  </a>
+		</div>
+	  </div>
+
+	  <div class="rowtwo">
+		<div class="column" style="position: relative;z-index: 1;">
+			<a href="./coding-exercises/Week2/Index.html">
+		  <img href="" src="./Screen Shot 2023-02-28 at 12.04.35 AM.png" alt="Snow" style="width:100%">
+		</a>
+		</div>
+		<div class="column" style="position: relative;z-index: 1;">
+			<a href="./coding-exercises/Week4/Index.html">
+		  <img src="./Screen Shot 2023-02-28 at 12.00.57 AM.png" alt="Forest" style="width:100%">
+		</a>
+		</div>
+	  </div>
+
+	  <div style="position:relative;height:80vh;"></div>
+		
+	
+
+</center>
+
+
+
+
+
+
+
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+
+
+	<script src="js/functions.js"></script>
+	<script src="js/jquery.hotspot.js"></script>
+	<script src="js/functions.js"></script>
+
+	<script>
+		jQuery(window).on( 'load', function() {
+			jQuery('.block-hero-11 #hotspot-img-onhover').hotSpot();
+		});
+		jQuery(window).on( 'load', function() {
+			jQuery('.block-hero-12 #hotspot-img-onhover').hotSpot();
+		});
+
+		jQuery(window).on( 'pluginSwiperReady', function(){
+			var sliderTop = new Swiper('.slider-top', {
+				spaceBetween: 10,
+				slidesPerView: 'auto',
+				centeredSlides: true,
+				navigation: {
+					nextEl: '.slider-arrow-right',
+					prevEl: '.slider-arrow-left',
+				},
+				loop: true,
+				loopedSlides: 4
+			});
+			var sliderThumbs = new Swiper('.slider-thumbs', {
+				spaceBetween: 10,
+				centeredSlides: true,
+				slidesPerView: 'auto',
+				touchRatio: 0.2,
+				slideToClickedSlide: true,
+					loop: true,
+					loopedSlides: 4
+			});
+
+			sliderTop.controller.control = sliderThumbs;
+			sliderThumbs.controller.control = sliderTop;
+		});
+	</script>
+
+</body>
+</html>
