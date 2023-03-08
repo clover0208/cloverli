@@ -473,6 +473,45 @@ html {
   }
 }
 
+/* New */
+
+#navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding-left: 60%;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  /* background-color: #000000; */
+  border-bottom: 1.5px solid rgb(0, 0, 0);
+
+
+  color: black;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
 </style>
 
@@ -487,6 +526,12 @@ html {
 </head>
 
 <body class="stretched">
+	<div id="navbar" style="z-index: 1;">
+		<a  href="../index.html">UIUX</a>
+		<a href="../Animation/index.html">Animation</a>
+		<a href="../cdv-student-main/index.html">Data Visualization</a>
+		<a href="https://clover0208.github.io/abc-student-repo/projects/Hyperline/index.html" target="blank">HTML</a>
+	  </div>
 
 
 
@@ -1152,6 +1197,20 @@ html {
 			sliderThumbs.controller.control = sliderTop;
 		});
 	</script>
+		<script>
+			window.onscroll = function() {myFunction()};
+		  
+		  var navbar = document.getElementById("navbar");
+		  var sticky = navbar.offsetTop;
+		  
+		  function myFunction() {
+			if (window.pageYOffset >= sticky) {
+			  navbar.classList.add("sticky")
+			} else {
+			  navbar.classList.remove("sticky");
+			}
+		  }
+		  </script>
 
 </body>
 </html>

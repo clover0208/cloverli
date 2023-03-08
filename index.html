@@ -153,120 +153,85 @@
   color: #4062bb;
 }
 
+
+/* New */
+
+#navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding-left: 60%;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  /* background-color: #000000; */
+  border-bottom: 1.5px solid rgb(0, 0, 0);
+
+
+  color: black;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 </style>
+
 </head>
 <body>
-    <!-- <div class="box">
-        <div class="inner">
-          <span>Hi I am Clover</span>
-        </div>
-        <div class="inner">
-          <span>Hi I am Clover</span>
-        </div>
-      </div> -->
-<div><img src="./assets/4x/资源 304@4x-20.jpg" style="width:100%;position:relative;"></div>
-<!-- <div><img src="./assets/4x/资源 297@4x-20.jpg" style="width:11%;position:absolute;top:6.5vh;right:21vw;"></div>
-<div><img src="./assets/4x/资源 298@4x-20.jpg" style="width:6.8%;position:absolute;top:6.5vh;right:12vw;"></div> -->
-<a href="https://drive.google.com/file/d/1g_cERL5G6HjeEo3G23FRW_JfFnpN8CYh/view?usp=sharing" target="_blank"><img src="./assets/4x/资源 299@4x-20.jpg" style="width:2%;position:absolute;top:6.6vh;right:8vw;"></a>
-<div><img src="./assets/4x/资源 303@4x-20.jpg" style="width:4.1%;position:absolute;top:6.6vh;right:12vw;"></div>
-<div>	<a href="./Rare-desease/about-me.html" ><img src="./assets/4x/资源 287@4x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
-<div>	<a href="./UX/closer-ux/Closer.html" ><img src="./assets/4x/资源 290@4x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
-<div>	<a href="./iFlyPlus/about-me.html" ><img src="./assets/4x/资源 289@4x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
-<div>	<a href="./car.html" ><img src="./assets/4x/资源 291@4x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
+  <div id="navbar" style="z-index: 1;">
+    <a class="active" href="./index.html">UIUX</a>
+    <a href="./Animation/index.html">Animation</a>
+    <a href="./cdv-student-main/index.html">Data Visualization</a>
+    <a href="https://clover0208.github.io/abc-student-repo/projects/Hyperline/index.html" target="blank">HTML</a>
+  </div>
+  
+<div><img src="./2x/资源 314 (2)@2x-20.jpg" style="width:100%;"></div>
+<div>	<a href="./Rare-desease/about-me.html" ><img src="./2x/资源 310@2x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
+<div>	<a href="./UX/closer-ux/Closer.html" ><img src="./2x/资源 309@2x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
+<div>	<a href="./iFlyPlus/about-me.html" ><img src="./2x/资源 314@2x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
+<div>	<a href="./car.html" ><img src="./2x/资源 313@2x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
 
-      <!-- <div id="section1" style="height: 50vh;padding: 0vh 4.5vw 2vh 4.5vw; display: flex;flex-wrap: none;">
-        <a href="/projects/Mask.html">
-         <div class="container">
-          <img src="projects/pictures/mask/mask-E.png" style="object-fit: cover;width: 45vw; height: 50vh;">
-            <div class="overlay">
-              <div class="text" >
-                <h1 style="font-size: 30px; line-height: 0.2;">Wear Your Smile</h1>
-                <p style="font-size: 20px;">wearable technology in connection with emotions</p>
-            </div>
-          </div>
-         </div>
-        </a>
-        <a href="/projects/3D.html">
-          <div class="container" style="margin-left: 1vw;">
-           <img src="projects/pictures/g-14.png" style="object-fit: cover;width: 45vw; height: 50vh;">
-             <div class="overlay">
-               <div class="text" >
-                 <h1 style="font-size: 30px; line-height: 0.2;">Thriving Green Power</h1>
-                 <p style="font-size: 20px;">3D computational sculptures embodiy real-life data</p>
-             </div>
-           </div>
-          </div>
-         </a>
-      </div>  -->
-
-      <!-- <div id="section1" style="height: 70vh;padding: 0vh 4.5vw 2vh 4.5vw; display: flex;flex-wrap: none;">
-        <a href="/projects/data.html">
-         <div class="container">
-          <img src="projects/pictures/data-story.png" style="object-fit: cover;width: 45vw; height: 50vh;">
-            <div class="overlay">
-              <div class="text" >
-                <h1 style="font-size: 30px; line-height: 0.2;">Sentimental Data</h1>
-                <p style="font-size: 20px;">explore the human sentiments in Wikipedia data</p>
-            </div>
-          </div>
-         </div>
-        </a>
-         <a href="/projects/UX.html">
-          <div class="container" style="margin-left: 1vw;">
-           <img src="projects/pictures/hrl.jpg" style="object-fit: cover;width: 45vw; height: 50vh;">
-             <div class="overlay">
-               <div class="text" >
-                 <h1 style="font-size: 30px; line-height: 0.2;">Website UX Design</h1>
-                 <p style="font-size: 20px;">a flexible, real-time data visualization tool for historical research</p>
-             </div>
-           </div>
-          </div>
-         </a>
-      </div>  -->
-
-
-    
-
-      
-
-      <!-- <div id="section1" style="height: 70vh;padding: 0vh 4.5vw 2vh 4.5vw; display: flex;flex-wrap: none;">
-        <a href="/projects/MirrorLoss.html">
-         <div class="container">
-          <img src="projects/pictures/dis-1.JPG" style="object-fit: cover;width: 45vw; height: 70vh;">
-            <div class="overlay">
-              <div class="text" >
-                <h1 style="font-size: 30px; line-height: 0.2;">Immersive Experience</h1>
-                <p style="font-size: 20px;">to unpack the perspective of disability and invoke empathy</p>
-            </div>
-          </div>
-         </div>
-        </a>
-      </div>  -->
-
-    
-      
-        
-      <!-- flower
-        <div id="section6" style="height: 80vh;padding: 10vh 5vw; display: flex;flex-wrap: none;">
-        <img src="projects/pictures/draw-flower2.png" style="object-fit: cover; width: 58vw;">
-        <div style="padding: 10vh 5vw 0 5vw">
-          <h2 style="font-size: 45px;">Flower Timer</h2>
-          
-          <p style="font-size: 20px;line-height: 1.3;">This is an installation project that links human physical interaction
-            with an animation of flowers in different conditions.
-          <br><br><br>
-          <button class="button"><span><a href="/projects/flower.html" style="text-decoration: none;">view more</a></span></button>
-        </div>
-      </div>     -->
-      
-      <!-- footer -->
         <div style="height: 100px;margin: 10vh 45vw 5vh 45vw;">
           <p style="padding-top: 0px;font-size: 20px;">created@2022</p>
         </div>
 </body>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js'></script>
-<script  src="./scriptthree.js"></script>
 <script  src="./scripttwo.js"></script>
-<script  src="./scriptone.js"></script>
+<!-- <script  src="./scriptone.js"></script> -->
+<script>
+  window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
 </html>
