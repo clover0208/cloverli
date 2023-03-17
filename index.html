@@ -16,8 +16,8 @@
  .box{
 	height: 100%;
 	display: flex;
-    position:relative;
-    top:10vh;
+  position:relative;
+  top:10vh;
 	align-items: center;
 	justify-content: center;
 	background-color: rgb(255, 255, 255);
@@ -194,6 +194,43 @@
   width: 100%;
 }
 
+h1 {
+
+  color: rgb(0, 0, 0);
+  /* text-transform: uppercase; */
+  font-size: 3.3em;
+	font-family: sans-serif;
+  font-weight: 400;
+  position: relative;
+  left:11vw;
+  top:6vh;
+  
+}
+h4 {
+
+color: rgb(0, 0, 0);
+/* text-transform: uppercase; */
+font-size: 1em;
+font-family: sans-serif;
+font-weight: 100;
+position: relative;
+left:11vw;
+top:6vh;
+
+
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
 </style>
 
 </head>
@@ -205,9 +242,13 @@
     <a href="https://clover0208.github.io/abc-student-repo/projects/Hyperline/index.html" target="blank">HTML</a>
   </div>
   
-<div><img src="./2x/资源 314 (2)@2x-20.jpg" style="width:100%;"></div>
-<div>	<a href="./Rare-desease/about-me.html" ><img src="./2x/资源 310@2x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
-<div>	<a href="./UX/closer-ux/Closer.html" ><img src="./2x/资源 309@2x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
+  <!-- new -->
+  <h1>Hello, Clover is a Product Designer</h1>
+  <h4>Currently @ <strong>UC.Berkeley </strong>Master of Design, the College of Engineering (STEM).</h4>
+  <h4 style="position: relative; top:30px;">Previously @ <strong>NYU </strong>Interactive Media Art @ NYU Business and Marketing.</h4>
+<!-- <div><img src="./2x/资源 314 (2)@2x-20.jpg" style="width:100%;"></div> -->
+<div>	<a href="./Rare-desease/about-me.html" ><img src="./2x/资源 310@2x-20.jpg" style="width:100%;position:relative; top:5vh;"></a></div>
+<div>	<a href="./UX/closer-ux/Closer.html" ><img src="./2x/资源 309@2x-20.jpg" style="width:100%;position:relative; top:-2vh;"></a></div>
 <div>	<a href="./iFlyPlus/about-me.html" ><img src="./2x/资源 314@2x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
 <div>	<a href="./car.html" ><img src="./2x/资源 313@2x-20.jpg" style="width:100%;position:relative; top:-8vh;"></a></div>
 
@@ -217,7 +258,10 @@
 </body>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
+
 <script  src="./scripttwo.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 <!-- <script  src="./scriptone.js"></script> -->
 <script>
   window.onscroll = function() {myFunction()};
@@ -232,6 +276,49 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+document.addEventListener('DOMContentLoaded',function(event){
+  // array with texts to type in typewriter
+  var dataText = [ "Clover is a Product Designer,", "A Human-centered UX Researcher,", "A Visual Artist and Creative Coder."];
+  
+  // type one text in the typwriter
+  // keeps calling itself until the text is finished
+  function typeWriter(text, i, fnCallback) {
+    // chekc if text isn't finished yet
+    if (i < (text.length)) {
+      // add next character to h1
+     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 100);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+      // call callback after timeout
+      setTimeout(fnCallback, 700);
+    }
+  }
+  // start a typewriter animation for a text in the dataText array
+   function StartTextAnimation(i) {
+     if (typeof dataText[i] == 'undefined'){
+        setTimeout(function() {
+          StartTextAnimation(0);
+        }, 1000);
+     }
+     // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+     typeWriter(dataText[i], 0, function(){
+       // after callback (and whole text has been animated), start next text
+       StartTextAnimation(i + 1);
+     });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
 </script>
 
 </html>
