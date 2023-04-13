@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css">
+<style>
+
+.parent{ 
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  }
+.container div {
+  padding: 0.5em;
+  flex: 1;
+  position: relative;
+  top:10px;
+}
+.child{
+	font-family: Poppins; 
+	color:black;
+	font-size:16px; 
+	font-weight: 100;
+	margin-left:40px;
+	position: relative;
+  top:42px;
+}
+
+.block-hero-11 h1,
+		.block-hero-11 h2,
+		.block-hero-11 h3,
+		.block-hero-11 h4,
+		.block-hero-11 h5,
+		.block-hero-11 h6 { font-family: Playfair Display, serif !important; color: #045d63 }
+
+		body.block-hero-11,
+		.block-hero-11 p { font-family: Roboto, sans-serif !important; }
+
+		/* <a href="https://www.jqueryscript.net/animation/">Animation</a> */
+		@-webkit-keyframes
+			pulsate {  0% {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				opacity: 0.8;
+			}
+			 45% {
+				-webkit-transform: scale(1.75);
+				transform: scale(1.75);
+				opacity: 0;
+			}
+		}
+		@keyframes
+			pulsate {  0% {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				opacity: 0.8;
+			}
+				45% {
+				-webkit-transform: scale(1.75);
+				transform: scale(1.75);
+				opacity: 0;
+			}
+		}
+
+		/* Hotspot */
+		.block-hero-11 .hotspot-img {
+			background-size: cover;
+			background-position: center center;
+			position: relative;
+		}
+
+		.block-hero-11 .hotspot-img .img-responsive { max-width: 100%; }
+
+		.block-hero-11 .hotspot-img .hot-spot {
+			position: absolute;
+			width: 26px;
+			height: 26px;
+			top: 5px;
+			left: 5px;
+			text-align: center;
+			background-color: rgb(255, 255, 255);
+			color: rgb(0, 0, 0);
+			border-radius: 100%;
+			cursor: pointer;
+			font-size: 12px;
+			line-height: 26px;
+			transition: all .3s ease;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .circle {
+			z-index: 2;
+			position: relative;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .circle i {
+			-webkit-transition: -webkit-transform .25s ease-out;
+			transition: transform .25s ease-out;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot.hotspot-tooltip-open .circle i,
+		.block-hero-11 .hotspot-img .hot-spot:not(.hotspot-on-click):hover .circle i {
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .circle:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 39%;
+			left: 39%;
+			width: 30px;
+			height: 30px;
+			margin: -1em auto auto -1em;
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			border-radius: 50%;
+			border: 10px solid rgb(255, 255, 255);
+			opacity: 0;
+			-webkit-animation: pulsate 3s ease-out infinite;
+			animation: pulsate 3s ease-out infinite;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip {
+			display: none;
+			background-color: rgba(255, 255, 255, 0.96);
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			font-size: 14px;
+			opacity: 1.0;
+			left: 0;
+			padding: 15px;
+			position: absolute;
+			top: 35px;
+			width: 280px;
+			z-index: 999;
+			box-shadow: 0 30px 102px rgba(0,0,0,0.33), 0 20px 51px rgba(0,0,0,0.18);
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip.ontop {
+			top: auto;
+			bottom: 35px;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip .img-row {
+			margin-bottom: 10px;
+			display: block;
+		}
+		.block-hero-11 .hotspot-img .hot-spot .tooltip h4 { margin-bottom: 0; }
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip p {
+			font-size: 13px;
+			line-height: 1rem !important;
+			margin-top: -10px;
+			margin-bottom: 10px;
+			color: #666 !important;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip p:last-child { margin-bottom: 0; }
+
+		@media (max-width: 991px) {
+			.block-hero-11 .hotspot-img .hot-spot .tooltip {
+				width: 200px;
+				left: 30px;
+				top: 35px;
+			}
+
+			.block-hero-11 .hotspot-img .hot-spot .tooltip .img-row {
+				display: none;
+			}
+		}
+
+		@media (min-width: 992px) {
+
+			.block-hero-11 .slider-element > .container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 100%;
+			}
+		}
+
+#weboldbefore{
+	display: inline-block;
+	position:relative;
+	left:-55vw;
+	top:8vh;
+	font-family: Poppins; 
+	font-size:33px; 
+	font-weight: 200;
+	color:black;
+
+}
+
+#webonenewafter{
+	display: inline-block;
+	position:relative;
+	left:85vw;
+	top:12vh;
+	font-family: Poppins; 
+	font-size:33px; 
+	font-weight: 200;
+	color:black;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 6px;
+	height: 600px;
+	background: white;
+	cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: 6px;
+	height: 600px;
+	background: white;
+	cursor: pointer;
+}
+
+
+
+
+.portfolio-single-content h2 {
+		font-size: 1.75rem;
+	}
+	.portfolio-meta {
+		font-size: 1rem;
+	}
+	.portfolio-meta li {
+		margin-bottom: 1rem;
+	}
+	/* Swiper */
+	.slider-top .swiper-slide {
+		width: 100%;
+		height: 100%;
+		min-height: 700px;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	@media (min-width: 992px) {
+		.slider-top .swiper-slide {
+			width: 85%;
+			min-height: 750px;
+		}
+	}
+	.slider-thumbs {
+		padding: 10px 0;
+	}
+	.slider-thumbs .swiper-slide {
+		width: 23%;
+		height: 100%;
+		opacity: 0.3;
+	}
+	.slider-thumbs .swiper-slide-active {
+		opacity: 1;
+	}
+
+
+	.button-3d {
+  position: relative;
+  display: inline-block;
+  margin: 100px auto;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 20px 80px;
+  transform: perspective(500px);
+  cursor: pointer;
+  color: transparent;
+}
+.button-3d:before, .button-3d:after {
+  content: attr(text);
+  display: block;
+  width: 100%;
+  height: calc(100% - 20px);
+  border: 5px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: -5px;
+  padding: 5px 0 0;
+  transition: 0.4s all;
+  color: rgb(0, 0, 0);
+}
+.button-3d:before {
+  transform: perspective(500px) rotateX(0) translateY(0);
+  transform-origin: 50% 0;
+}
+.button-3d:after {
+  transform: perspective(500px) rotateX(-90deg) translateY(100%);
+  transform-origin: 50% 100%;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.button-3d:hover:before {
+  transform: perspective(500px) rotateX(90deg) translateY(-100%);
+}
+.button-3d:hover:after {
+  transform: perspective(500px) rotateX(0) translateY(0);
+}
+
+.privacygif{
+   background-color: transparent;
+
+}
+.imgContainer{
+    float:right;
+}
+
+@font-face {
+  font-family: 'Rowdies';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rowdies/v15/ptRJTieMYPNBAK21zrc.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Rowdies', cursive;
+  font-size: calc(12px + 4 * ((100vw - 400px) / 400));
+  line-height: 1.25;
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+.example {
+  margin: 3rem auto;
+  text-align: center;
+}
+.example > .text {
+  display: inline-block;
+  position: relative;
+  padding: 1rem 3rem;
+  transform: translateY(-0.5rem);
+  text-transform: uppercase;
+  perspective: 10rem;
+}
+.example > .text:first-of-type {
+  padding-left: 4rem;
+}
+.example > .text:first-of-type::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(10deg) translateX(calc(2rem - 3px));
+  z-index: -1;
+  background: #ffffff;
+}
+.example > .text:last-of-type {
+  padding-right: 4rem;
+}
+.example > .text:last-of-type::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-10deg) translateX(calc(-1rem - 6px));
+  z-index: -1;
+  background: #ffffff;
+}
+.example > .counter {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem 2rem;
+}
+.example > .counter > .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #6a558e;
+  border-radius: 0.7rem;
+}
+.example > .counter > .background::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  z-index: -1;
+  border-radius: 1rem;
+  border: solid #ffffff 4px;
+  background: #6a558e;
+}
+.example > .counter > .background::after {
+  content: '';
+  width: 80%;
+  padding-top: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: solid #fff 4px;
+  background: #6a558e;
+}
+.example > .counter > .number {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+.example > .counter > .number:first-of-type {
+  font-size: 2rem;
+}
+.example > .counter > .number:first-of-type::after {
+  content: '/';
+  display: inline-block;
+  padding: 0 0.2rem;
+  font-size: 2.5rem;
+}
+.example > .counter > .number:last-of-type {
+  font-size: 1rem;
+  transform: translateY(-0.8rem) translateX(-0.2rem);
+}
+@media screen and (max-width: 600px) {
+  .example > .text {
+    display: block;
+  }
+  .example > .text:first-of-type {
+    margin-bottom: 3rem;
+  }
+  .example > .text:last-of-type {
+    margin-top: 4rem;
+  }
+}
+
+/* New */
+
+#navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding-left: 51%;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  /* background-color: #000000; */
+  border-bottom: 1.5px solid rgb(0, 0, 0);
+
+
+  color: black;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+p{
+	font-family: Poppins; 
+	color: black;
+}
+.inline-block {
+	width:60%;
+   display: inline-block;
+}
+</style>
+
+<script>
+
+</script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>iFlyPlus</title>
+
+</head>
+
+<body class="stretched">
+	<div id="navbar" style="z-index: 1;">
+		<a  href="../../index.html">UIUX</a>
+		<a href="../about-me.html">VR,AR</a>
+		<a href="../../Animation/index.html">Animation</a>
+		<a href="../../cdv-student-main/index.html">Data Visualization</a>
+		<a href="https://clover0208.github.io/abc-student-repo/projects/Hyperline/index.html" target="blank">Front-End</a>
+	  </div>
+
+
+
+
+<center>
+<p style="font-size: 38px;opacity: 100%;position: relative;top:12.5vh; font-weight: 600;">RAMify: The Curse of Undying Memory</p>
+<p style="font-size: 18px;opacity: 100%;position: relative;top:14vh; font-weight: 100;">Forgetting, VR, and Cyberpunk - Collaborate Project with Jamie Wang</p>
+<p style="font-size: 35px;opacity: 100%;position: relative;top:22vh; font-weight: 600;">Video Demo</p>
+<div style="width:60%; position: relative;top:22vh;">
+<iframe width="960" height="540" src="https://www.youtube.com/embed/jXhWvkuS3io"></iframe></div>
+<a href="https://youtu.be/sULTGa9zsZE" target="blank"><p style="font-size: 20px;opacity: 100%;position: relative;top:26vh; font-weight: 100;">👉 Link to the full game experience</p></a>
+
+<p style="font-size: 35px;opacity: 100%;position: relative;top:38vh; font-weight: 600;">Abstract</p>
+<div style="width:60%; position: relative;top:24vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+	RAMify is an <b style="font-weight: 600;">interactive VR storytelling experience that revolves around futuristic technology for memory editing and removal</b>. From written language to photography, human culture has long relied on external tools for storing personal and societal memory. With the ascent of digital culture and its capacity for seamless archiving, not only has the effectiveness of these tools increased but, as some scholars argue, the human behavioral default has shifted from forgetting to remembering. <b style="font-weight: 600;">RAMify intends to explore the ramifications of future memory technologies.</b>
+
+	<br><br>The story of RAMify takes place in a cyberpunk society, where memory implants and memory retrieval technologies have become commonplace. The player plays as a memory architect working for the MindGen Corporation, currently tasked with fulfilling a dying woman’s last wish of recovering the memory of her long-lost son. In the course of gameplay, the player must face complex ethical questions about whether to preserve, alter or delete the memories, as they uncover the relationship between the mother and the son. RAMify’s narrative immersion is delivered through a combination of the Passthrough AR feature and VR to stimulate the player's imagination based on reality.
+	
+	<br><br>Though set within the convention of the futuristic cyberpunk genre, RAMify addresses already existing dilemmas around technology and memory. Within the interactive experience, the ability to navigate through an individual’s memory represents the possible future of memory externalization. Exploring both the positive and negative ramifications of hypothetical memory tech, it rejuvenates the concern of the cyberpunk genre in a distinctly contemporary setting, highlighting the choices we make when using our technologies in order to remember or forget.
+	
+	<br><br>Through showing the possible consequences that memory over-externalization would bring to individuals and society in the future era, our project would raise people’s awareness on remembering to forget, and therefore avoid the dystopian cyberpunk scenario that the lack of forgetting would forge.</p>
+</div>
+<p style="font-size: 35px;opacity: 100%;position: relative;top:56vh; font-weight: 600;">Inspiration</p>
+<p style="font-size: 25px;opacity: 100%;position: relative;top:58vh; font-weight: 400;">From literatures</p>
+<img src="./ramify_literature_inspiration.png" style="width: 60%;position: relative;top:58vh; ">
+<div style="width:60%; position: relative;top:48vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+	<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+		Contemporary studies on cyberpunk culture and visions inherit the tradition of picturing a dystopian futuristic society and derive new imaginations from the inventions created in past works of the genre. Although we are witnessing a cyberpunk revival in works of different genres (fictions, video games, etc.), the retro-futuristic references to works like Neuromancer ignore the by-product that has been unearthed along with the birth of modern technologies. These existing side-effects, particularly <b style="font-weight: 600;">the loss of forgetting caused by memory over-externalization</b>, are necessary factors to be considered when constructing an up-to-date contemporary imagination for cyberpunk.</p>
+	</div>
+
+	<p style="font-size: 25px;opacity: 100%;position: relative;top:76vh; font-weight: 400;">to Mass Media</p>
+	<img src="./ramify_cyberpunk2077_bd.png" style="width: 60%;position: relative;top:76vh; ">
+	<div style="width:60%; position: relative;top:66vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+		<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+			Case studies consist of three video games and a VR project: To the Moon, Cyberpunk 2077, The Last Night, and Their Memory.
+
+			<br><br>In To the Moon, the player plays as one of the two doctors who tries to implant a memory of “traveling to the moon” into an old man’s memory to fulfill his dying wish. Even though it is a 2011 PC game and its aesthetic isn’t considered cyberpunk style, I learned how they <b style="font-weight: 600;">distinguish the same scene in reality from memories</b> purely through blurring the edges and making the color tone yellowish in the memory. After I implemented the idea into the old man’s memory, I had to connect his memory tubes that would initiate a series of changes in his consequent memories, this inspired the design of <b style="font-weight: 600;">the “butterfly effect”</b> that would happen when deleting or altering the woman’s memory.
+		</div>
+
+		<p style="font-size: 35px;opacity: 100%;position: relative;top:96vh; font-weight: 600;">Design and Techical Highlights</p>
+<p style="font-size: 25px;opacity: 100%;position: relative;top:102vh; font-weight: 400;">1. Pre Unity</p>
+<p style="font-size: 20px;opacity: 100%;position: relative;top:108vh; font-weight: 400;">1.1 Scene Logic Map</p>
+
+<div style="width:60%; position: relative;top:86vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+	<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+	
+
+		<br><br>Being an interactive experience with multiple branches that lead to different outcomes, we created a logic map that links together all the scene nodes that will be included in the game.
+	</div>
+	<img src="./ramify_logic_map.png" style="width: 60%;position: relative;top:108vh; ">
+
+	<p style="font-size: 20px;opacity: 100%;position: relative;top:118vh; font-weight: 400;">1.2 Script Writing</p>
+
+	<div style="width:60%; position: relative;top:96vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+		<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+		
+	
+			<br><br>RAMify is a strong narrative game. With no voiceovers, the lines in game needs to be refined to "casual and daily" terms, and scenario-fitting tones to cope with the relax, desperate, or even horrifying scenes in game.
+		</div>
+		<img src="./ramify_gangster_talk.gif" style="width: 60%;position: relative;top:118vh; ">
+
+
+
+		<p style="font-size: 25px;opacity: 100%;position: relative;top:128vh; font-weight: 400;">2. Mid Unity</p>
+		<p style="font-size: 20px;opacity: 100%;position: relative;top:134vh; font-weight: 400;">2.1 Passthrough Feature</p>
+		
+		<div style="width:60%; position: relative;top:112vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+			<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+			
+		
+				<br><br>Originally, I planned to implement my virtual environment on the real-life environment layer, and purchase a physical ward bed to simulate the ward environment. With the project being completely virtual now due to Shanghai's lockdown situation, I had to place a ward model in the virtual environment.
+			</div>
+			<img src="./ramify_passthrough.gif" style="width: 60%;position: relative;top:134vh; ">
+
+
+
+
+			<p style="font-size: 20px;opacity: 100%;position: relative;top:144vh; font-weight: 400;">2.2 PVFX SDF</p>
+		
+			<div style="width:60%; position: relative;top:122vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+				<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+				
+			
+					<br><br>To develop a futuritic and high-tech brain scene, I planned to generate fluid particles to form my brain and neuron models.
+
+					I experimented with the Signed Distance Field in VFX and it gave me a nice result overall:
+				</div>
+
+				<div id="banner" style="overflow: hidden; display: flex; justify-content:space-around; position: relative;top:144vh; width:60%;">
+					<div class="" style="max-width: 50%;margin-right: 10px;">
+						<img src ="./ramify_sdf_tiger.gif">
+					</div>
+			
+					<div class="" style="max-width: 50%;">
+						<img src ="./ramify_sdf_brain.gif">
+					</div>
+
+			
+
+				</div>
+
+
+
+
+
+				<p style="font-size: 20px;opacity: 100%;position: relative;top:158vh; font-weight: 400;">2.3 Button-controlled Color Lerp</p>
+		
+				<div style="width:60%; position: relative;top:136vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+					<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+					
+				
+						<br><br>When at the end of the game, the player needs to make their final decision by holding onto a button and watch how their decision impact their client. To emphasize on the "butterfly effect" caused by memory editing, I designed a button that the player needs to hold onto in order to complete the operation. The color of the Brain and Neuron would also slowly lerp to another color as the button is being pressed; and lerp back to the original state if the button is released in the middle:
+					</div>
+					<img src="./ramify_lerp_color.gif" style="width: 30%;position: relative;top:156vh; ">
+			
+			
+	
+					
+
+			
+						
+						<p style="font-size: 20px;opacity: 100%;position: relative;top:166vh; font-weight: 400;">2.4 Stereo Narration Scene</p>
+		
+						<div style="width:60%; position: relative;top:144vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+							<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+							
+						
+								<br><br>This stereo scene place an important role in the narration. To have the player focus on the story itself and the cultural settng of the game, I shrank the visual elements of this scene down to the four main objects that emits sound. In addition to the stereo sound on multiple sound sources, many sound sources are animated to simulate an even more immersive environment for the experience.
+
+								<br><br>Here, player not only learns about Jacob's intention, but also gets to know how people living in that era freqently deal with memory technologies and entertainment.
+							</div>
+							<img src="./ramify_pure_audio.gif" style="width: 30%;position: relative;top:166vh; ">
+
+
+
+
+							
+					<p style="font-size: 20px;opacity: 100%;position: relative;top:174vh; font-weight: 400;">2.5 Fix Memory Operation</p>
+		
+					<div style="width:60%; position: relative;top:152vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+						<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+						
+					
+							<br><br>As a memory architect, the player need retrieve lost memory of the client. To simulate this operation, all unfixed memory scenes are covered with blurry shader until the whole scene is fixed.
+
+							<br><br>There are several object that needs to be fixed in a certain order, particles with specific waypoints sets are used to link one memory object to another.
+							
+							<br><br>I simulated the memory fixing operation through gradually changing the opacity of the material's texture of the memory objects; once the object is fixed, it will become opague, its animation will also start playing.
+						</div>
+						<img src="./ramify_fix_memory.gif" style="width: 30%;position: relative;top:176vh; ">
+					
+
+
+
+</center>
+<div style="position:relative; top:180vh;">
+	<div class='example'>
+		<div class='text'><a href="https://devpost.com/software/paper-plane-742lqz" target="blank">SnapAR Hackson</a></div>
+		<div class='text'></div>
+		<div class='counter' style="opacity:0;">
+			<span class='number'>01</span>
+			<div class='background'></div>
+			<span class='number'>04</span>
+		</div>
+		<div class='text' ><a href="../physical/Eye/eye.html">Find Steve Trilogy</a></div>
+	</div>
+</div>
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+	<script src="js/jquery.hotspot.js"></script>
+	<script src="js/functions.js"></script>
+
+	<script>
+		jQuery(window).on( 'load', function() {
+			jQuery('.block-hero-11 #hotspot-img-onhover').hotSpot();
+		});
+		jQuery(window).on( 'load', function() {
+			jQuery('.block-hero-12 #hotspot-img-onhover').hotSpot();
+		});
+
+		jQuery(window).on( 'pluginSwiperReady', function(){
+			var sliderTop = new Swiper('.slider-top', {
+				spaceBetween: 10,
+				slidesPerView: 'auto',
+				centeredSlides: true,
+				navigation: {
+					nextEl: '.slider-arrow-right',
+					prevEl: '.slider-arrow-left',
+				},
+				loop: true,
+				loopedSlides: 4
+			});
+			var sliderThumbs = new Swiper('.slider-thumbs', {
+				spaceBetween: 10,
+				centeredSlides: true,
+				slidesPerView: 'auto',
+				touchRatio: 0.2,
+				slideToClickedSlide: true,
+					loop: true,
+					loopedSlides: 4
+			});
+
+			sliderTop.controller.control = sliderThumbs;
+			sliderThumbs.controller.control = sliderTop;
+		});
+	</script>
+		<script>
+			window.onscroll = function() {myFunction()};
+		  
+		  var navbar = document.getElementById("navbar");
+		  var sticky = navbar.offsetTop;
+		  
+		  function myFunction() {
+			if (window.pageYOffset >= sticky) {
+			  navbar.classList.add("sticky")
+			} else {
+			  navbar.classList.remove("sticky");
+			}
+		  }
+		  </script>
+
+</body>
+</html>
