@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css">
+<style>
+
+.parent{ 
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  }
+.container div {
+  padding: 0.5em;
+  flex: 1;
+  position: relative;
+  top:10px;
+}
+.child{
+	font-family: Poppins; 
+	color:black;
+	font-size:16px; 
+	font-weight: 100;
+	margin-left:40px;
+	position: relative;
+  top:42px;
+}
+
+.block-hero-11 h1,
+		.block-hero-11 h2,
+		.block-hero-11 h3,
+		.block-hero-11 h4,
+		.block-hero-11 h5,
+		.block-hero-11 h6 { font-family: Playfair Display, serif !important; color: #045d63 }
+
+		body.block-hero-11,
+		.block-hero-11 p { font-family: Roboto, sans-serif !important; }
+
+		/* <a href="https://www.jqueryscript.net/animation/">Animation</a> */
+		@-webkit-keyframes
+			pulsate {  0% {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				opacity: 0.8;
+			}
+			 45% {
+				-webkit-transform: scale(1.75);
+				transform: scale(1.75);
+				opacity: 0;
+			}
+		}
+		@keyframes
+			pulsate {  0% {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				opacity: 0.8;
+			}
+				45% {
+				-webkit-transform: scale(1.75);
+				transform: scale(1.75);
+				opacity: 0;
+			}
+		}
+
+		/* Hotspot */
+		.block-hero-11 .hotspot-img {
+			background-size: cover;
+			background-position: center center;
+			position: relative;
+		}
+
+		.block-hero-11 .hotspot-img .img-responsive { max-width: 100%; }
+
+		.block-hero-11 .hotspot-img .hot-spot {
+			position: absolute;
+			width: 26px;
+			height: 26px;
+			top: 5px;
+			left: 5px;
+			text-align: center;
+			background-color: rgb(255, 255, 255);
+			color: rgb(0, 0, 0);
+			border-radius: 100%;
+			cursor: pointer;
+			font-size: 12px;
+			line-height: 26px;
+			transition: all .3s ease;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .circle {
+			z-index: 2;
+			position: relative;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .circle i {
+			-webkit-transition: -webkit-transform .25s ease-out;
+			transition: transform .25s ease-out;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot.hotspot-tooltip-open .circle i,
+		.block-hero-11 .hotspot-img .hot-spot:not(.hotspot-on-click):hover .circle i {
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .circle:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 39%;
+			left: 39%;
+			width: 30px;
+			height: 30px;
+			margin: -1em auto auto -1em;
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			border-radius: 50%;
+			border: 10px solid rgb(255, 255, 255);
+			opacity: 0;
+			-webkit-animation: pulsate 3s ease-out infinite;
+			animation: pulsate 3s ease-out infinite;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip {
+			display: none;
+			background-color: rgba(255, 255, 255, 0.96);
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			font-size: 14px;
+			opacity: 1.0;
+			left: 0;
+			padding: 15px;
+			position: absolute;
+			top: 35px;
+			width: 280px;
+			z-index: 999;
+			box-shadow: 0 30px 102px rgba(0,0,0,0.33), 0 20px 51px rgba(0,0,0,0.18);
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip.ontop {
+			top: auto;
+			bottom: 35px;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip .img-row {
+			margin-bottom: 10px;
+			display: block;
+		}
+		.block-hero-11 .hotspot-img .hot-spot .tooltip h4 { margin-bottom: 0; }
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip p {
+			font-size: 13px;
+			line-height: 1rem !important;
+			margin-top: -10px;
+			margin-bottom: 10px;
+			color: #666 !important;
+		}
+
+		.block-hero-11 .hotspot-img .hot-spot .tooltip p:last-child { margin-bottom: 0; }
+
+		@media (max-width: 991px) {
+			.block-hero-11 .hotspot-img .hot-spot .tooltip {
+				width: 200px;
+				left: 30px;
+				top: 35px;
+			}
+
+			.block-hero-11 .hotspot-img .hot-spot .tooltip .img-row {
+				display: none;
+			}
+		}
+
+		@media (min-width: 992px) {
+
+			.block-hero-11 .slider-element > .container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 100%;
+			}
+		}
+
+#weboldbefore{
+	display: inline-block;
+	position:relative;
+	left:-55vw;
+	top:8vh;
+	font-family: Poppins; 
+	font-size:33px; 
+	font-weight: 200;
+	color:black;
+
+}
+
+#webonenewafter{
+	display: inline-block;
+	position:relative;
+	left:85vw;
+	top:12vh;
+	font-family: Poppins; 
+	font-size:33px; 
+	font-weight: 200;
+	color:black;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 6px;
+	height: 600px;
+	background: white;
+	cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: 6px;
+	height: 600px;
+	background: white;
+	cursor: pointer;
+}
+
+
+
+
+.portfolio-single-content h2 {
+		font-size: 1.75rem;
+	}
+	.portfolio-meta {
+		font-size: 1rem;
+	}
+	.portfolio-meta li {
+		margin-bottom: 1rem;
+	}
+	/* Swiper */
+	.slider-top .swiper-slide {
+		width: 100%;
+		height: 100%;
+		min-height: 700px;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	@media (min-width: 992px) {
+		.slider-top .swiper-slide {
+			width: 85%;
+			min-height: 750px;
+		}
+	}
+	.slider-thumbs {
+		padding: 10px 0;
+	}
+	.slider-thumbs .swiper-slide {
+		width: 23%;
+		height: 100%;
+		opacity: 0.3;
+	}
+	.slider-thumbs .swiper-slide-active {
+		opacity: 1;
+	}
+
+
+	.button-3d {
+  position: relative;
+  display: inline-block;
+  margin: 100px auto;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 20px 80px;
+  transform: perspective(500px);
+  cursor: pointer;
+  color: transparent;
+}
+.button-3d:before, .button-3d:after {
+  content: attr(text);
+  display: block;
+  width: 100%;
+  height: calc(100% - 20px);
+  border: 5px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: -5px;
+  padding: 5px 0 0;
+  transition: 0.4s all;
+  color: rgb(0, 0, 0);
+}
+.button-3d:before {
+  transform: perspective(500px) rotateX(0) translateY(0);
+  transform-origin: 50% 0;
+}
+.button-3d:after {
+  transform: perspective(500px) rotateX(-90deg) translateY(100%);
+  transform-origin: 50% 100%;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.button-3d:hover:before {
+  transform: perspective(500px) rotateX(90deg) translateY(-100%);
+}
+.button-3d:hover:after {
+  transform: perspective(500px) rotateX(0) translateY(0);
+}
+
+.privacygif{
+   background-color: transparent;
+
+}
+.imgContainer{
+    float:right;
+}
+
+@font-face {
+  font-family: 'Rowdies';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rowdies/v15/ptRJTieMYPNBAK21zrc.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Rowdies', cursive;
+  font-size: calc(12px + 4 * ((100vw - 400px) / 400));
+  line-height: 1.25;
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+.example {
+  margin: 3rem auto;
+  text-align: center;
+}
+.example > .text {
+  display: inline-block;
+  position: relative;
+  padding: 1rem 3rem;
+  transform: translateY(-0.5rem);
+  text-transform: uppercase;
+  perspective: 10rem;
+}
+.example > .text:first-of-type {
+  padding-left: 4rem;
+}
+.example > .text:first-of-type::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(10deg) translateX(calc(2rem - 3px));
+  z-index: -1;
+  background: #ffffff;
+}
+.example > .text:last-of-type {
+  padding-right: 4rem;
+}
+.example > .text:last-of-type::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-10deg) translateX(calc(-1rem - 6px));
+  z-index: -1;
+  background: #ffffff;
+}
+.example > .counter {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem 2rem;
+}
+.example > .counter > .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #6a558e;
+  border-radius: 0.7rem;
+}
+.example > .counter > .background::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  z-index: -1;
+  border-radius: 1rem;
+  border: solid #ffffff 4px;
+  background: #6a558e;
+}
+.example > .counter > .background::after {
+  content: '';
+  width: 80%;
+  padding-top: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: solid #fff 4px;
+  background: #6a558e;
+}
+.example > .counter > .number {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+.example > .counter > .number:first-of-type {
+  font-size: 2rem;
+}
+.example > .counter > .number:first-of-type::after {
+  content: '/';
+  display: inline-block;
+  padding: 0 0.2rem;
+  font-size: 2.5rem;
+}
+.example > .counter > .number:last-of-type {
+  font-size: 1rem;
+  transform: translateY(-0.8rem) translateX(-0.2rem);
+}
+@media screen and (max-width: 600px) {
+  .example > .text {
+    display: block;
+  }
+  .example > .text:first-of-type {
+    margin-bottom: 3rem;
+  }
+  .example > .text:last-of-type {
+    margin-top: 4rem;
+  }
+}
+
+/* New */
+
+#navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding-left: 51%;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  /* background-color: #000000; */
+  border-bottom: 1.5px solid rgb(0, 0, 0);
+
+
+  color: black;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+p{
+	font-family: Poppins; 
+	color: black;
+}
+.inline-block {
+	width:60%;
+   display: inline-block;
+}
+</style>
+
+<script>
+
+</script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>iFlyPlus</title>
+
+</head>
+
+<body class="stretched">
+	<div id="navbar" style="z-index: 1;">
+		<a  href="../../index.html">UIUX</a>
+		<a href="../about-me.html">VR,AR</a>
+		<a href="../../Animation/index.html">Animation</a>
+		<a href="../../cdv-student-main/index.html">Data Visualization</a>
+		<a href="https://clover0208.github.io/abc-student-repo/projects/Hyperline/index.html" target="blank">Front-End</a>
+	  </div>
+
+
+
+
+<center>
+<p style="font-size: 38px;opacity: 100%;position: relative;top:12.5vh; font-weight: 600;">Prism</p>
+<p style="font-size: 18px;opacity: 100%;position: relative;top:14vh; font-weight: 100;">A Dreamy VR Experience developed with Unity & Oculus Quest 2</p>
+<p style="font-size: 35px;opacity: 100%;position: relative;top:22vh; font-weight: 600;">Video Demo</p>
+<div style="width:60%; position: relative;top:22vh;">
+<iframe width="960" height="540" src="https://www.youtube.com/embed/3wtKQCiRpAA"></iframe></div>
+
+
+<p style="font-size: 35px;opacity: 100%;position: relative;top:38vh; font-weight: 600;">Project Description</p>
+<div style="width:60%; position: relative;top:24vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+	Prism is an immersive VR dream experience developed on Oculus Quest 2 with Unity. It slowly leads the audience into a <b style="font-weight: 600;">surrealistic but dreamy world</b> where the audience gets to interact with dream objects.
+	
+</p>
+</div>
+<p style="font-size: 25px;opacity: 100%;position: relative;top:52vh; font-weight: 400;">Artist's Statement</p>
+
+<div style="width:60%; position: relative;top:38vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+	<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+		You are in your bed, there is a floating prism in front of you. You can't reach it. But you can reach the ball in front of your eyes. You try to score by aiming at the basket and throw, but it would always hit the floating prism. This triggers the prism, which then leads you into a dream world.
+	<br><br>The experience starts by placing the audience in a <b style="font-weight: 600;">futuristic dystopian world </b>where people drown themselves in the pool of desire for money and sex. In the scene which starts from the bottom of the city, the audience would be able to float by holding onto dream bubbles, which symbolizes that the bubbles are taking the audience away from <b style="font-weight: 600;">the numbing reality and into the carefree dreamy state.</b> The ocean sky scene is the dream state the audience would enter. He would fly around the space with various kinds of fish, interact with a few of them by lighting up the lanterns of some fish, and be amazed by the huge whale swimming over his head. In the calming voice of the whales, the audience would slowly slip into the rotating prism under him and wake up in the bedroom.
+</p>
+	</div>
+	<img src="./Prism.png" style="width: 60%;position: relative;top:60vh; ">
+
+	<p style="font-size: 25px;opacity: 100%;position: relative;top:70vh; font-weight: 400;">Why Prism?</p>
+	<div style="width:60%; position: relative;top:56vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+		<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+			A prism has <b style="font-weight: 600;">multiple faces</b> that can reflect different perspectives of a world on each face. We use the prism as the media to teleport our audience from one state to another: he is always within the same world, but the different scenes simply represent <b style="font-weight: 600;">different stages of dreaming</b>, from a light dreamy state that is still closely related to reality to a deep dreamy state that is distantly related to reality.
+
+</p>
+		</div>
+
+		<p style="font-size: 35px;opacity: 100%;position: relative;top:86vh; font-weight: 600;">Development Process</p>
+<p style="font-size: 25px;opacity: 100%;position: relative;top:92vh; font-weight: 400;">Moodboard Creation
+</p>
+
+<div style="width:60%; position: relative;top:76vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+	<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+		We started by coming up with some ideas to build this dream world and quickly settled down to three main scenes: <b style="font-weight: 600;">The bedroom, city bottom, and ocean sky.</b>
+		<br><br>The tone we are aiming for is <b style="font-weight: 600;">a futuristic dystopia</b>, for this, we referenced the design elements from the movie Ghost in the Shell.
+		<br><br>We designed the city scene to be like a <b style="font-weight: 600;">dystopian Atlantis</b>, which is an underwater world. For this, we referenced the city from Aquaman.
+		<br><br>Since we'd like the ocean sky scene to be <b style="font-weight: 600;">dreamy and unrealistic</b>, we wanted to create a beautiful and hollow effect on the sea creatures within that scene. For this, we referenced the elements from a quest in Witcher 3: the cave of dreams.</p>
+	</div>
+	<img src="./prism_moodboard.png" style="width: 60%;position: relative;top:98vh; ">
+		<p style="font-size: 25px;opacity: 100%;position: relative;top:108vh; font-weight: 400;">Storyboard Creation</p>
+
+		
+
+			<p style="font-size: 18px;opacity: 100%;position: relative;top:110vh; font-weight: 200;">
+			
+				We used Procreate to sketch out the effect we want for each scene.</p>
+
+			<img src="./Screen Shot 2023-04-14 at 2.47.29 AM.png" style="width: 60%;position: relative;top:114vh; ">
+			<img src="./Screen Shot 2023-04-14 at 2.47.46 AM.png" style="width: 60%;position: relative;top:118vh; ">
+			<img src="./Screen Shot 2023-04-14 at 2.48.09 AM.png" style="width: 60%;position: relative;top:120vh; ">
+			<img src="./Screen Shot 2023-04-14 at 2.48.36 AM.png" style="width: 60%;position: relative;top:122vh; ">
+
+			<p style="font-size: 25px;opacity: 100%;position: relative;top:128vh; font-weight: 400;">Bubble Climbing Interaction Iteration</p>
+			<p style="font-size: 22px;opacity: 100%;position: relative;top:133vh; font-weight: 400;">Iteration One</p>
+			<div style="width:60%; position: relative;top:118vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+				<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+					We want the audience to float up by holding onto nearby objects and pushing themselves up, then grab onto another nearby object and float up further, so on so forth.
+				<br><br><b style="font-weight: 600;">Step One:</b>  Building Climbing Interaction
+				</p>
+				</div>
+				<video width="400" style="position: relative;top:140vh;"  controls Autoplay=autoplay>
+					<source src="./climbing1.mov" type="video/mp4">
+				</video>
+
+				<div style="width:60%; position: relative;top:122vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+					<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+					<br><br><b style="font-weight: 600;">Step Two:</b>  Building Push System
+					<br><br>To achieve <b style="font-weight: 600;">the drag, push and float effect</b> we want, however, need to consider adding pushing force to the OVRCameraRig. I tried adding force by calculating the last delta movement of the hand controller and multiplying it with a certain float number. This results in an unstable performance: imagine now you are trying to push yourself up, the movement of your last frame could be countering the movement you wish to perform.
+
+					<br><br>I tried another approach: getting the start position and the end position of your moving controller, starting the timer when it is triggered, and ending it when the trigger is released. Then calculate the average speed of this action and multiply it with a float number. It seemed like a feasible approach. But when I applied it to the climber (OVRCameraRig & both hands), it's still <b style="font-weight: 600;">unstable and unpredictable.</b>
+					</p>
+					</div>
+					<p style="font-size: 22px;opacity: 100%;position: relative;top:150vh; font-weight: 400;">Iteration Two</p>
+					<div style="width:60%; position: relative;top:135vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+						<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+							We changed the idea to have the audience floating up by holding onto the bubbles that would keep generating from the floor. But there is an issue I had to fix: The climber isn't holding onto the bubble when the bubble itself is floating up, even though the climber is clearly still holding onto the bubble (the mesh on the hand is disabled when grabbing onto the bubble), he still remains on the ground as the bubble floats up itself.
+						</p>
+						</div>
+						<video width="400" style="position: relative;top:158vh;"  controls Autoplay=autoplay>
+							<source src="./holding.mp4" type="video/mp4">
+						</video>
+						<div style="width:60%; position: relative;top:140vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+							<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+								<br><br>We tried to fix this with two approaches:
+
+								<br><br>1. Parenting the climber to the bubble he's grabbing on.
+								
+								<br><br>This leads to the weird effect that the floating speed of the climber is slower than that of the bubble.
+								
+								<br><br>2. Applying the same speed of the bubble to the player, activate this only when he's holding onto the bubble, and deactivate this and enable the gravity when the trigger is released.
+								
+								<br><br>We went with the second approach and found out that since we have another controller.Move function hiding in climber.cs script, it creates a relative speed between the bubble and the climber. After we disable that extra movement control completely, the climber is able to move along with the bubble.
+							</p>
+							</div>
+							<p style="font-size: 25px;opacity: 100%;position: relative;top:168vh; font-weight: 400;">AI Fish Spawning</p>
+							<div style="width:60%; position: relative;top:153vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+								<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+									For our Ocean Sky scene, I planned to create a Fish movement system that allows the fish to swim freely around the audience. And have the audience standing still on the back of the Stingray while waiting for the Lophius to come and light its light up.
+								</p>
+								</div>
+								<video width="600" style="position: relative;top:174vh;"  controls Autoplay=autoplay>
+									<source src="./fish.mp4" type="video/mp4">
+								</video>
+								<p style="font-size: 25px;opacity: 100%;position: relative;top:182vh; font-weight: 400;">Continuity & Queuing Scenes</p>
+								<div style="width:60%; position: relative;top:160vh;text-align: start; text-align: end; text-align: left; text-align: right; text-align: center; text-align: justify;">
+									<p style="font-size: 18px;opacity: 100%;position: relative;top:18vh; font-weight: 200;">
+										<br><br>We designed a completely linear and looped experience for Prism. There are triggers that need to be triggered in order to proceed to the following scene but they are easily triggered in a linear storytelling scenario.
+
+										<br><br>For  <b style="font-weight: 600;">bedroom scene</b>, we set up a ball and a basketball hoop across the room: the audience would automatically think of throwing the ball through the hoop. But because of the mass setting, he would always hit the prism floating in front of him instead of actually scoring.
+										
+										<br><br>The <b style="font-weight: 600;">Transition scene</b> is non-interactive and leads the audience straight to the next scene.
+										
+										<br><br>The <b style="font-weight: 600;">City Bottom scene</b> requires the audience to hold onto the bubble, but the entrance to the next scene is above the starting position, hence the audience won't get lost in this "chaotic" scene.
+										
+										<br><br>The <b style="font-weight: 600;">Ocean Sky scene</b> is queued with timer. Starting with having the audience flying around the fish and interacting with them. When 65 seconds are up, the whale would appear from behind the audience, which would attract the audience's attention. 20 seconds later, the audience's movement would be locked (not being able to fly anymore) and slowly fall into the prism that appears beneath him.
+									</p>
+									</div>
+									<p style="font-size: 35px;opacity: 100%;position: relative;top:186vh; font-weight: 600;">NYU Final Showcase</p>		
+									<img src="./Screen Shot 2023-04-14 at 3.32.56 AM.png"  style="width: 60%;position: relative;top:188vh; ">
+</center>
+<div style="position:relative; top:188vh;">
+	<div class='example'>
+		<div class='text'><a href="../Ramify/about-me.html" target="blank">Ramify</a></div>
+		<div class='text'></div>
+		<div class='counter' style="opacity:0;">
+			<span class='number'>01</span>
+			<div class='background'></div>
+			<span class='number'>04</span>
+		</div>
+		<div class='text' ><a href="https://devpost.com/software/paper-plane-742lqz">SnapAR</a></div>
+	</div>
+</div>
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+	<script src="js/jquery.hotspot.js"></script>
+	<script src="js/functions.js"></script>
+
+	<script>
+		jQuery(window).on( 'load', function() {
+			jQuery('.block-hero-11 #hotspot-img-onhover').hotSpot();
+		});
+		jQuery(window).on( 'load', function() {
+			jQuery('.block-hero-12 #hotspot-img-onhover').hotSpot();
+		});
+
+		jQuery(window).on( 'pluginSwiperReady', function(){
+			var sliderTop = new Swiper('.slider-top', {
+				spaceBetween: 10,
+				slidesPerView: 'auto',
+				centeredSlides: true,
+				navigation: {
+					nextEl: '.slider-arrow-right',
+					prevEl: '.slider-arrow-left',
+				},
+				loop: true,
+				loopedSlides: 4
+			});
+			var sliderThumbs = new Swiper('.slider-thumbs', {
+				spaceBetween: 10,
+				centeredSlides: true,
+				slidesPerView: 'auto',
+				touchRatio: 0.2,
+				slideToClickedSlide: true,
+					loop: true,
+					loopedSlides: 4
+			});
+
+			sliderTop.controller.control = sliderThumbs;
+			sliderThumbs.controller.control = sliderTop;
+		});
+	</script>
+		<script>
+			window.onscroll = function() {myFunction()};
+		  
+		  var navbar = document.getElementById("navbar");
+		  var sticky = navbar.offsetTop;
+		  
+		  function myFunction() {
+			if (window.pageYOffset >= sticky) {
+			  navbar.classList.add("sticky")
+			} else {
+			  navbar.classList.remove("sticky");
+			}
+		  }
+		  </script>
+
+</body>
+</html>
