@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+	<!-- Kindergarten Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/kindergarten/kindergarten.css" type="text/css" /> <!-- Kindergarten Custom Css -->
+	<link rel="stylesheet" href="demos/kindergarten/css/fonts.css" type="text/css" /> <!-- Kindergarten Custom Fonts -->
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=6953A8" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>SLB-CCUS</title>
+
+	<style>
+		body {
+    font-family: L-PTSans, Arial, sans-serif;
+    color: #333;
+
+}
+p{
+	font: L-PTSans, Arial, sans-serif;
+	line-height: 1.6;
+	font-size: 20px;
+	
+}
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+	</style>
+	<style>
+
+/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto Mono", monospace;
+} */
+
+button {
+  margin: 50px;
+  font-family: inherit;
+}
+/* End of Page styling */
+
+/* Simple button styling -- No animation */
+.simple {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.simple::after {
+  content: "";
+  background-color: #dcbaff;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+/* End of Simple Button */
+
+/* Fill button styling */
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fill::after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
+/* End of Fill Button  */
+
+/* Slide button styling */
+.slide {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 30px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.slide i {
+  opacity: 0;
+  font-size: 13px;
+  transition: 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 21px;
+  transition: transform 1;
+}
+
+.slide div {
+  transition: transform 0.8s;
+}
+
+.slide:hover div {
+  transform: translateX(-6px);
+}
+
+.slide::after {
+  content: "";
+  background-color: #66f2d5;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+
+.slide:hover i {
+  opacity: 1;
+  transform: translateX(-6px);
+}
+		/* FONT LEGIBILITY */
+		h1, h2, h3, h4, h5, h6, p, a, li, span {
+		  font-variant-numeric: oldstyle-nums;
+		  font-feature-settings: "onum";
+		}
+		* {
+		 text-rendering: optimizeLegibility;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale; 
+		}
+	  /* LINK HOVER */
+	  .marker,
+	  .w-richtext a,
+	  .w-richtext p a{
+			-webkit-transition: all .15s ease-out;
+			-moz-transition: all .15s ease-out;
+			-ms-transition: all .15s ease-out;
+			-o-transition: all .15s ease-out;
+			transition: all .15s ease-out;
+			text-decoration: none;
+		  background-image: -webkit-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -moz-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: -o-linear-gradient(transparent 50%, #fcf113 0%);
+		  background-image: linear-gradient(transparent 50%, #fcf113 0%);
+			background-size: 0 100%;
+			background-repeat: no-repeat;
+			border-bottom: 1px solid #33393f;
+		  }
+	  .marker:hover,
+	  .active-link,
+	  .w-richtext a:hover,
+	  .w-richtext p a:hover{
+		  background-size: 100% 100%;
+			border-bottom: 1px solid #fcf113;
+		  }
+	  @media screen and (min-width:1440px){
+		  img.image {
+				max-width:1440px;
+				}
+	  }
+	  /* Hide Nav when Scrolling */
+		#nav.nav-up {
+			 top:-70px; 
+		}
+	  @media screen and (max-width:480px){
+		  #nav.nav-up {
+				 bottom:-70px; 
+			}
+		.w-webflow-badge {
+			  top: 12px !important;
+			  bottom: auto !important;
+		  }
+	  }
+	  /* Making sure navigation stays behind lightbox overlay */
+		.w-lightbox-backdrop{
+			 z-index:9999; 
+		}
+	  .noscroll {
+		  overflow:hidden;
+	  }
+	  #mobile-nav.open .navbar:first-child {
+		  -webkit-transform:translateY(9px) rotate(225deg);
+		transform:translateY(9px) rotate(225deg);
+	  }
+	  #mobile-nav.open .navbar:nth-child(2) {
+		  -webkit-transform:translateX(50px);
+		transform:translateX(50px);
+		opacity:0;
+	  }
+	  #mobile-nav.open .navbar:last-child {
+		  -webkit-transform:translateY(-9px) rotate(-45deg);
+		transform:translateY(-9px) rotate(-45deg);
+	  }
+	  /* BADGE MODIFICATIONS */
+	  /*.w-webflow-badge span {
+		  position: absolute;
+		  right: 3px;
+		  top: 6px;
+		  color: #222;
+		  font-size: 14px;
+		  }*/
+	  </style>
+		<style>
+	  .w-slider-nav {
+		  text-align: left;
+	  }
+	  .w-slider-dot.w-active,
+	  .w-slider-dot.w-active:hover {
+		  background-color: #1E262B;
+	  }
+	  .w-slider-dot {
+		  background-color: transparent;
+		width:16px;
+		height:16px;
+		border:2px solid #1E262B;
+	  }
+	  .w-slider-dot:hover {
+		  background-color: #D8D8D8;
+	  }
+	 
+
+
+/* New */
+
+#navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding-left: 51%;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  /* background-color: #000000; */
+  border-bottom: 1.5px solid rgb(0, 0, 0);
+
+
+  color: black;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+
+
+	 
+	 </style>
+
+
+
+</head>
+
+<body class="stretched">
+	<div id="navbar" style="z-index: 1;">
+		<a  href="../../index.html">UIUX</a>
+		<a  href="../../VR/about-me.html">VR,AR</a>
+		<a href="../../Animation/index.html">Animation</a>
+		<a href="../../cdv-student-main/index.html">Data Visualization</a>
+		<a href="https://clover0208.github.io/abc-student-repo/projects/Hyperline/index.html" target="blank">Front-End</a>
+	  </div>
+
+	<!-- <div class="modal-on-load" data-target="#myModal1"></div> -->
+
+	<!-- Modal -->
+	<!-- <div class="modal1 mfp-hide subscribe-widget" id="myModal1">
+		<a href="#" class="d-flex mx-auto h-scale-sm all-ts" style="max-width: 670px">
+			<img src="demos/kindergarten/images/banner.jpg" alt="Banner Image" class="rounded-4">
+		</a>
+	</div> -->
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-0 col-lg-3">
+							<!-- <a href="index.html" class="standard-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a>
+							<a href="index.html" class="retina-logo"><img src="demos/kindergarten/images/logo.svg" alt="Canvas Logo" width="140"></a> -->
+						</div>
+						<!-- #logo end -->
+
+						<div class="header-misc col-lg-3 justify-content-end">
+							<!-- WhatsApp Icon
+							============================================= -->
+				
+						</div>
+
+
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div>
+
+						<!-- <nav class="primary-menu">
+
+							<ul class="menu-container">
+								<li class="menu-item"><a class="menu-link" href="../../index.html" ><div>Home</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="https://drive.google.com/file/d/1NJlOdgeZrMYcXHU12JGgAyKoVCSeZqSb/view?usp=sharing" target="_blank"><div>CV</div></a></li>
+							</ul>
+
+						</nav> -->
+
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+
+	
+
+		<!-- Hero
+		============================================= -->
+		<section id="slider" class="slider-element include-header" style="background-color: #ebeefb;">
+
+			<div class="position-absolute top-0 start-0 w-100 h-100" style="background: transparent url('./2x/2\ copy.png') center center / cover; opacity: 1;width:80%;"></div>
+
+			<div class="container" >
+				<div class="row align-items-center min-vh-100 pt-5 pb-4">
+					<div class="col-lg-6" style="margin-left: 2vw;margin-top: -10vh;">
+						<h6 class="mb-4 ls1 text-uppercase fw-normal"></h6>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!-- <div class="shape-divider" data-shape="wave-2" data-position="bottom" data-height="80"></div> -->
+
+			<!-- <div class="position-relative d-none d-sm-block">
+				<img src="demos/kindergarten/images/fish2.png" alt="Fish" class="background-img pos-right float-anim" style="top: -120px">
+			</div> -->
+
+		</section>
+		<center>
+			<img src="./4x/Asset 42_1@4x.png" style="position:relative;top:4vh;width:84%;">
+			<img src="./2x/Asset 44@2x.png" style="position:relative;top:3vh;width:84%;">
+			<img src="./2x/Group 60.png" style="position:relative;top:10vh;width:84%;">
+			<img src="./2x/2x/Asset 45@2x.png" style="position:relative;top:20vh;width:84%;">
+			<img src="./Group 204.png" style="position:relative;top:15vh;width:84%;">
+			<img src="./2x/2x/Asset 46@2x.png" style="position:relative;top:22vh;width:84%;">
+			<img src="./2x/2x/Asset 48@2x.png" style="position:relative;top:16vh;width: 84%;">
+			<img src="./2x/2x/Asset 48@2x copy.png" style="position:relative;top:16vh;width: 84%;">
+		</center>
+
+
+		<!-- interview start -->
+
+
+	
+	<!-- <div class="rich-kid w-richtext" style="margin-top:8vh; width:600px;">
+	<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400" height="750" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fyz6q2wNFjuPTTh5D3aqLEW%2FCloser%3Fnode-id%3D1%253A49%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A49" allowfullscreen></iframe>
+</div> -->
+<center>
+	<div style="position:relative;top: 36px;">
+<a href="../../Berkeley/about-me.html">
+	<button type="button" class="slide">
+	<div>UX Research</div>
+	<i class="icon-arrow-left"></i>
+  </button>
+</a>
+<a href="../../Rare-desease/about-me.html">
+  <button type="button" class="slide">
+	<div>Web Design</div>
+	<i class="icon-arrow-right"></i>
+  </button>
+</a>
+</div>
+
+</center>
+
+
+
+	</div>
+
+
+	<div id="gotoTop" class="icon-hand-up rounded-circle"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/closer.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/hello.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+
+var animateButton = function(e) {
+
+e.preventDefault;
+//reset animation
+e.target.classList.remove('animate');
+
+e.target.classList.add('animate');
+setTimeout(function(){
+  e.target.classList.remove('animate');
+},800);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+// $(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+$(".col-lg-4 mt-5 mt-lg-0").css('display',null);
+
+$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+
+
+
+		let carousels = jQuery('#kindergarten-carousel-img, #kindergarten-carousel-text');
+		jQuery('.carousel-control-prev').on( 'click', function(){
+			carousels.carousel('prev');
+		});
+		jQuery('.carousel-control-next').on( 'click', function(){
+			carousels.carousel('next');
+		});
+
+		jQuery(function() {
+			jQuery(".component-flatpickr").flatpickr({
+				enableTime: true,
+				dateFormat: "d/m/yy - H:i",
+			});
+		});
+
+
+		$(document).ready(function() {
+// Hide Webflow Badge
+	$('.w-webflow-badge').addClass("wf").removeClass('w-webflow-badge');
+	$('.wf').hide();
+
+if($(window).width() > 479){
+// Hide Header on scroll down
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('#nav').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      // Make sure they scroll more than delta
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('#nav').addClass('nav-up');
+      } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+              $('#nav').removeClass('nav-up');
+          }
+      }
+      lastScrollTop = st;
+  }
+}
+  //mobile nav open close
+if ($(window).width() < 480) {
+    $('#mobile-nav, .nav-link, .mobopen').on('click', function(){
+    	//$('.logo-link').toggleClass("mobopen");
+      	//$('#menu').toggleClass("flex");
+        $('#mobile-nav').toggleClass("open");
+        $('body').toggleClass("noscroll");
+    });
+}
+});
+	</script>
+		<script>
+			window.onscroll = function() {myFunction()};
+		  
+		  var navbar = document.getElementById("navbar");
+		  var sticky = navbar.offsetTop;
+		  
+		  function myFunction() {
+			if (window.pageYOffset >= sticky) {
+			  navbar.classList.add("sticky")
+			} else {
+			  navbar.classList.remove("sticky");
+			}
+		  }
+		  </script>
+
+</body>
+</html>
